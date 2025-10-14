@@ -52,7 +52,7 @@ Schwerpunkte:
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_1 = [{
     "question": """Welche Aussagen beschreiben die Funktionsweise und Einsatzzwecke von OCR korrekt?""",
@@ -100,7 +100,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 question2 = [
     {
@@ -154,7 +154,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 ocr_sequence_question = [
     {
@@ -213,7 +213,7 @@ Schwerpunkte:
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 question1 = [
     {
@@ -381,7 +381,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 question3 = [
     {
@@ -428,7 +428,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 question5 = [
     {
@@ -475,7 +475,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 question4 = [
     {
@@ -543,7 +543,7 @@ Schwerpunkte:
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 question5 = [{
     "question": """Welche Aussagen zu OCR-Qualitätsmetriken sind korrekt?""",
@@ -594,7 +594,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 question6 = [
     {
@@ -635,7 +635,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 question7 = [
     {
@@ -674,7 +674,7 @@ Erklären Sie die Beziehungen zwischen den OCR-Qualitätsmetriken.
 ```{code-cell} ipython3
 :tags: [remove-input]
 import sys
-sys.path.append("../quadriga_config")  # Adjust path as needed
+sys.path.append("../quadriga")  # Adjust path as needed
 from assessment import create_answer_box
 
 create_answer_box('ocr-1')
@@ -695,7 +695,7 @@ Wichtig zu verstehen:
 ```{code-cell} ipython3
 :tags: [remove-input]
 import sys
-sys.path.append("../quadriga_config")  # Adjust path as needed
+sys.path.append("../quadriga")  # Adjust path as needed
 from assessment import create_answer_box
 
 create_answer_box('ocr-2')
@@ -720,7 +720,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 precision_question = [
     {
@@ -907,7 +907,7 @@ Geschätzte Zeit: 10 Minuten
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 quality_sequence = [
     {
@@ -957,7 +957,7 @@ Analysieren Sie die folgenden OCR-Qualitätswerte aus dem Beispiel:
 ```{code-cell} ipython3
 :tags: [remove-input]
 import sys
-sys.path.append("../quadriga_config")  # Adjust path as needed
+sys.path.append("../quadriga")  # Adjust path as needed
 from assessment import create_answer_box
 
 create_answer_box('ocr-3')
@@ -977,7 +977,7 @@ Begründung:
 ```{code-cell} ipython3
 :tags: [remove-input]
 import sys
-sys.path.append("../quadriga_config")  # Adjust path as needed
+sys.path.append("../quadriga")  # Adjust path as needed
 from assessment import create_answer_box
 
 create_answer_box('ocr-4')
@@ -1001,7 +1001,7 @@ Bewerten Sie die Eignung der gemessenen OCR-Qualität für verschiedene Anwendun
 ```{code-cell} ipython3
 :tags: [remove-input]
 import sys
-sys.path.append("../quadriga_config")  # Adjust path as needed
+sys.path.append("../quadriga")  # Adjust path as needed
 from assessment import create_answer_box
 
 create_answer_box('ocr-5')
@@ -1024,7 +1024,7 @@ Bedingt geeignet, weil:
 ```{code-cell} ipython3
 :tags: [remove-input]
 import sys
-sys.path.append("../quadriga_config")  # Adjust path as needed
+sys.path.append("../quadriga")  # Adjust path as needed
 from assessment import create_answer_box
 
 create_answer_box('ocr-6')

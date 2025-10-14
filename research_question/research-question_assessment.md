@@ -42,7 +42,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 question2 = [
     {
@@ -109,7 +109,7 @@ Formulieren Sie zunächst selbst eine mögliche Operationalisierung
 ```{code-cell} ipython3
 :tags: [remove-input]
 import sys
-sys.path.append("../quadriga_config")  # Adjust path as needed
+sys.path.append("../quadriga")  # Adjust path as needed
 from assessment import create_answer_box
 
 create_answer_box('1')
@@ -125,7 +125,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 questions = [
     {

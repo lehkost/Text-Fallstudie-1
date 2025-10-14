@@ -48,7 +48,7 @@ Geschätzte Zeit: 15 Minuten
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_1 = [{
     "question": """Welche der folgenden Fehler fallen in die Kategorie \"Zeichenerkennung\"?""",
@@ -89,7 +89,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_2 = [{
     "question": """Welche Aussagen zu Formatierungsfehlern bei der OCR sind korrekt?""",
@@ -130,7 +130,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_3 = [{
     "question": """Welche Eigenschaften treffen auf die manuelle OCR-Korrektur zu?""",
@@ -171,7 +171,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_4 = [{
     "question": """Welche Aussagen zur automatischen OCR-Korrektur sind zutreffend?""",
@@ -211,7 +211,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_5 = [{
     "question": """In welcher Reihenfolge werden typischerweise die folgenden Schritte der OCR-Nachbearbeitung durchgeführt?""",
@@ -259,7 +259,7 @@ Geschätzte Zeit: 15 Minuten
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_6 = [{
     "question": """Welche Aussagen zur Änderung historischer Schreibweisen (wie 'ſ' zu 's') sind korrekt?""",
@@ -300,7 +300,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_7 = [{
     "question": """Welche Anforderungen stellt die Korrektur des OCR-Fehlers "'<' statt 'ch'"?""",
@@ -354,7 +354,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_8 = [{
     "question": """Welche Aussagen sind korrekt?""",
@@ -394,7 +394,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_9 = [{
     "question": """Was bedeutet die Verbesserung des F1-Scores nach der regelbasierten Korrektur?""",
@@ -434,7 +434,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_10 = [{
     "question": """In welcher Reihenfolge werden die Schritte der regelbasierten OCR-Nachkorrektur typischerweise durchgeführt?""",
@@ -475,7 +475,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_11 = [{
     "question": """Welche Aussagen zur regelbasierten OCR-Korrektur sind korrekt?""",
@@ -524,7 +524,7 @@ Geschätzte Zeit: 15 Minuten
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_12 = [{
     "question": """Welche Aussagen beschreiben die Herausforderungen beim Einsatz von Large Language Models für die OCR-Nachbearbeitung korrekt?""",
@@ -565,7 +565,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_13 = [{
     "question": """Welche der folgenden Aspekte gehören zu den ressourcenbezogenen Herausforderungen beim Einsatz von LLMs für die OCR-Nachbearbeitung?""",
@@ -606,7 +606,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_14 = [{
     "question": """Welche orthographischen und inhaltlichen Probleme können bei der LLM-basierten OCR-Nachbearbeitung entstehen?""",
@@ -647,7 +647,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_15 = [{
     "question": """Eine Forschungsgruppe plant, einen historischen Zeitungskorpus von 10.000 Seiten mit LLMs nachzukorrigieren. Welche Herausforderungen sind dabei zu erwarten?""",
@@ -688,7 +688,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_16 = [{
     "question": """Welche Maßnahmen sind wichtig für die Qualitätskontrolle bei der LLM-basierten OCR-Nachbearbeitung?""",

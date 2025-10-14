@@ -1,8 +1,9 @@
 # yaml-language-server: $schema=https://citation-file-format.github.io/1.2.0/schema.json
 cff-version: 1.2.0
-title: 'Quantitative Analyse der Medienwellen der Spanischen Grippe (1918/19). Eine Fallstudie'
-abstract: Die vorliegende Fallstudie bereitet – in Form eines “Jupyter Books” – den Prozess und 
-  die Ergebnisse eines Forschungsprojekts aus den Digital Humanities didaktisch auf.
+title: Waves of the Spanish Flu – Case Study
+abstract: Die vorliegende Fallstudie bereitet – in Form eines “Jupyter Books” – den
+  Prozess und die Ergebnisse eines Forschungsprojekts aus den Digital Humanities didaktisch
+  auf.
 type: software
 message: Please cite this software using the metadata from `preferred-citation` in
   `CITATION.cff`.
@@ -37,7 +38,7 @@ references:
 preferred-citation:
   year: 2024
   authors: *id001
-  title: 'Quantitative Analyse der Medienwellen der Spanischen Grippe (1918/19). Eine Fallstudie'
+  title: Waves of the Spanish Flu – Case Study
   type: book
   doi: 10.5281/zenodo.15682652
   url: https://quadriga-dk.github.io/Text-Fallstudie-1/
@@ -48,3 +49,5 @@ preferred-citation:
   copyright: CC-BY-SA-4.0
   keywords:
   - Open Educational Resource
+  version: 1.0.0-beta.3
+version: 1.0.0-beta.3

@@ -45,7 +45,7 @@ Format: Multiple Choice
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_1 = [{
     "question": """Was versteht man unter einem semantischen Feld im Kontext der Analyse der Spanischen Grippe?""",
@@ -85,7 +85,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_2 = [{
     "question": """Worin besteht der Unterschied zwischen absoluter und relativer Häufigkeit?""",
@@ -125,7 +125,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_3 = [{
     "question": """Warum ist die Verwendung relativer Häufigkeiten bei der vergleichenden Analyse von Texten aus verschiedenen Zeitungen sinnvoll?""",
@@ -167,7 +167,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_4 = [{
     "question": """Welche Aussage ist korrekt?""",
@@ -212,7 +212,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_6 = [{
     "question": """Was ist die korrekte relative Häufigkeit der Grippewörter, wenn alle drei Texte zusammen betrachtet werden?""",
@@ -252,7 +252,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_7 = [{
     "question": """Warum eignet sich ein Liniendiagramm besonders gut zur Darstellung der Häufigkeitsverläufe der Grippewörter über die Zeit?""",
@@ -298,7 +298,7 @@ Ein Forschungsteam untersucht die mediale Berichterstattung über COVID-19 in ve
 ```{code-cell} ipython3
 :tags: [remove-input]
 import sys
-sys.path.append("../quadriga_config")  # Adjust path as needed
+sys.path.append("../quadriga")  # Adjust path as needed
 from assessment import create_answer_box
 
 create_answer_box('semantic-field')
@@ -353,7 +353,7 @@ Format: Multiple Choice
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_1 = [{
     "question": """Welche Schritte sind für die Frequenzanalyse eines semantischen Feldes in historischen Texten notwendig?""",
@@ -399,7 +399,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_2 = [{
     "question": """Welche Arten von Frequenzberechnungen werden im Notebook für die Analyse verwendet?""",
@@ -439,7 +439,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_3 = [{
     "question": """Warum ist die Unterscheidung zwischen absoluten und relativen Häufigkeiten bei der diachronen Analyse wichtig?""",
@@ -479,7 +479,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_4 = [{
     "question": """Welche Beobachtung lässt sich aus dem im Notebook erstellten diachronen Frequenzdiagramm der Grippe-Begriffe ableiten?""",
@@ -519,7 +519,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_5 = [{
     "question": """Welche Hypothese wird im Notebook für das Fehlen einer dritten Welle in der Frequenzanalyse angeführt?""",
@@ -559,7 +559,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_6 = [{
     "question": """Welche Zeiteinheiten werden im Notebook für die Aggregation der Frequenzdaten angeboten?""",
@@ -599,7 +599,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_7 = [{
     "question": """Welche Schritte werden im Notebook durchgeführt, um die Daten für die Frequenzanalyse vorzubereiten?""",
@@ -645,7 +645,7 @@ Sie planen eine diachrone Frequenzanalyse zu Berichten über eine historische Na
 ```{code-cell} ipython3
 :tags: [remove-input]
 import sys
-sys.path.append("../quadriga_config")  # Adjust path as needed
+sys.path.append("../quadriga")  # Adjust path as needed
 from assessment import create_answer_box
 
 create_answer_box('frequency-analysis')
@@ -702,7 +702,7 @@ Format: Multiple Choice
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_1 = [{
     "question": """Was ist der Hauptzweck der KWIC-Darstellung (Keyword in Context) in der Textanalyse?""",
@@ -742,7 +742,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_2 = [{
     "question": """Welche Informationen werden typischerweise in einer KWIC-Darstellung angezeigt?""",
@@ -782,7 +782,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_3 = [{
     "question": """Welcher Schritt muss vor der Erstellung einer KWIC-Darstellung durchgeführt werden?""",
@@ -822,7 +822,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_4 = [{
     "question": """Welche Funktion erfüllt der Parameter n_words in der KWIC-Darstellung im Notebook?""",
@@ -862,7 +862,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_5 = [{
     "question": """Warum ist die KWIC-Darstellung eine sinnvolle Ergänzung zur quantitativen Frequenzanalyse?""",
@@ -902,7 +902,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_6 = [{
     "question": """Welche Aussage zur Auswahl von Suchwörtern für die KWIC-Darstellung ist korrekt?""",
@@ -946,7 +946,7 @@ Stellen Sie sich vor, Sie möchten eine KWIC-Analyse zum Thema "Schutzmaßnahmen
 ```{code-cell} ipython3
 :tags: [remove-input]
 import sys
-sys.path.append("../quadriga_config")  # Adjust path as needed
+sys.path.append("../quadriga")  # Adjust path as needed
 from assessment import create_answer_box
 
 create_answer_box('kwic-analysis')

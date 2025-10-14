@@ -45,7 +45,7 @@ Format: Multiple Choice
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_1 = [{
     "question": """Welche der folgenden Aussagen beschreibt korrekt, was NLP im Kontext der Textanalyse leistet?""",
@@ -85,7 +85,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_2 = [{
     "question": """Welche Funktion erfüllt die Tokenisierung im NLP-Prozess?""",
@@ -125,7 +125,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_3 = [{
     "question": """Was ist das Hauptziel der Lemmatisierung in der NLP-Pipeline?""",
@@ -165,7 +165,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_4 = [{
     "question": """Warum ist die Kombination von Tokenisierung und Lemmatisierung für die quantitative Textanalyse besonders wertvoll?""",
@@ -205,7 +205,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_5 = [{
     "question": """Welcher Unterschied besteht zwischen dem ursprünglichen Text und dem mit NLP-Methoden verarbeiteten Text?""",
@@ -250,7 +250,7 @@ Originaltext: "Die Forschenden untersuchten verschiedene Zeitungsartikel zur Spa
 ```{code-cell} ipython3
 :tags: [remove-input]
 import sys
-sys.path.append("../quadriga_config")  # Adjust path as needed
+sys.path.append("../quadriga")  # Adjust path as needed
 from assessment import create_answer_box
 
 create_answer_box('process-1')
@@ -296,7 +296,7 @@ Format: Multiple Choice
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_1 = [{
     "question": """Welche Schritte gehören zur automatischen Annotation eines Textes mit spaCy?""",
@@ -342,7 +342,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_2 = [{
     "question": """Welche Vorteile bietet die Tokenisierung mit spaCy gegenüber einer einfachen Worttrennung mittels split()?""",
@@ -387,7 +387,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_3 = [{
     "question": """Warum werden im Beispiel bestimmte Analysekomponenten von spaCy deaktiviert?""",
@@ -427,7 +427,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_4 = [{
     "question": """Welches Dateiformat wird im Beispiel für die Speicherung der annotierten Texte verwendet und warum?""",
@@ -467,7 +467,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_5 = [{
     "question": """Was zeigt der Vergleich der Textlänge vor und nach der Tokenisierung mit spaCy im Beispiel?""",
@@ -514,7 +514,7 @@ from jupyterquiz import display_quiz
 
 import sys
 sys.path.append("..")
-from quadriga_config import colors
+from quadriga import colors
 
 multiple_choice_6 = [{
     "question": """Welche Reihenfolge der Verarbeitungsschritte ist korrekt für die Textannotation mit spaCy?""",
