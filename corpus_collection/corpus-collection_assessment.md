@@ -875,44 +875,31 @@ display_quiz(metadata_schema_questions, colors=colors.jupyterquiz)
 ```
 
 ## Frage 9
+
 ```{code-cell} ipython3
 :tags: [remove-input]
-from jupyterquiz import display_quiz
-
 import sys
-sys.path.append("..")
-from quadriga import colors
+sys.path.append("../quadriga")
+from assessment import DragDropQuiz
 
-sequence_question = [
-    {
-        "question": "In welcher Reihenfolge werden die folgenden Schritte beim Korpusaufbau durchgeführt?",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "1. Durchführung der Datensammlung → 2. Dokumention der Auswahlkriterien → 3. Testen der Sammlungsmethodik",
-                "correct": False,
-                "feedback": """× Falsch. Die Datensammlung kann erst durchgeführt werden, wenn ein Korpuskonzept erstellt wurde. Außerdem muss eine Metadatenstruktur festgelegt werden."""
-            },
-            {
-                "answer": "1. Entwicklung des Korpuskonzepts → 2. Dokumentation der Auswahlkriterien → 3. Festlegung des Metadatenstruktur → 4. Test der Sammlungsmethodik → Durchführung der Datensammlung",
-                "correct": True,
-                "feedback": """✓ Richtig! Dies ist die korrekte Reihenfolge: Die Erstellung des Konzept muss an erster Stelle erfolgen. Bevor ein erster Test zur Machbarkeit der Sammlungsmethodik durchgeführt werden kann, müssen die Kriterien zur Auswahl der Daten festgelegt werden sowie eine Struktur, in der die Metadaten gespeichert werden. Wenn erste Tests der Sammlungsmethodik erfolgreich waren, kann die Sammlung der kompletten Daten ausgeführt werden."""
-            },
-            {
-                "answer": "1. Festlegung des Metadatenschemas → 2. Dokumentation der Auswahlkriterien → 3. Test der Sammlungsmethodik → 4. Durchführung der Datensammlung",
-                "correct": False,
-                "feedback": """× Falsch. Es muss zuerst ein Korpuskonzept festgelegt werden, damit eine Metadatenstruktur und die Auswahlkriterien festgelegt werden können."""
-            },
-            {
-                "answer": "1. Entwicklung des Korpuskonzepts → 2. Festlegung des Metadatenschemas → 3. Durchführung der Datensammlung → 4. Test der Sammlungsmethodik → 5. Dokumentation der Auswahlkriterien",
-                "correct": False,
-                "feedback": """× Falsch. Die Datensammlung kann nicht durchgeführt werden, ohne dass die Auswahlkriterien zur Sammlung festgelegt wurden. Auch sollte die Sammlungsmethodik getestet werden, bevor sie auf den gesamten Daten ausgeführt wird."""
-            }
-        ]
+quiz = DragDropQuiz()
+
+quiz.create_matching_quiz(
+    title="Ordnen Sie die folgenden Schritte beim Korpusaufbau in die richtige Reihenfolge:",
+    descriptions=["Entwicklung des Korpuskonzepts",
+        "Test der Sammlungsmethodik",
+        "Festlegung des Metadatenstruktur",
+        "Dokumentation der Auswahlkriterien", 
+        "Durchführung der Datensammlung"],
+    options=["1", "2", "3", "4", "5"],
+    correct_mapping={
+        "Entwicklung des Korpuskonzepts" : "1",
+        "Dokumentation der Auswahlkriterien" : "2",
+        "Festlegung des Metadatenstruktur" : "3",
+        "Test der Sammlungsmethodik" : "4",
+        "Durchführung der Datensammlung" : "5"
     }
-]
-
-display_quiz(sequence_question, colors=colors.jupyterquiz, max_width=1000)
+)
 ```
 
 ## Frage 10

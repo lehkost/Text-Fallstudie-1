@@ -150,45 +150,24 @@ display_quiz(question2, colors=colors.jupyterquiz)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
-from jupyterquiz import display_quiz
-
 import sys
-sys.path.append("..")
-from quadriga import colors
+sys.path.append("../quadriga")
+from assessment import DragDropQuiz
 
-ocr_sequence_question = [
-    {
-        "question": "Welche Reihenfolge der Prozessschritte ist für eine OCR-Pipeline korrekt?",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "1. Texterkennung → 2. Bildvorverarbeitung → 3. Qualitätskontrolle",
-                "correct": False,
-                "feedback": """× Falsch. Die Bildvorverarbeitung muss vor der Texterkennung erfolgen, um optimale Ergebnisse zu erzielen."""
-            },
-            {
-                "answer": "1. Qualitätskontrolle → 2. Bildvorverarbeitung → 3. Texterkennung",
-                "correct": False,
-                "feedback": """× Falsch. Die Qualitätskontrolle kann erst nach der Texterkennung durchgeführt werden, da sie den OCR-Output überprüft."""
-            },
-            {
-                "answer": "1. Bildvorverarbeitung → 2. Texterkennung → 3. Qualitätskontrolle",
-                "correct": True,
-                "feedback": """✓ Richtig! Dies ist die korrekte Reihenfolge einer OCR-Pipeline:
-                * Schritt 1: Die Bildvorverarbeitung verbessert die Bildqualität (durch Entfernung von Rauschen, Kontrastanpassung, etc.), erhöht dadurch die OCR-Genauigkeit und reduziert potenzielle Fehler.
-                * Schritt 2: Bei der Texterkennung werden einzelne Zeichen erkannt, das Layout analysiert und die visuellen Elemente in digitalen Text umgewandelt.
-                * Schritt 3: Die abschließende Qualitätskontrolle überprüft die Genauigkeit des erzeugten Textes, identifiziert Probleme und hilft bei der Entscheidung über notwendige Nachbearbeitungen."""
-            },
-            {
-                "answer": "1. Bildvorverarbeitung → 2. Qualitätskontrolle → 3. Texterkennung",
-                "correct": False,
-                "feedback": """× Falsch. Die Qualitätskontrolle kann erst durchgeführt werden, nachdem die Texterkennung Text erzeugt hat, den man überprüfen kann."""
-            }
-        ]
+quiz = DragDropQuiz()
+
+quiz.create_matching_quiz(
+    title="Ordnen Sie die folgenden Schritte der OCR-Pipeline in die richtige Reihenfolge:",
+    descriptions=["Texterkennung", 
+        "Bildvorverarbeitung",
+        "Qualitätskontrolle"],
+    options=["1", "2", "3"],
+    correct_mapping={
+        "Bildvorverarbeitung" : "1",
+        "Texterkennung" : "2",
+        "Qualitätskontrolle" : "3"
     }
-]
-
-display_quiz(ocr_sequence_question, colors=colors.jupyterquiz,max_width=1000)
+)
 ```
 ## Frage 4
 (Wählen Sie alle zutreffenden Antworten aus)
@@ -424,45 +403,25 @@ display_quiz(question3, colors=colors.jupyterquiz)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
-from jupyterquiz import display_quiz
-
 import sys
-sys.path.append("..")
-from quadriga import colors
+sys.path.append("../quadriga")
+from assessment import DragDropQuiz
 
-question5 = [
-    {
-        "question": "In welcher Reihenfolge werden die folgenden Schritte bei der OCR-Verarbeitung eines mehrseitigen PDFs durchgeführt?",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "1. OCR auf jeder Seite durchführen → 2. PDF in Einzelseiten konvertieren → 3. Erkannten Text speichern",
-                "correct": False,
-                "feedback": """× Falsch. Die OCR-Engine benötigt Bilddaten als Eingabe, daher muss das PDF zuerst in Einzelbilder konvertiert werden, bevor die OCR durchgeführt werden kann."""
-            },
-            {
-                "answer": "1. PDF in Einzelseiten konvertieren → 2. OCR auf jeder Seite durchführen → 3. Erkannten Text speichern",
-                "correct": True,
-                "feedback": """✓ Richtig! Dies ist die korrekte Reihenfolge:
-                * Zuerst wird das PDF in Einzelseiten konvertiert, da OCR Bilddaten benötigt und PDFs seitenweise verarbeitet werden müssen
-                * Dann wird auf jeder konvertierten Bildseite die OCR durchgeführt (typischerweise mit Funktionen wie `image_to_string`), wodurch Text für jede Seite erzeugt wird
-                * Schließlich wird der erkannte Text gespeichert, um die OCR-Ergebnisse zu sichern, weitere Verarbeitung zu ermöglichen und für die Dokumentation"""
-            },
-            {
-                "answer": "1. PDF in Einzelseiten konvertieren → 2. Erkannten Text speichern → 3. OCR auf jeder Seite durchführen",
-                "correct": False,
-                "feedback": """× Falsch. Man kann keinen Text speichern, bevor die OCR durchgeführt wurde, da die OCR erst den Text aus den Bildern erzeugt."""
-            },
-            {
-                "answer": "1. Erkannten Text speichern → 2. PDF in Einzelseiten konvertieren → 3. OCR auf jeder Seite durchführen",
-                "correct": False,
-                "feedback": """× Falsch. Diese Reihenfolge ist logisch unmöglich, da der Text erst nach der PDF-Konvertierung und OCR-Durchführung vorhanden ist und gespeichert werden kann."""
-            }
-        ]
+quiz = DragDropQuiz()
+
+quiz.create_matching_quiz(
+    title="Ordnen Sie die folgenden Schritte bei der OCR-Verarbeitung eines mehrseitigen PDFs in die richtige Reihenfolge:",
+    descriptions=[
+        "OCR auf jeder Seite durchführen", 
+        "PDF in Einzelseiten konvertieren",
+        "Erkannten Text speichern"],
+    options=["1", "2", "3"],
+    correct_mapping={
+        "PDF in Einzelseiten konvertieren" : "1",
+        "OCR auf jeder Seite durchführen" : "2",
+        "Erkannten Text speichern" : "3"
     }
-]
-
-display_quiz(question5, colors=colors.jupyterquiz, max_width=1000)
+)
 ```
 
 ## Frage 7
@@ -892,56 +851,24 @@ display_quiz(recall_applications, colors=colors.jupyterquiz)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
-from jupyterquiz import display_quiz
-
-"""
-Lernziel: 
-    Sie können die Schritte zur Qualitätsmessung eines OCR-Outputs aufzählen und die Qualitätsmaße interpretieren.
-Bloom-Stufe: Verstehen, Anwenden
-Format: 
-Geschätzte Zeit: 10 Minuten
-    - Reihenfolge der Prozessschritte 
-    - Bedeutung der Messergebnisse 
-    - Praktische Interpretation
-"""
-
 import sys
-sys.path.append("..")
-from quadriga import colors
+sys.path.append("../quadriga")
+from assessment import DragDropQuiz
 
-quality_sequence = [
-    {
-        "question": "In welcher Reihenfolge werden die folgenden Schritte zur Messung der OCR-Qualität durchgeführt?",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "1. Berechnung der Qualitätsmetriken → 2. Erstellung der Ground Truth → 3. Durchführung der OCR",
-                "correct": False,
-                "feedback": """× Falsch. Die Qualitätsmetriken können erst berechnet werden, wenn sowohl der OCR-Output als auch die Ground Truth vorliegen, da sie auf dem Vergleich dieser beiden Texte basieren."""
-            },
-            {
-                "answer": "1. Erstellung der Ground Truth → 2. Durchführung der OCR → 3. Berechnung der Qualitätsmetriken",
-                "correct": False,
-                "feedback": """× Falsch. Obwohl es möglich wäre, zuerst die Ground Truth zu erstellen und dann die OCR durchzuführen, ist dies in der Praxis ineffizient, da die manuelle Erstellung der Ground Truth oft auf dem OCR-Text aufbaut, der dann korrigiert wird."""
-            },
-            {
-                "answer": "1. Durchführung der OCR → 2. Erstellung der Ground Truth → 3. Berechnung der Qualitätsmetriken",
-                "correct": True,
-                "feedback": """✓ Richtig! Dies ist die effizienteste und übliche Reihenfolge:
-                * Zuerst wird die OCR auf dem Quelldokument durchgeführt, wobei die entsprechende OCR-Engine (hier: Tesseract) mit spezifischen Parametern (z.B. lang='frk' für Fraktur) verwendet wird. Dies erzeugt den OCR-Output, der für den Vergleich benötigt wird.
-                * Dann wird die Ground Truth durch manuelle Korrektur erstellt. Dabei wird der OCR-Output als Grundlage genommen und manuell korrigiert, um einen fehlerfreien Referenztext zu erhalten.
-                * Zuletzt werden die Qualitätsmetriken berechnet, indem der OCR-Output mit der Ground Truth verglichen wird. Dabei werden Maße wie Precision, Recall und F1-Score ermittelt, die eine quantitative Bewertung der OCR-Qualität ermöglichen."""
-            },
-            {
-                "answer": "1. Durchführung der OCR → 2. Berechnung der Qualitätsmetriken → 3. Erstellung der Ground Truth",
-                "correct": False,
-                "feedback": """× Falsch. Die Qualitätsmetriken können erst nach Erstellung der Ground Truth berechnet werden, da für die Berechnung beide Texte (OCR-Output und Ground Truth) benötigt werden."""
-            }
-        ]
+quiz = DragDropQuiz()
+
+quiz.create_matching_quiz(
+    title="Ordnen Sie die folgenden Schritte zur Messung der OCR-Qualität in die richtige Reihenfolge:",
+    descriptions=["Erstellung der Ground Truth", 
+        "Durchführung der OCR",
+        "Berechnung der Qualitätsmetriken"],
+    options=["1", "2", "3"],
+    correct_mapping={
+        "Durchführung der OCR" : "1",
+        "Erstellung der Ground Truth" : "2",
+        "Berechnung der Qualitätsmetriken" : "3"
     }
-]
-
-display_quiz(quality_sequence, colors=colors.jupyterquiz, max_width=1000)
+)
 ```
 
 

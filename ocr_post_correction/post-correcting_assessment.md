@@ -207,40 +207,25 @@ display_quiz(multiple_choice_4, colors=colors.jupyterquiz)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
-from jupyterquiz import display_quiz
-
 import sys
-sys.path.append("..")
-from quadriga import colors
+sys.path.append("../quadriga")
+from assessment import DragDropQuiz
 
-multiple_choice_5 = [{
-    "question": """In welcher Reihenfolge werden typischerweise die folgenden Schritte der OCR-Nachbearbeitung durchgeführt?""",
-    "type": "multiple_choice",
-    "answers": [
-        {
-            "answer": "1. Vollständigkeitsprüfung → 2. Grundlegende Zeichenkorrektur → 3. Formatierungswiederherstellung",
-            "correct": False,
-            "feedback": """× Nicht korrekt. Die Vollständigkeitsprüfung sollte erst nach grundlegenden Korrekturen erfolgen, da sie einen Überblick über den gesamten Text erfordert."""
-        },
-        {
-            "answer": "1. Grundlegende Zeichenkorrektur → 2. Formatierungswiederherstellung → 3. Vollständigkeitsprüfung",
-            "correct": True,
-            "feedback": """✓ Richtig! Dieser Workflow ist sinnvoll, weil zunächst die häufigsten Zeichenfehler behoben werden, dann die Struktur wiederhergestellt wird und schließlich eine Gesamtprüfung erfolgt."""
-        },
-        {
-            "answer": "1. Formatierungswiederherstellung → 2. Grundlegende Zeichenkorrektur → 3. Vollständigkeitsprüfung",
-            "correct": False,
-            "feedback": """× Nicht korrekt. Es ist effizienter, zuerst die Zeichenerkennung zu korrigieren, bevor die Formatierung angegangen wird."""
-        },
-        {
-            "answer": "1. Grundlegende Zeichenkorrektur → 2. Vollständigkeitsprüfung → 3. Formatierungswiederherstellung",
-            "correct": False,
-            "feedback": """× Nicht korrekt. Die Formatierungswiederherstellung sollte vor der abschließenden Vollständigkeitsprüfung erfolgen, da sie zur Verbesserung der Lesbarkeit beiträgt."""
-        }
-    ]
-}]
+quiz = DragDropQuiz()
 
-display_quiz(multiple_choice_5, colors=colors.jupyterquiz, max_width = 1000)
+quiz.create_matching_quiz(
+    title="Ordnen Sie die folgenden Schritte der OCR-Nachbearbeitung in die richtige Reihenfolge:",
+    descriptions=[
+        "Formatierungswiederherstellung", 
+        "Grundlegende Zeichenkorrektur",
+        "Vollständigkeitsprüfung"],
+    options=["1", "2", "3"],
+    correct_mapping={
+        "Grundlegende Zeichenkorrektur" : "1",
+        "Formatierungswiederherstellung" : "2",
+        "Vollständigkeitsprüfung" : "3"
+    }
+)
 ```
 
 ## Frage 6
@@ -430,40 +415,24 @@ display_quiz(multiple_choice_9, colors=colors.jupyterquiz)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
-from jupyterquiz import display_quiz
-
 import sys
-sys.path.append("..")
-from quadriga import colors
+sys.path.append("../quadriga")
+from assessment import DragDropQuiz
 
-multiple_choice_10 = [{
-    "question": """In welcher Reihenfolge werden die Schritte der regelbasierten OCR-Nachkorrektur typischerweise durchgeführt?""",
-    "type": "multiple_choice",
-    "answers": [
-        {
-            "answer": "1. Anwendung und Qualitätsmessung → 2. Identifikation typischer Fehler → 3. Entwicklung von Korrekturregeln",
-            "correct": False,
-            "feedback": """× Nicht korrekt. Es ist nicht sinnvoll, Regeln anzuwenden, bevor man die Fehler identifiziert und die Regeln entwickelt hat."""
-        },
-        {
-            "answer": "1. Identifikation typischer Fehler → 2. Entwicklung von Korrekturregeln → 3. Anwendung und Qualitätsmessung",
-            "correct": True,
-            "feedback": """✓ Richtig! Diese Reihenfolge ist logisch, da zuerst die Fehler im Korpus identifiziert werden müssen, um darauf basierend spezifische Korrekturregeln zu entwickeln. Erst danach können diese Regeln angewendet und ihre Wirksamkeit gemessen werden."""
-        },
-        {
-            "answer": "1. Entwicklung von Korrekturregeln → 2. Identifikation typischer Fehler → 3. Anwendung und Qualitätsmessung",
-            "correct": False,
-            "feedback": """× Nicht korrekt. Korrekturregeln können nicht sinnvoll entwickelt werden, bevor die typischen Fehler identifiziert wurden."""
-        },
-        {
-            "answer": "1. Identifikation typischer Fehler → 2. Anwendung und Qualitätsmessung → 3. Entwicklung von Korrekturregeln",
-            "correct": False,
-            "feedback": """× Nicht korrekt. Die Qualität kann erst gemessen werden, nachdem die Korrekturregeln entwickelt und angewendet wurden."""
-        }
-    ]
-}]
+quiz = DragDropQuiz()
 
-display_quiz(multiple_choice_10, colors=colors.jupyterquiz, max_width = 1000)
+quiz.create_matching_quiz(
+    title="Ordnen Sie die folgenden Schritte der regelbasierten OCR-Nachkorrektur in die richtige Reihenfolge:",
+    descriptions=["Identifikation typischer Fehler",
+        "Anwendung und Qualitätsmessung",
+        "Entwicklung von Korrekturregeln" ],
+    options=["1", "2", "3"],
+    correct_mapping={
+        "Identifikation typischer Fehler" : "1",
+        "Entwicklung von Korrekturregeln" : "2",
+        "Anwendung und Qualitätsmessung" : "3"
+    }
+)
 ```
 
 ## Frage 11

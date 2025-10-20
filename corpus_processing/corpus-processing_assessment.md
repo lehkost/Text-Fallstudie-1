@@ -500,48 +500,29 @@ display_quiz(multiple_choice_5, colors=colors.jupyterquiz)
 ```
 
 ## Frage 12
-Ordnen Sie die Schritte in die richtige Reihenfolge, um einen Text mit spaCy zu annotieren:
-
-1. Speichern der Annotation als CSV-Datei
-2. Auswahl der Analysekomponenten
-3. Laden des Sprachmodells
-4. Einlesen des Textes
-5. Durchführung der Annotation mit nlp(text)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
-from jupyterquiz import display_quiz
-
 import sys
-sys.path.append("..")
-from quadriga import colors
+sys.path.append("../quadriga")
+from assessment import DragDropQuiz
 
-multiple_choice_6 = [{
-    "question": """Welche Reihenfolge der Verarbeitungsschritte ist korrekt für die Textannotation mit spaCy?""",
-    "type": "multiple_choice",
-    "answers": [
-        {
-            "answer": "3 → 2 → 4 → 5 → 1",
-            "correct": False,
-            "feedback": """× Nicht korrekt. Diese Reihenfolge ist nicht korrekt. Laut Notebook wird zuerst der Text eingelesen (Schritt 1), bevor weitere Verarbeitungsschritte folgen."""
-        },
-        {
-            "answer": "3 → 4 → 2 → 5 → 1",
-            "correct": False,
-            "feedback": """× Nicht korrekt. Diese Reihenfolge stimmt nicht mit dem Ablauf im Notebook überein, in dem zuerst der Text eingelesen wird."""
-        },
-        {
-            "answer": "4 → 3 → 2 → 5 → 1",
-            "correct": True,
-            "feedback": """✓ Richtig! Die Reihenfolge im Notebook ist: 1. Einlesen des Texts, 2. Laden des Sprachmodells, 3. Auswahl der Analysekomponenten, 4. Durchführung der Annotation, 5. Speichern der Ergebnisse."""
-        },
-        {
-            "answer": "4 → 5 → 3 → 2 → 1",
-            "correct": False,
-            "feedback": """× Nicht korrekt. Das Sprachmodell muss vor der Annotation geladen werden, wie im Notebook gezeigt."""
-        }
-    ]
-}]
+quiz = DragDropQuiz()
 
-display_quiz(multiple_choice_6, colors=colors.jupyterquiz)
+quiz.create_matching_quiz(
+    title="Ordnen Sie die folgenden Schritte zur Textannotation mit spaCy in die richtige Reihenfolge:",
+    descriptions=["Einlesen des Textes",
+        "Durchführung der Annotation mit nlp(text)",
+        "Auswahl der Analysekomponenten",
+        "Laden des Sprachmodells", 
+        "Speichern der Annotation als CSV-Datei"],
+    options=["1", "2", "3", "4", "5"],
+    correct_mapping={
+        "Einlesen des Textes" : "1",
+        "Laden des Sprachmodells" : "2",
+        "Auswahl der Analysekomponenten" : "3",
+        "Durchführung der Annotation mit nlp(text)" : "4",
+        "Speichern der Annotation als CSV-Datei" : "5"
+    }
+)
 ```
