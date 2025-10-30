@@ -1,15 +1,18 @@
-#!/usr/bin/env python3
-import sys
+from __future__ import annotations
+
 import logging
-from pathlib import Path
+import sys
+
 from .utils import (
-    load_yaml_file,
-    get_file_path,
+    extract_keywords,
     format_authors_for_bibtex,
     generate_citation_key,
+    get_file_path,
+    load_yaml_file,
 )
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+logger = logging.getLogger(__name__)
 
 # Map CFF types to BibTeX entry types
 CFF_TO_BIBTEX_TYPES = {
@@ -69,14 +72,15 @@ CFF_TO_BIBTEX_TYPES = {
 }
 
 
-def create_bibtex_from_cff():
+def create_bibtex_from_cff() -> bool | None:
     """
-    Creates a CITATION.bib file from CITATION.cff.
+    Create a CITATION.bib file from CITATION.cff.
 
-    It reads citation data, prioritizing the 'preferred-citation' block if available,
+    Reads citation data, prioritizing the 'preferred-citation' block if available,
     formats authors, generates a citation key, and constructs a BibTeX entry.
 
-    Returns:
+    Returns
+    -------
         bool: True if successful, False otherwise.
     """
     try:
@@ -85,51 +89,52 @@ def create_bibtex_from_cff():
             repo_root = get_file_path("")  # Get repo root
             citation_cff_path = get_file_path("CITATION.cff", repo_root)
             citation_bib_path = get_file_path("CITATION.bib", repo_root)
-        except Exception as e:
-            logging.error(f"Failed to resolve file paths: {str(e)}")
+        except Exception:
+            logger.exception("Failed to resolve file paths")
             return False
 
         # Check if citation_cff_path exists
-        if not Path(citation_cff_path).exists():
-            logging.error(f"CITATION.cff file not found at {citation_cff_path}")
+        if not citation_cff_path.exists():
+            logger.error("CITATION.cff file not found at %s", citation_cff_path)
             return False
 
         # Read CITATION.cff using utility function
         citation_data = load_yaml_file(citation_cff_path)
 
-        if not citation_data:
-            logging.error(f"Could not load {citation_cff_path}. Exiting.")
+        if not citation_data or not isinstance(citation_data, dict):
+            logger.error("Could not load CITATION.cff or invalid format. Exiting.")
             return False
 
         # Extract data from preferred-citation or root
         if "preferred-citation" in citation_data:
-            logging.info("Using 'preferred-citation' section from CITATION.cff")
+            logger.info("Using 'preferred-citation' section from CITATION.cff")
             pref = citation_data.get("preferred-citation")
+            if not isinstance(pref, dict):
+                logger.error("preferred-citation is not a dictionary")
+                return False
         else:
-            logging.info("No 'preferred-citation' section found, using root data")
+            logger.info("No 'preferred-citation' section found, using root data")
             pref = citation_data
 
         # Validate required fields
         authors = pref.get("authors", [])
         title = pref.get("title", "Untitled")
-        year = str(
-            pref.get("year", "")
-        )  # Ensure year is a string for generate_citation_key
+        year = str(pref.get("year", ""))  # Ensure year is a string for generate_citation_key
 
         if not authors:
-            logging.warning("No authors found in CITATION.cff")
+            logger.warning("No authors found in CITATION.cff")
 
         if title == "Untitled":
-            logging.warning("No title found in CITATION.cff, using 'Untitled'")
+            logger.warning("No title found in CITATION.cff, using 'Untitled'")
 
         if not year:
-            logging.warning("No year found in CITATION.cff")
+            logger.warning("No year found in CITATION.cff")
 
         # Use utility function to format authors
         try:
             author_str = format_authors_for_bibtex(authors)
-        except Exception as e:
-            logging.error(f"Error formatting authors: {str(e)}")
+        except Exception:
+            logger.exception("Error formatting authors")
             author_str = ""
 
         # Choose entry type based on type field
@@ -142,25 +147,19 @@ def create_bibtex_from_cff():
         if entry_type == "thesis":
             # Check for thesis type information
             thesis_type = pref.get("thesis-type", "").lower()
-            if (
-                thesis_type == "master"
-                or thesis_type == "masters"
-                or thesis_type == "master's"
-            ):
+            if thesis_type in {"master", "masters", "master's"}:
                 entry_type = "mastersthesis"
             else:
                 # Default to phdthesis if type is not specified or is something else
                 entry_type = "phdthesis"
 
-        logging.info(
-            f"Converting CFF type '{cff_type}' to BibTeX entry type: {entry_type}"
-        )
+        logger.info("Converting CFF type '%s' to BibTeX entry type: %s", cff_type, entry_type)
 
         # Use utility function to generate citation key
         try:
             citation_key = generate_citation_key(authors, title, year)
-        except Exception as e:
-            logging.error(f"Error generating citation key: {str(e)}")
+        except Exception:
+            logger.exception("Error generating citation key")
             citation_key = "Unknown_Citation_Key"
 
         # Compile BibTeX entry
@@ -195,11 +194,7 @@ def create_bibtex_from_cff():
             # Map CFF journal-specific fields to BibTeX fields
             if "collection-title" in pref and "journal" not in pref:
                 bibtex_lines.append(f"  journal   = {{{pref['collection-title']}}},")
-            if (
-                "volume-title" in pref
-                and "journal" not in pref
-                and "collection-title" not in pref
-            ):
+            if "volume-title" in pref and "journal" not in pref and "collection-title" not in pref:
                 bibtex_lines.append(f"  journal   = {{{pref['volume-title']}}},")
 
         elif entry_type in ["inproceedings", "proceedings"]:
@@ -261,14 +256,12 @@ def create_bibtex_from_cff():
                 bibtex_lines.append(f"  booktitle = {{{pref['collection-title']}}},")
 
             # Map collection editor if available
-            if "collection-editors" in pref and isinstance(
-                pref["collection-editors"], list
-            ):
+            if "collection-editors" in pref and isinstance(pref["collection-editors"], list):
                 try:
                     editor_str = format_authors_for_bibtex(pref["collection-editors"])
                     bibtex_lines.append(f"  editor    = {{{editor_str}}},")
-                except Exception as e:
-                    logging.warning(f"Error formatting collection editors: {str(e)}")
+                except (KeyError, TypeError, AttributeError) as e:
+                    logger.warning("Error formatting collection editors: %s", e)
 
         # Special handling for software, code, data entries
         if cff_type.lower().startswith("software") or cff_type.lower() in [
@@ -280,18 +273,12 @@ def create_bibtex_from_cff():
 
             # Add repository info to note field if available
             if "repository-code" in pref and "note" not in pref:
-                bibtex_lines.append(
-                    f"  note      = {{Repository: {pref['repository-code']}}},"
-                )
+                bibtex_lines.append(f"  note      = {{Repository: {pref['repository-code']}}},")
 
-            # Add version info
-            if "version" in pref:
-                bibtex_lines.append(f"  version   = {{{pref['version']}}},")
+            # Note: version is already added in the common fields section above
 
             # Add software-specific details as howpublished if not present
-            if ("howpublished" not in pref) and (
-                "repository-code" in pref or "url" in pref
-            ):
+            if ("howpublished" not in pref) and ("repository-code" in pref or "url" in pref):
                 repo = pref.get("repository-code", pref.get("url", ""))
                 bibtex_lines.append(f"  howpublished = {{Available from: {repo}}},")
 
@@ -303,9 +290,7 @@ def create_bibtex_from_cff():
 
             # Include last accessed date if available
             if "date-accessed" in pref:
-                bibtex_lines.append(
-                    f"  note      = {{Accessed: {pref['date-accessed']}}},"
-                )
+                bibtex_lines.append(f"  note      = {{Accessed: {pref['date-accessed']}}},")
 
         # Process all simple fields
         for field in simple_fields:
@@ -318,21 +303,22 @@ def create_bibtex_from_cff():
                 bibtex_lines.append(f"  {field:<9} = {{{field_value}}},")
 
         # Handle list fields like languages
-        if "languages" in pref and pref["languages"]:
+        if pref.get("languages"):
             try:
                 languages_str = ", ".join(pref["languages"])
                 bibtex_lines.append(f"  language  = {{{languages_str}}},")
-            except Exception as e:
-                logging.warning(f"Error processing languages field: {str(e)}")
+            except (TypeError, AttributeError) as e:
+                logger.warning("Error processing languages field: %s", e)
 
         # Handle keywords field
-        if "keywords" in pref and pref["keywords"]:
+        if pref.get("keywords"):
             try:
-                if isinstance(pref["keywords"], list):
-                    keywords_str = ", ".join(pref["keywords"])
+                keywords_list = extract_keywords(pref["keywords"])
+                if keywords_list:
+                    keywords_str = ", ".join(keywords_list)
                     bibtex_lines.append(f"  keywords  = {{{keywords_str}}},")
-            except Exception as e:
-                logging.warning(f"Error processing keywords field: {str(e)}")
+            except (TypeError, AttributeError) as e:
+                logger.warning("Error processing keywords field: %s", e)
 
         # Close the entry
         bibtex_lines.append("}")
@@ -340,16 +326,17 @@ def create_bibtex_from_cff():
 
         # Write to CITATION.bib
         try:
-            with open(citation_bib_path, "w", encoding="utf-8") as f:
+            with citation_bib_path.open("w", encoding="utf-8") as f:
                 f.write(bibtex)
-            logging.info(f"BibTeX citation successfully created at {citation_bib_path}")
-            return True
-        except IOError as e:
-            logging.error(f"Error writing to {citation_bib_path}: {e}")
+        except OSError:
+            logger.exception("Error writing to %s", citation_bib_path)
             return False
+        else:
+            logger.info("BibTeX citation successfully created at %s", citation_bib_path)
+            return True
 
-    except Exception as e:
-        logging.exception(f"Unexpected error in create_bibtex_from_cff: {str(e)}")
+    except Exception:
+        logger.exception("Unexpected error in create_bibtex_from_cff")
         return False
 
 
