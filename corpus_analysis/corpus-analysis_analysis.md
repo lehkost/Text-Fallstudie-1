@@ -115,7 +115,7 @@ Eine zweite Möglichkeit, die Häufigkeiten über eine Zeitraum zusammenzufassen
 | 3    | 15    | 600  | 
 ```
 1. Alle Häufigkeiten addieren und durch die Summe der Textlängen teilen: $ {{20 + 5 + 15} \over {500 + 100 + 600}} = {{40} \over {1200}} = {0.033}$
-2. Die relative Häufigkeiten addieren und durch die Anzahl an Tagen teilen: $ {{{20 \over 500} + {5 \over 100} + {15 \over 600}} \over 3} = {{0.04 + 0.05 + 0.025} \over 3} = 0.038$
+2. Die relativen Häufigkeiten addieren und durch die Anzahl an Tagen teilen: $ {{{20 \over 500} + {5 \over 100} + {15 \over 600}} \over 3} = {{0.04 + 0.05 + 0.025} \over 3} = 0.038$
 
 Mit der zweiten Methode ist die relative Häufigkeit um 0.005 Prozentpunkte höher.
 `````
