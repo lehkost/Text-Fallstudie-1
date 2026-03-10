@@ -97,7 +97,7 @@ df.head()
 Die vollständige CSV-Datei kann [hier](https://github.com/quadriga-dk/Text-Fallstudie-1/blob/main/data/metadata/QUADRIGA_FS-Text-01_Data01_Corpus-Table.csv) heruntergeladen werden.
 
 ## Sammlung der Elemente
-Die CSV-Datei, die sämtliche Elemente Korpus aufführt, listet auch jeweils einen Link zur PDF-Datei des Korpus. Dieser Link hat stets die Form: 
+Die CSV-Datei, die sämtliche Elemente des Korpus auflistet, enthält zudem einen Link zur jeweiligen PDF-Datei. Der Link ist wie folgt aufgebaut:
 
 ```
 https://content.staatsbibliothek-berlin.de/zefys/SNP2719372X-19180101-0-0-0-0.pdf
