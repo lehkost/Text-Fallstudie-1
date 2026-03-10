@@ -1,10 +1,10 @@
 # Resümee
 
-```{admonition} Key points des Kapitels
+```{admonition} Key Points des Kapitels
 :class: keypoint
 **Vom Tool zur Methode**
 
-Die [Optical Character Recognition](ocr) (OCR) ist ein entscheidender Schritt bei der Erstellung maschinenlesbarer Korpora aus Bilddaten. Dabei zeigt sich, dass die Wahl der OCR-Lösung stark vom spezifischen Anwendungsfall abhängt – während integrierte OCR-Funktionen in PDF-Viewern für einzelne Dokumente ausreichen können, erfordern umfangreiche Korpusprojekte spezialisierte Tools wie Tesseract.
+[Optical Character Recognition](ocr) (OCR) ist ein entscheidender Schritt bei der Erstellung maschinenlesbarer Korpora aus Bilddaten. Dabei zeigt sich, dass die Wahl der OCR-Lösung stark vom spezifischen Anwendungsfall abhängt – während integrierte OCR-Funktionen in PDF-Viewern für einzelne Dokumente ausreichen können, erfordern umfangreiche Korpusprojekte spezialisierte Tools wie Tesseract.
 
 **Qualität als zentraler Aspekt**
 
@@ -12,7 +12,7 @@ Besonders wichtig ist das Verständnis der [OCR-Qualität](ocr-quality): Die Met
 
 **Prozesscharakter der OCR**
 
-Die [praktische Durchführung](../ocr/ocr_pytesseract_intro) der OCR muss als mehrstufiger Prozess verstanden werden, bei dem die eigentliche Texterkennung nur einen Schritt darstellt. Die Qualitätskontrolle und eventuelle Nachkorrektur sind integrale Bestandteile des Workflows.
+Die [praktische Durchführung](../ocr/ocr_pytesseract_intro) der OCR ist als mehrstufiger Prozess zu verstehen, bei dem die eigentliche Texterkennung nur einen Schritt darstellt. Die Qualitätskontrolle und eventuelle Nachkorrektur sind integrale Bestandteile des Workflows.
 ```
 
 <!-- 
