@@ -1,7 +1,7 @@
 (corpus-collection_text_as_digital_objects)=
 # Elemente von Korpora: Texte als digitale Objekte
 
-Texte können digital auf sehr unterschiedliche Weisen gespeichert, prozessiert und repräsentiert werden. Die vielfältige Formen von Text im Digitalen weisen dabei jeweils spezifische Eigenschaften und Einsatzmöglichkeiten auf. In diesem Abschnitt werden vier weit verbreitete Erscheinungsformen digitaler Texte vorgestellt: 
+Texte können digital auf sehr unterschiedliche Weisen gespeichert, prozessiert und repräsentiert werden. Die vielfältigen Formen von Text im Digitalen weisen dabei jeweils spezifische Eigenschaften und Einsatzmöglichkeiten auf. In diesem Abschnitt werden vier weit verbreitete Erscheinungsformen digitaler Texte vorgestellt: 
 
 - Bilddigitalisate von Text (z.B. PDF, PNG, JPG, TIFF)
 - Reiner Text, auch "Plain Text" (TXT)
@@ -88,7 +88,7 @@ Die Zahl der Grippefälle ist in den letzten beiden Tagen auch in Groß-Berlin n
 </TEI>
 ```
 
-*Beispiel für eine XML-Kodierung nach TEI-Standard. Im Kopfbereich der Datei steht der `<teiHeader>` mit Metadaten, es folgt das `<text>`-Element, in dem der Text mit Strukturinformationen (z.B. `<head>` für Überschrift) gesoeichert wird*
+*Beispiel für eine XML-Kodierung nach TEI-Standard. Im Kopfbereich der Datei steht der `<teiHeader>` mit Metadaten, es folgt das `<text>`-Element, in dem der Text mit Strukturinformationen (z.B. `<head>` für Überschrift) gespeichert wird*
 
 ## CSV für annotierte Texte
 
