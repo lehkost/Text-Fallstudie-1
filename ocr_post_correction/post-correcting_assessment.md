@@ -19,15 +19,15 @@ Diese Übungsaufgaben dienen Ihrer Selbsteinschätzung und helfen Ihnen, das im 
 Sie können die Fragen in beliebiger Reihenfolge beantworten und auch mehrfach versuchen. 
 
 **So funktioniert es:**
-- Wählen Sie bei jeder Frage die Antwort(en), die Sie für richtig halten
-- Lesen Sie das Feedback zu den einzelnen Antwortoptionen sorgfältig durch
-- Die Erklärungen helfen Ihnen, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten 
+- Wählen Sie bei jeder Frage die Antwort(en), die Sie für richtig halten.
+- Lesen Sie das Feedback zu den einzelnen Antwortoptionen sorgfältig durch.
+- Die Erklärungen helfen Ihnen, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten.
 
 Es erfolgt keine Bewertung oder Speicherung Ihrer Ergebnisse. Nutzen Sie dieses Assessment, um Wissenslücken zu identifizieren und gegebenenfalls die entsprechenden Abschnitte des Kapitels noch einmal zu bearbeiten.
 
 **Geschätzte Zeit**: 45min
 
-Viel Erfolg!
+**Viel Erfolg!**
 ````
 
 ## Frage 1
@@ -500,7 +500,7 @@ multiple_choice_12 = [{
     "type": "multiple_choice",
     "answers": [
         {
-            "answer": "LLMs benötigen erhebliche Rechenressourcen und können typischerweise nicht auf einem gewöhnlichen PC ausgeführt werden",
+            "answer": "LLMs benötigen erhebliche Rechenressourcen und können typischerweise nicht auf einem herkömmlichen PC ausgeführt werden",
             "correct": True,
             "feedback": """✓ Richtig! LLMs haben einen hohen Bedarf an Rechenleistung, verbrauchen viel Energie, benötigen großen Speicher und erfordern spezielle Infrastruktur."""
         },
@@ -638,7 +638,7 @@ multiple_choice_15 = [{
             "feedback": """✓ Richtig! Aufgrund der \"Black-Box\"-Natur von LLMs kann es schwierig sein nachzuvollziehen, welche Änderungen vorgenommen wurden und warum, was die Qualitätskontrolle erschwert."""
         },
         {
-            "answer": "Gleichbleibende Qualität bei allen Korrekturen",
+            "answer": "Gleichbleibend hohe Qualität bei allen Korrekturen",
             "correct": False,
             "feedback": """× Nicht korrekt. Wegen der nicht-deterministischen Natur von LLMs und variierenden Texteigenschaften ist eine gleichbleibende Korrekturqualität über den gesamten Korpus hinweg nicht garantiert."""
         }
