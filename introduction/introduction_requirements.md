@@ -16,7 +16,7 @@ Die Fallstudie lässt sich vollständig in jedem gängigen Browser auf einem ein
 
 `````{admonition} Tutorials
 :class: seealso
-- Tutorial zur Arbeit mit Jupyter Books
-- Tutorial zur Arbeit mit Jupyter Notebooks 
-- Tutorial zur Installation und Nutzung von Anaconda
+- <a href="https://digital-history-berlin.github.io/Python-fuer-Historiker-innen/ch00-preface/04-nutzung.html" class="external-link" target="_blank">Tutorial zur Arbeit mit Jupyter Books</a>
+- <a href="https://www.elab2go.de/demo-py1/jupyter-notebooks.php#1WasisteinJupyterNotebook" class="external-link" target="_blank">Tutorial zur Arbeit mit Jupyter Notebooks</a> 
+- <a href="https://www.elab2go.de/demo-py1/installation-python-anaconda.php" class="external-link" target="_blank">Tutorial zur Installation und Nutzung von Anaconda</a>
 `````
