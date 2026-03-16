@@ -78,7 +78,7 @@ Der Beispieltext besteht aus insgesamt 69 Wörter, davon sind 4 Wörter in dem s
 
 $ f = {4 \over 69} = {0.05797101449} $$.
 
-Das heißt: Jedes zwangstigste Wort im Text steht im Zusammenhang mit der Spanischen Grippe. 
+Das heißt: Jedes zwanzigste Wort im Text steht im Zusammenhang mit der Spanischen Grippe. 
 `````
 
 ### Analyse des gesamten Korpus 
