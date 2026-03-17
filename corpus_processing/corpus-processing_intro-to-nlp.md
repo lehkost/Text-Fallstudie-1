@@ -61,7 +61,7 @@ Die verschiedenen NLP-Methoden bauen teilweise aufeinander auf. Grundlegend wird
 
 ### NLP mit spaCy 
 Da die Vorverarbeitung der Texte keinerlei spezialisierter NLP-Methoden bedarf und aufgrund der leichten Benutzbarkeit und der Geschwindigkeit verwenden wir spaCy für die Tokenisierung und Lemmatisierung des Textkorpus. spaCy stellt unterschiedliche Methoden für die Vorverarbeitung bereit, die meisten basieren auf maschinellem Lernen. Da die Vorverarbeitung sprachabhängig ist, stellt spaCy für die unterstützten Sprachen (über 20) verschiedene Analyse-Modelle zur Verfügung. Eine Übersicht über die von spaCy unterstützten Sprachen gibt es <a href="https://spacy.io/models" class="external-link" target="_blank">hier</a>.
-Die zur Verfügung gestellten Modelle unterscheiden sich in der Geschwindigkeit und in der Genauigkeit der Annotation. Da wir auf einem verhältnismäßig großem Korpus operieren und sich die Leistung der Modelle für die Tokenisierung gar nicht und für die Lemmatisierung nur wenig (0.02%) unterscheidet, verwenden wir ein Modell, das auf Geschwindigkeit ausgelegt ist (`de_core_news_sm`). 
+Die zur Verfügung gestellten Modelle unterscheiden sich in der Geschwindigkeit und in der Genauigkeit der Annotation. Da wir auf einem verhältnismäßig großen Korpus operieren und sich die Leistung der Modelle für die Tokenisierung gar nicht und für die Lemmatisierung nur wenig (0.02%) unterscheidet, verwenden wir ein Modell, das auf Geschwindigkeit ausgelegt ist (`de_core_news_sm`). 
 
 `````{admonition} Leistung von spaCy auf unserem Korpus 
 :class: caution

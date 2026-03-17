@@ -26,7 +26,7 @@ Mit Ihren Rückmeldungen können wir unser interaktives Lehrbuch gezielt an Ihre
 3. Die Darstellungsmethode Keywords in Context kann beschrieben, Wörter zur Anzeige ausgewählt und diese angezeigt werden.
 ```
 
-Für die Ausführung einer digitalen Analyse, in diesem Fall der Analyse der Spanischen Grippe in einem Berliner Zeitungskorpus (1918-20) durch Worthäufigkeiten über Zeit, wird ein Korpus benötigt, das in Wörter (Token) aufgeteilt und mit Lemmata angereichtert ist. Wir haben gezeigt, wie mittels OCR ein aus PDF-Dateien bestehendes Zeitungskorpus in ein Textkorpus konvertiert werden kann (siehe die Kapitel ["Korpusaufbau"](corpus-collection_intro) und ["OCR — Vom Bild zum Text"](ocr_intro)). Das Textkorpus wurde dann mit der Python-Bibliothek spaCy unter Anwendung von NLP-Methoden (Tokenisierung und Lemmatisierung) angereichtert (siehe Kapitel ["Korpusverarbeitung – Von Strings zu Token"](corpus-processing_intro)). Das angereichterte Korpus liegt im Tabellenformat (CSV) vor. In jeder Zeile steht ein Wort und die Grundform des Wortes.
+Für die Ausführung einer digitalen Analyse, in diesem Fall der Analyse der Spanischen Grippe in einem Berliner Zeitungskorpus (1918-20) durch Worthäufigkeiten über Zeit, wird ein Korpus benötigt, das in Wörter (Token) aufgeteilt und mit Lemmata angereichert ist. Wir haben gezeigt, wie mittels OCR ein aus PDF-Dateien bestehendes Zeitungskorpus in ein Textkorpus konvertiert werden kann (siehe die Kapitel ["Korpusaufbau"](corpus-collection_intro) und ["OCR — Vom Bild zum Text"](ocr_intro)). Das Textkorpus wurde dann mit der Python-Bibliothek spaCy unter Anwendung von NLP-Methoden (Tokenisierung und Lemmatisierung) angereichert (siehe Kapitel ["Korpusverarbeitung – Von Strings zu Token"](corpus-processing_intro)). Das angereicherte Korpus liegt im Tabellenformat (CSV) vor. In jeder Zeile steht ein Wort und die Grundform des Wortes.
 
 
 ```{figure} ../assets/images/flow-chart_corpus-analysis.jpeg
@@ -37,7 +37,7 @@ name: Flussdiagramm der Fallstudie
 Flussdiagramm der Fallstudie, das aktuelle Arbeitspaket ist hervorgehoben.
 ```
 
-Nachdem die Korpuserstellung und -anreicherung abgeschlossen ist, wird in diesem Kapitel zur Forschungsfrage zurückgekehrt. Es soll die öffentliche Aufmerksamkeit für die spanische Grippe im Zeitraum von 1918-1920 anhand von Worthäufigkeiten derjenigen Wörter gemessen werden, die direkt oder indirekt auf die spanische Grippe verweisen. Es wird zuerst konzeptionell in die Frequenzanalyse eingeführt, dann wird die Analyse mit folgenden Schritten durchgeführt:
+Nachdem die Korpuserstellung und -anreicherung abgeschlossen ist, wird in diesem Kapitel zur Forschungsfrage zurückgekehrt. Es soll die öffentliche Aufmerksamkeit für die Spanische Grippe im Zeitraum von 1918-1920 anhand von Worthäufigkeiten derjenigen Wörter gemessen werden, die direkt oder indirekt auf die Spanische Grippe verweisen. Es wird zuerst konzeptionell in die Frequenzanalyse eingeführt, dann wird die Analyse mit folgenden Schritten durchgeführt:
 
 1. Erstellung eines Wortfelds, in dem grippenbezogene Wörter gesammelt werden
 2. Berechnung der Häufigkeiten dieses Wortfelds 

@@ -31,7 +31,7 @@ Es erfolgt keine Bewertung oder Speicherung Ihrer Ergebnisse. Nutzen Sie dieses 
 ````
 
 ## Frage 1
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 
 ```{code-cell} ipython3
@@ -81,7 +81,7 @@ display_quiz(multiple_choice_1, colors=colors.jupyterquiz)
 ```
 
 ## Frage 2
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -122,7 +122,7 @@ display_quiz(multiple_choice_2, colors=colors.jupyterquiz)
 ```
 
 ## Frage 3
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -163,7 +163,7 @@ display_quiz(multiple_choice_3, colors=colors.jupyterquiz)
 ```
 
 ## Frage 4
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -229,7 +229,7 @@ quiz.create_matching_quiz(
 ```
 
 ## Frage 6
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -277,7 +277,7 @@ display_quiz(multiple_choice_6, colors=colors.jupyterquiz)
 ```
 
 ## Frage 7
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -331,7 +331,7 @@ Nach Korrektur:
 - Recall: 0.8248
 - F1-score: 0.8169
 
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -436,7 +436,7 @@ quiz.create_matching_quiz(
 ```
 
 ## Frage 11
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -478,7 +478,7 @@ display_quiz(multiple_choice_11, colors=colors.jupyterquiz)
 
 ## Frage 12
 
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -526,7 +526,7 @@ display_quiz(multiple_choice_12, colors=colors.jupyterquiz)
 ```
 
 ## Frage 13
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -567,7 +567,7 @@ display_quiz(multiple_choice_13, colors=colors.jupyterquiz)
 ```
 
 ## Frage 14
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -608,7 +608,7 @@ display_quiz(multiple_choice_14, colors=colors.jupyterquiz)
 ```
 
 ## Frage 15
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -619,7 +619,7 @@ sys.path.append("..")
 from quadriga import colors
 
 multiple_choice_15 = [{
-    "question": """Eine Forschungsgruppe plant, einen historischen Zeitungskorpus von 10.000 Seiten mit LLMs nachzukorrigieren. Welche Herausforderungen sind dabei zu erwarten?""",
+    "question": """Eine Forschungsgruppe plant, ein historisches Zeitungskorpus von 10.000 Seiten mit LLMs nachzukorrigieren. Welche Herausforderungen sind dabei zu erwarten?""",
     "type": "multiple_choice",
     "answers": [
         {
@@ -649,7 +649,7 @@ display_quiz(multiple_choice_15, colors=colors.jupyterquiz)
 ```
 
 ## Frage 16
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
