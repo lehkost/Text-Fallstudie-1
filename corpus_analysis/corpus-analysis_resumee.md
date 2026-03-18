@@ -1,5 +1,5 @@
 # Resümee
-```{admonition} Key points des Kapitels
+```{admonition} Key Points des Kapitels
 :class: keypoint
 
 **Quantitative Operationalisierung:** Die qualitative Forschungsfrage nach "wellenartigen Mustern öffentlicher Aufmerksamkeit" wurde durch Häufigkeitsanalyse eines semantischen Felds "Grippe" erfolgreich quantitativ messbar gemacht.

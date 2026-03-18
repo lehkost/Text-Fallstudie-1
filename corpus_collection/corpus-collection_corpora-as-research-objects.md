@@ -22,7 +22,7 @@ Ein vollständiges Korpus umfasst alle verfügbaren Textobjekte zu einem spezifi
 ## Repräsentative Stichprobe
 Eine Stichprobe, die die gesamte <a href="https://de.wikipedia.org/wiki/Streuungsma%C3%9F_(Statistik)" class="external-link" target="_blank">Variabilität</a> der <a href="https://de.wikipedia.org/wiki/Grundgesamtheit" class="external-link" target="_blank">Grundgesamtheit</a> abbildet. Repräsentativität ist dabei das Ergebnis statistischer Operationen.
 
-- **Voraussetzung:** Grundgesamtheit muss bekannt und gut dokumentiert sein; Zufällige Auswahl der Datensätze ist erforderlich.
+- **Voraussetzung:** Grundgesamtheit muss bekannt und gut dokumentiert sein; zufällige Auswahl der Datensätze ist erforderlich.
 - **Anwendung:** Ermöglicht gültige Aussagen über die Grundgesamtheit und dient als Referenz für andere Studien.
 - **Beispiel:** Eine repräsentative Auswahl von 100 Romanen aus dem 19. Jahrhundert, die zufällig ausgewählt wurden, um die Vielfalt dieser Epoche zu repräsentieren; siehe die Korpora der <a href="https://www.distant-reading.net/eltec/" class="external-link" target="_blank">European Literary Text Collection (ELTeC)</a>
 

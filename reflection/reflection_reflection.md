@@ -6,17 +6,17 @@
 :class: frage-feedback
 
 <a href="https://github.com/quadriga-dk/Text-Fallstudie-1/issues/new?assignees=&labels=question&projects=&template=frage.yml" class="external-link" target="_blank">
-    Stellen Sie eine Frage
+    Stellen Sie eine Frage.
 </a> <br>
 <a href="https://github.com/quadriga-dk/Text-Fallstudie-1/issues/new?assignees=&labels=feedback&projects=&template=feedback.yml" class="external-link" target="_blank">
-    Geben Sie uns Feedback
+    Geben Sie uns Feedback.
 </a>
 
 Mit Ihren Rückmeldungen können wir unser interaktives Lehrbuch gezielt an Ihre Bedürfnisse anpassen.
 
 ```
 ````
-Auch wenn es uns gelungen ist, das Ziel der Fallstudie zu erreichen und unsere eingangs formulierte [Forschungsfrage](research-question_research-question) nach den "Medienwellen" der Spanischen Grippe insofern exemplarisch zu beantworten, als wir tatsächliche eine [wellenartige Entwicklung der quantitative verstandenen Aufmerksamkeit in ausgewählten Berliner Tageszeitungen](../corpus_analysis/corpus-analysis_diachronic-analysis) nachweisen konnten, gibt es mehrere Punkte, die abschließend kritisch zu reflektieren sind. 
+Auch wenn es uns gelungen ist, das Ziel der Fallstudie zu erreichen und unsere eingangs formulierte [Forschungsfrage](research-question_research-question) nach den "Medienwellen" der Spanischen Grippe insofern exemplarisch zu beantworten, als wir tatsächlich eine [wellenartige Entwicklung der quantitativ verstandenen Aufmerksamkeit in ausgewählten Berliner Tageszeitungen](../corpus_analysis/corpus-analysis_diachronic-analysis) nachweisen konnten, gibt es mehrere Punkte, die abschließend kritisch zu reflektieren sind.
 
 ```{admonition} Kritische Bewertung der Reichweite und Limitationen
 :class: lernziele
@@ -24,12 +24,9 @@ Auch wenn es uns gelungen ist, das Ziel der Fallstudie zu erreichen und unsere e
 1. Die methodischen Limitationen einer Digital Humanities-Fallstudie können benannt werden.
 ```
 
+1. Auf das gesamte **Forschungssetting eines Digital Humanities-Projekts** gesehen, ist die durchgeführte Fallstudie von lediglich kleinem Umfang. Im Grunde fehlen ihr noch zwei Komponenten: zum einen die umfangreichen Kontextualisierungen in der medienhistorischen Epidemiologie; zum anderen die eingehende Auswertung der Ergebnisse der Analyse. So wäre denkbar, dass ausgehend von den Ergebnissen ein weiteres Forschungskorpus aufgebaut wird, das nur die Texte enthält, die sich explizit mit der Spanischen Grippe beschäftigen. Dieses Korpus könnte dann etwa in Hinblick auf Semantisierungen der Grippe untersucht werden, um so näher einzutauchen in die konkreten diskursiven Verhandlungen, mit denen die historische Pandemie begleitet wurde. 
 
-Auch wenn es uns gelungen ist, das Ziel der Fallstudie zu erreichen und unsere eingangs formulierte [Forschungsfrage](research-question_research-question) nach den "Medienwellen" der Spanischen Grippe insofern exemplarisch zu beantworten, als wir tatsächliche eine [wellenartige Entwicklung der quantitative verstandenen Aufmerksamkeit in ausgewählten Berliner Tageszeitungen](corpus_analysis/corpus-analysis_diachronic-analysis) nachweisen konnten, gibt es mehrere Punkte, die abschließend kritisch zu reflektieren sind. 
-
-1. Auf das gesamte **Forschungssetting eines Digital Humanities-Projekts** gesehen, ist die durchgeführte Fallstudie von lediglich kleinem Umfang. Im Grunde fehlen ihr noch zwei Komponenten: zum einen die umfangreiche Kontextualisierungen in der medienhistorischen Epidemologie; zum anderen die eingehende Auswertung der Ergebnisse der Analyse. So wäre denkbar, dass ausgehend von den Ergebnissen ein weiteres Forschungskorpus aufgebaut wird, das nur die Texte enthält, die sich explizit mit der Spannischen Grippe beschäftigen. Diese Korpus könnte dann etwa in Hinblick auf Semantisierungen der Grippe untersucht werden, um so näher einzutauchen in die konkreten diskursiven Verhandlungen, mit denen die historische Pandemie begleitet wurde. 
-
-2. Dass das **Forschungskorpus**, das den Analysen zurgundeliegt, auch ausgehend von pragmatischen Kriterien gebildet wurde, wurde [am entsprechenden Ort](corpus-collection_building-our-corpus) bereits bemerkt. Die Auswahl der beiden Tageszeitungen, zu denen wir vollständige Teil-Korpora aufgebaut haben, erfolgt dabei allein aufgrund von opportunistischen Kriterien, v.a. der Verfügbarkeit und der Prominenz der Zeitung. Wiederholende Forschung könnte hier ausgehend von systematischen Analysen der Berliner Zeitungslandschaft dieser Zeit einen Ansatz entwickeln, um ein repräsentatives Sample für das Korpus zu definieren oder auch eine balancierte Auswahl vorzunehmen. 
+2. Dass das **Forschungskorpus**, das den Analysen zugrunde liegt, auch ausgehend von pragmatischen Kriterien gebildet wurde, wurde [am entsprechenden Ort](corpus-collection_building-our-corpus) bereits bemerkt. Die Auswahl der beiden Tageszeitungen, zu denen wir vollständige Teil-Korpora aufgebaut haben, erfolgt dabei allein aufgrund von opportunistischen Kriterien, v.a. der Verfügbarkeit und der Prominenz der Zeitung. Folgende Forschung könnte auf Basis systematischer Analysen der Berliner Zeitungslandschaft dieser Zeit einen Ansatz entwickeln, um ein repräsentatives Sample für das Korpus zu definieren oder auch eine balancierte Auswahl vorzunehmen. 
 
 
 3. Wie wir bereits durch die [OCR-Evaluation](../ocr/ocr_ocr-quality) deutlich gemacht haben, ist die **Qualität der Volltexte im Korpus**, die als prozessiertes Forschungskorpus das epistemische Objekt unserer Studie bilden, dürftig. Um die Aussagekraft und die Präzision der Analyse zu erhöhen, müsste erheblich mehr Arbeit in die Verbesserung der Textqualität der Korpuselemente investiert werden. 

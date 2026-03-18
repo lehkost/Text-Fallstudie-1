@@ -19,9 +19,9 @@ Diese Übungsaufgaben dienen Ihrer Selbsteinschätzung und helfen Ihnen, das im 
 Sie können die Fragen in beliebiger Reihenfolge beantworten und auch mehrfach versuchen. 
 
 **So funktioniert es:**
-- Wählen Sie bei jeder Frage die Antwort(en), die Sie für richtig halten
-- Lesen Sie das Feedback zu den einzelnen Antwortoptionen sorgfältig durch
-- Die Erklärungen helfen Ihnen, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten 
+- Wählen Sie bei jeder Frage die Antwort(en), die Sie für richtig halten.
+- Lesen Sie das Feedback zu den einzelnen Antwortoptionen sorgfältig durch.
+- Die Erklärungen helfen Ihnen, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten.
 
 Es erfolgt keine Bewertung oder Speicherung Ihrer Ergebnisse. Nutzen Sie dieses Assessment, um Wissenslücken zu identifizieren und gegebenenfalls die entsprechenden Abschnitte des Kapitels noch einmal zu bearbeiten. 
 
@@ -31,7 +31,7 @@ Es erfolgt keine Bewertung oder Speicherung Ihrer Ergebnisse. Nutzen Sie dieses 
 ````
 
 ## Frage 1
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -277,7 +277,7 @@ Alternative Ansätze:
 - Nur Plain Text dokumentiert die ursprüngliche Seitengestaltung nicht
 ````
 ## Frage 4
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ### Frage 4(a)
 
@@ -487,7 +487,7 @@ display_quiz(format_questions, colors=colors.jupyterquiz)
 ```
 
 ## Frage 5
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]

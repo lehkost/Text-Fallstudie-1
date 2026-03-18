@@ -21,7 +21,7 @@ Um das Korpus für unser Forschungsprojekt aufzubauen, müssen nun drei Punkte a
 
 ## Korpuskonzept
 Als Untersuchungsgegenstand wurde [oben](research-question_operationalization) "Texte in Berliner Tageszeitungen" angegeben, wobei wir uns auf den Zeitraum der Spanischen Grippe-Pandemie beschränken wollen. Als Zeitraum für die Spanische Grippe gibt <a href="https://en.wikipedia.org/wiki/Spanish_flu" class="external-link" target="_blank">Wikipedia</a> "February 1918 – April 1920" an. Ebenfalls auf <a href="https://de.wikipedia.org/wiki/Liste_Berliner_Tageszeitungen" class="external-link" target="_blank">Wikipedia</a> wird angegeben, dass es um 1925 in Berlin "30 Tageszeitungen" gab. Geht man nur von einer Ausgabe pro Tag aus (was wenig ist, da viele Zeitungen in dieser Zeit in Morgen- und Abendausgabe erscheinen), würde ein vollständiges Korpus für diesen Untersuchungsgegenstand 24.570 Ausgaben von Tageszeitungen umfassen. 
-Bei unseren Recherchen haben wir als mögliche Quelle für die Korpuselemente das <a href="https://zefys.staatsbibliothek-berlin.de/" class="external-link" target="_blank">"ZEitungsinFormationssYStem der Staatsbibliothek zu Berlin"</a>, kurz "ZEFYS", identifiziert, das zu zahlreichen Berliner Tageszeitungen unseres Untersuchungszeitraums Bilddigitalisate (u.a. im PDF-Format) führt. Eine von uns durchgeführte Stichproben hat dabei ergeben, das dass PDF einer Ausgabe im Durchschnitt etwa 74 MB groß ist. Eine erste Grobschätzung für ein Korpus ergab damit eine Größe von 
+Bei unseren Recherchen haben wir als mögliche Quelle für die Korpuselemente das <a href="https://zefys.staatsbibliothek-berlin.de/" class="external-link" target="_blank">"ZEitungsinFormationssYStem der Staatsbibliothek zu Berlin"</a>, kurz "ZEFYS", identifiziert, das zu zahlreichen Berliner Tageszeitungen unseres Untersuchungszeitraums Bilddigitalisate (u.a. im PDF-Format) führt. Eine von uns durchgeführte Stichprobe hat dabei ergeben, dass das PDF einer Ausgabe im Durchschnitt etwa 74 MB groß ist. Eine erste Grobschätzung für ein Korpus ergab damit eine Größe von 
 
 ```
 24.570 x 75 MB = 1.818,18 GB
@@ -32,7 +32,7 @@ Dieses Korpus konzentriert sich dabei
 
 - auf zwei renommierte Zeitungen, nämlich die <a href="https://zefys.staatsbibliothek-berlin.de/list/title/zdb/27112366/" class="external-link" target="_blank">Vossische Zeitung</a> und die <a href="https://zefys.staatsbibliothek-berlin.de/list/title/zdb/2719372X/" class="external-link" target="_blank">Berliner Morgenpost</a>, 
 - wobei wir jeweils nur eine Ausgabe pro Tag und Zeitung nehmen, also im Falle von Morgen- und Abendausgabe eine von beiden auswählen, und
-- uns auf den Zeitraum 1. Januar 1918 bis 31.12.1919 beschränken, also maximal 2 x 2 x 365 = 1.460 Ausgaben umfassen 
+- uns auf den Zeitraum 1. Januar 1918 bis 31. Dezember 1919 beschränken, also maximal 2 x 2 x 365 = 1.460 Ausgaben umfassen 
 
 Das Korpus soll ausgehend von den über ZEFYS verfügbaren PDF-Dateien aufgebaut werden. Am Ende des weiter unten genauer erläuterten Korpusaufbau-Prozesses stand damit schließlich ein Korpus, das sich mit folgenden Metadaten beschreiben lässt: 
 
@@ -66,7 +66,7 @@ Wie Stichproben zeigen, werden die Links des ZEFYS-Portals erfreulich systematis
 - `https://content.staatsbibliothek-berlin.de/zefys/` – Angabe des Image-Servers und dem Endpunkt für ZEFYS
 - `SNP27112366` – einer Zeichenkette mit der ID der Zeitung
 - `19180101` – einer Zeichenkette für das Datum
-- `0-0-0-0` – einer Zeichenkette, die die Ausgabe benennt; weitere Ausgaben weisen die Zeichenkette `1-0-0-0` etc. auf. ZEFYS vergibt in der Regel `0-0-0-0` für die Morgenausgabe. Wir nehmen stehts die `0-0-0-0`-Datei. 
+- `0-0-0-0` – einer Zeichenkette, die die Ausgabe benennt; weitere Ausgaben weisen die Zeichenkette `1-0-0-0` etc. auf. ZEFYS vergibt in der Regel `0-0-0-0` für die Morgenausgabe. Wir nehmen stets die `0-0-0-0`-Datei. 
 
 Die Analyse der ZEFYS API macht es möglich, unsere Metadaten-Tabelle semi-automatisch etwa mit Excel oder Open Office zu befüllen. Ausgehend vom 
 
@@ -109,7 +109,7 @@ Dafür erstellen wir aus der CSV-Datei zunächst eine einfache Link-Liste mit al
 
 Sofern Sie mit der PowerShell (Windows) oder dem Terminal Ihres Computers umgehen können, können Sie nun Folgendes machen: Legen Sie Link-Liste in einem Ordner ab und navigieren Sie in der PowerShell/im Terminal in diesen Ordner. 
 
-Mac-Nutzer-innen führen nun folgenden Befehl aus: 
+Mac-Nutzer:innen führen nun folgenden Befehl aus: 
 ```
 xargs -n 1 curl -O < QUADRIGA_FS-Text-01_Data01_Link-List.txt
 ```
