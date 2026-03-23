@@ -1,0 +1,1274 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.2. 🚀 OCR in Python mit PyTesseract &#8212; Waves of the Spanish Flu – Case Study</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/carousel.css?v=999f73f4" />
+    <link rel="stylesheet" type="text/css" href="../_static/drag_drop.css?v=2202ffcf" />
+    <link rel="stylesheet" type="text/css" href="../_static/quadriga.css?v=abee4fda" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ocr/ocr_pytesseract_intro';</script>
+    <script src="../_static/assessment.js?v=f23f720b"></script>
+    <script src="../_static/carousel.js?v=a1af88dd"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.3. Messung der OCR-Qualität" href="ocr-quality.html" />
+    <link rel="prev" title="4.1. OCR als Methode, um Text maschinenlesbar zu machen" href="ocr.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../front_page/intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/Text1.png" class="logo__image only-light" alt="Waves of the Spanish Flu – Case Study - Home"/>
+    <script>document.write(`<img src="../_static/Text1.png" class="logo__image only-dark" alt="Waves of the Spanish Flu – Case Study - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../front_page/intro.html">
+                    Quantitative Analyse der Medienwellen der Spanischen Grippe (1918/19). Eine Fallstudie
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../pr%C3%A4ambel/einf%C3%BChrung.html">1. Präambel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/learning-outcomes.html">1.1. Lernziele</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/introduction_requirements.html">1.2. Technische Voraussetzungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../research_question/research-question_intro.html">2. Fragestellung und Operationalisierung. Einführung in die Fallstudie</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../research_question/research-question_research-question.html">2.1. Fragestellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../research_question/research-question_operationalization.html">2.2. Operationalisierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../research_question/research-question_summary.html">2.3. Resümee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../research_question/research-question_assessment.html">2.4. 🏆Selbsttest: Wissen und Praxis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../corpus_collection/corpus-collection_intro.html">3. Korpusaufbau. Auswählen, sammeln, dokumentieren</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_collection/corpus-collection_corpora-as-research-objects.html">3.1. Korpora als Forschungsobjekte der Digital Humanities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_collection/corpus-collection_text_as_digital_objects.html">3.2. Elemente von Korpora: Texte als digitale Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_collection/corpus-collection_metadata.html">3.3. Metadaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_collection/corpus-collection_building-our-corpus.html">3.4. Aufbau des Forschungskorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_collection/corpus-collection_summary.html">3.5. Resümee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_collection/corpus-collection_assessment.html">3.6. 🏆Selbsttest: Wissen und Praxis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ocr_intro.html">4. OCR. Von Bild zu Text</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ocr.html">4.1. OCR als Methode, um Text maschinenlesbar zu machen</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. 🚀 OCR in Python mit PyTesseract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ocr-quality.html">4.3. Messung der OCR-Qualität</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ocr_ocr-quality.html">4.4. 🚀 Messung der OCR-Qualität in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ocr_summary.html">4.5. Resümee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ocr_assessment.html">4.6. 🏆Selbsttest: Wissen und Praxis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ocr_post_correction/post-correcting_intro.html">5. OCR-Nachbearbeitung: manuell, automatisch, LLMs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ocr_post_correction/post-correcting_ocr.html">5.1. Einführung in die OCR-Nachbearbeitung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ocr_post_correction/post-correcting_correction.html">5.2. 🚀 Regelbasierte OCR-Nachbearbeitung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ocr_post_correction/post-correcting_llm.html">5.3. LLM-basierte OCR-Nachbearbeitung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ocr_post_correction/post-correcting_summary.html">5.4. Resümee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ocr_post_correction/post-correcting_assessment.html">5.5. 🏆Selbsttest: Wissen und Praxis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../corpus_processing/corpus-processing_intro.html">6. Korpusverarbeitung. Von Strings zu Token</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_processing/corpus-processing_intro-to-nlp.html">6.1. NLP als Methode zur “Semantisierung” von Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_processing/corpus-processing_nlp-annotation.html">6.2. 🚀 Korpusverarbeitung – Annotation mit spaCy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_processing/corpus-processing_resumee.html">6.3. Resümee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_processing/corpus-processing_assessment.html">6.4. 🏆Selbsttest: Wissen und Praxis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../corpus_analysis/corpus-analysis_intro.html">7. Korpusanalyse. Von Häufigkeiten zu Diagrammen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_analysis/corpus-analysis_analysis.html">7.1. Häufigkeitenanalyse, Visualisierung und KWIC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_analysis/corpus-analysis_diachronic-analysis.html">7.2. 🚀 Analyse 1: Diachrone Frequenzdiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_analysis/corpus-analysis_KWIC.html">7.3. 🚀 Analyse 2: Keyword in Context (KWIC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_analysis/corpus-analysis_resumee.html">7.4. Resümee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_analysis/corpus-analysis_assessment.html">7.5. 🏆Selbsttest: Wissen und Praxis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../reflection/reflection_reflection.html">8. Reflexion</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reflection/reflection_LLM-post-correction.html">8.1. Ausblick: Die Auswirkung der LLM-Nachkorrektur auf die Suche nach Textspuren der Spanischen Grippe <!-- Outlook: LLM postcorrection effect on the search for Spanish Flu --></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../epilog/toc.html">9. Epilog</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../epilog/fragen_und_feedback.html">9.1. Fragen und Feedback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../epilog/literaturverzeichnis.html">9.2. Literaturverzeichnis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../epilog/authors.html">9.3. Autor*innen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../epilog/quadriga.html">9.4. QUADRIGA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../epilog/impressum.html">9.5. Impressum</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/quadriga-dk/Text-Fallstudie-1/blob/main/ocr/ocr_pytesseract_intro.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/quadriga-dk/Text-Fallstudie-1" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quadriga-dk/Text-Fallstudie-1/issues/new?title=Issue%20on%20page%20%2Focr/ocr_pytesseract_intro.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ocr/ocr_pytesseract_intro.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>🚀 OCR in Python mit PyTesseract</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kurze-einfuhrung-in-jupyter-notebooks">4.2.1. Kurze Einführung in Jupyter-Notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hinweise-zur-ausfuhrung-des-notebooks">Hinweise zur Ausführung des Notebooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kommentare-vs-code-in-jupyter-notebooks">Kommentare 📝 vs. Code in Jupyter-Notebooks ⚙️</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocr-mit-python">4.2.2. OCR mit Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installationen-und-importe">4.2.3. Installationen und Importe <!--Importing tools--></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verarbeitung-eines-bildes">4.2.4. Verarbeitung eines Bildes <!--Processing one image--></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verschiedene-typen-von-ocr-fehlern">4.2.5. Verschiedene Typen von OCR-Fehlern</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-it-yourself">🚀 Try It Yourself</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verarbeitung-eines-mehrseitigen-pdfs">4.2.6. Verarbeitung eines (mehrseitigen) PDFs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arten-von-dateipfaden">Arten von Dateipfaden:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pfadtrennzeichen">Pfadtrennzeichen:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-in-python">Beispiel in Python:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-verarbeitung-des-gesamten-korpus-von-pdfs-mit-derselben-ocr-engine">4.2.7. (Advanced) Verarbeitung des gesamten Korpus von PDFs mit derselben OCR-Engine <!-- (Advanced) Processing the whole corpus of PDF-s with the same OCR engine --></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ocr-in-python-mit-pytesseract">
+<h1><span class="section-number">4.2. </span>🚀 OCR in Python mit PyTesseract<a class="headerlink" href="#ocr-in-python-mit-pytesseract" title="Link to this heading">#</a></h1>
+<section id="kurze-einfuhrung-in-jupyter-notebooks">
+<h2><span class="section-number">4.2.1. </span>Kurze Einführung in Jupyter-Notebooks<a class="headerlink" href="#kurze-einfuhrung-in-jupyter-notebooks" title="Link to this heading">#</a></h2>
+<p>Was Sie im Moment sehen, ist ein <strong>Jupyter-Notebook</strong>. Jupyter ermöglicht es Ihnen, Python-Code in Ihrem Browser zu schreiben und auszuführen. Notebook-Zellen mit Code sehen so aus:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hallo Welt!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hallo Welt!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um die Code-Zellen auszuführen, müssen Sie das Notebook entweder <a href="https://jupyter.org/install" class="external-link" target="_blank">lokal</a> (mit lokaler Jupyter-Instanz) oder in der Cloud mit <a href="https://colab.research.google.com/github/quadriga-dk/Text-Fallstudie-1/blob/main/ocr/ocr_pytesseract_intro.ipynb" class="external-link" target="_blank">Colab</a> ausführen. Dadurch werden Code-Zellen ausführbar. Um <strong>Code in der Zelle auszuführen</strong>, treten Sie darauf und drücken Sie <strong>Cmd/Strg + Enter</strong> oder verwenden Sie die <strong>‘Play button’</strong> links neben der Zelle.</p>
+<p>Eine weitere nützliche Tastenkombination ist <strong>Umschalt+Enter</strong>. Sie führt die Shell aus und geht zur nächsten über. Nützlich, wenn Sie durch viele Zellen klicken müssen.</p>
+<section id="hinweise-zur-ausfuhrung-des-notebooks">
+<h3>Hinweise zur Ausführung des Notebooks<a class="headerlink" href="#hinweise-zur-ausfuhrung-des-notebooks" title="Link to this heading">#</a></h3>
+<p>Dieses Notebook kann auf unterschiedlichen Levels erarbeitet werden (siehe Abschnitt <a class="reference internal" href="../introduction/introduction_requirements.html"><span class="doc std std-doc">“Technische Voraussetzungen”</span></a>):</p>
+<ol class="arabic simple">
+<li><p>Book-Only Mode</p></li>
+<li><p>Cloud Mode: Dafür auf 🚀 klicken und z.B. in Colab ausführen.</p></li>
+<li><p>Local Mode: Dafür auf Herunterladen ↓ klicken und “.ipynb” wählen.</p></li>
+</ol>
+</section>
+<section id="kommentare-vs-code-in-jupyter-notebooks">
+<h3>Kommentare 📝 vs. Code in Jupyter-Notebooks ⚙️<a class="headerlink" href="#kommentare-vs-code-in-jupyter-notebooks" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Die Teile der Codezellen, die <strong>mit <code class="docutils literal notranslate"><span class="pre">#</span></code></strong> beginnen, sind Kommentare <strong>für Menschen</strong>, um den Code zu erklären</p></li>
+<li><p>Lokale Jupyter-Umgebung hebt Kommentare in <font color='#408080'>grün-blau</font> hervor</p></li>
+<li><p>Colab hebt Kommentare in <font color='green'>grün</font> hervor</p></li>
+<li><p>JupyterBook hebt Kommentare in <font color='#797129'>dunkelgelb</font> hervor</p></li>
+<li><p>Kommentare sind keine Python-Befehle und werden <strong>nicht ausgeführt</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># I am a comment, I do nothing, I&#39;m just here for you to read</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am a print function, part of Python code, I print whatever is in these brackets!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am a print function, part of Python code, I print whatever is in these brackets!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ocr-mit-python">
+<h2><span class="section-number">4.2.2. </span>OCR mit Python<a class="headerlink" href="#ocr-mit-python" title="Link to this heading">#</a></h2>
+<p>In diesem Notizbuch werden wir pyTesseract ausführen, um maschinenlesbaren Text zu erzeugen aus:</p>
+<ul class="simple">
+<li><p>einem JPEG-Bild</p></li>
+<li><p>einem mehrseitigen PDF</p></li>
+<li><p>einem Korpus mehrseitiger PDFs</p></li>
+</ul>
+<!--In this notebook, we will run pyTesseract to produce machine readable text from:
+* a JPEG image
+* a multi-paged PDF
+* a corpus of multi-page PDF-s--><details>
+  <summary><b>Informationen zum Ausführen des Notebooks – Zum Ausklappen klicken ⬇️</b></summary>
+<p><b>Voraussetzungen zur Ausführung des Jupyter Notebooks</b></p>
+<ol>
+<li> Installieren der Bibliotheken </li>
+<li>2. Laden der Daten (z.B. über den Command `wget` (s.u.))</li>
+<li>3. Pfad zu den Daten setzen</li>
+</ol>
+Zum Testen: Ausführen der Zelle "load libraries" und der Sektion "Einlesen des Texts". </br>
+Alle Zellen, die mit 🚀 gekennzeichnet sind, werden nur bei der Ausführung des Notebooks in Colab / JupyterHub bzw. lokal ausgeführt. 
+</details></section>
+<section id="installationen-und-importe">
+<h2><span class="section-number">4.2.3. </span>Installationen und Importe <!--Importing tools--><a class="headerlink" href="#installationen-und-importe" title="Link to this heading">#</a></h2>
+<div class="cell tag_skip-execution tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  🚀 Install libraries  </span>
+<span class="o">!</span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>tesseract-ocr
+<span class="o">!</span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>tesseract-ocr-frk
+<span class="o">!</span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>poppler-utils
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pytesseract<span class="w"> </span>pillow
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pdf2image
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>tqdm
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;sudo&#39; is not recognized as an internal or external command,
+operable program or batch file.
+&#39;sudo&#39; is not recognized as an internal or external command,
+operable program or batch file.
+&#39;sudo&#39; is not recognized as an internal or external command,
+operable program or batch file.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytesseract in C:\Users\souvi\AppData\Local\Programs\Python\Python311\Lib\site-packages (0.3.13)
+Requirement already satisfied: pillow in C:\Users\souvi\AppData\Local\Programs\Python\Python311\Lib\site-packages (12.0.0)
+Requirement already satisfied: packaging&gt;=21.3 in C:\Users\souvi\AppData\Local\Programs\Python\Python311\Lib\site-packages (from pytesseract) (25.0)
+Requirement already satisfied: pdf2image in C:\Users\souvi\AppData\Local\Programs\Python\Python311\Lib\site-packages (1.17.0)
+Requirement already satisfied: pillow in C:\Users\souvi\AppData\Local\Programs\Python\Python311\Lib\site-packages (from pdf2image) (12.0.0)
+Requirement already satisfied: tqdm in C:\Users\souvi\AppData\Local\Programs\Python\Python311\Lib\site-packages (4.67.1)
+Requirement already satisfied: colorama in C:\Users\souvi\AppData\Local\Programs\Python\Python311\Lib\site-packages (from tqdm) (0.4.6)
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pytesseract</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pdf2image</span><span class="w"> </span><span class="kn">import</span> <span class="n">convert_from_path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pytesseract</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pytesseract&#39;
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="verarbeitung-eines-bildes">
+<h2><span class="section-number">4.2.4. </span>Verarbeitung eines Bildes <!--Processing one image--><a class="headerlink" href="#verarbeitung-eines-bildes" title="Link to this heading">#</a></h2>
+<div class="cell tag_skip-execution tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget<span class="w"> </span>https://raw.githubusercontent.com/quadriga-dk/Text-Fallstudie-1/refs/heads/main/assets/images/grippe.jpeg
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;wget&#39; is not recognized as an internal or external command,
+operable program or batch file.
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<a class="reference internal image-reference" href="../_images/grippe.jpeg"><img alt="../_images/grippe.jpeg" src="../_images/grippe.jpeg" style="width: 600px;" />
+</a>
+<p>So können wir <strong>OCR auf dieses Bild</strong> des Zeitungsartikels (‘Die Grippe wütet weiter’) durchführen: <!-- This is how we can **perform OCR on this image** of the ('*Die Grippe wütet weiter*') newspaper article: --></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ocr_output</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;grippe.jpeg&#39;</span><span class="p">),</span> <span class="n">lang</span><span class="o">=</span><span class="s1">&#39;deu_latf&#39;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">ocr_output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zie Grippe wüfel weiter
+
+Zunahme der ſchweren Fälle in Berlin.
+
+Die Zahl der Grippefälle iſt in den letzten
+beider Tagen auch in Groß-Berlin noH
+erfblih zefitiegen. Die Worenhäuſer und ſon-
+Haen aroßen GerſHäfte, die Krirgs- und die pri«
+n Betriebe lagen, daß übermäig viele An«
+
+: fich 5cben kren? melden miüen,-und an:
+; ew Loſt und 5ei der Straßenbahn iſt der
+ſoz der Grippekranken bedeuten) g&amp;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="verschiedene-typen-von-ocr-fehlern">
+<h2><span class="section-number">4.2.5. </span>Verschiedene Typen von OCR-Fehlern<a class="headerlink" href="#verschiedene-typen-von-ocr-fehlern" title="Link to this heading">#</a></h2>
+<p>Betrachten wir dieses Beispiel, so fallen sofort zahlreiche Fehler auf. Bereits das allererste Zeichen des ersten Wortes ist falsch: „Zie” statt „Die”. Dies ist ein sehr häufiger OCR-Fehlertyp, bei dem ein Zeichen mit einem anderen verwechselt wird — in diesem Fall liegt die Ursache vermutlich unter anderem in der unterschiedlichen Druckfarbintensität verschiedener Bereiche des Buchstabens „D”. Dasselbe ist bei beiden „t”-Buchstaben im Wort „wütet” geschehen: Sie wurden fälschlicherweise als „f” bzw. „l” erkannt. Solche Fehler bezeichnen wir als Substitutionsfehler.</p>
+<p>Manchmal werden Zeichen nicht durch andere ersetzt, sondern gar nicht erst erkannt. Dies ist beispielsweise bei den meisten Zeichen im Wort „Angestellte” der Fall — es wurde lediglich als „An«” ausgegeben. Derartige Fehler lassen sich als Auslassungsfehler (engl. omission errors) klassifizieren.</p>
+<p>Darüber hinaus treten gelegentlich zusätzliche Zeichen auf, die im Original nicht vorhanden sind. Dieser Fehlertyp lässt sich allerdings nicht immer eindeutig von einer Substitution abgrenzen — etwa dann, wenn ein einzelnes Zeichen der Vorlage im OCR-Ergebnis zu zwei oder mehr Zeichen wird.</p>
+<p>Schließlich gibt es Abweichungen zwischen dem gewünschten und dem tatsächlichen OCR-Ergebnis, die sich nicht als Fehler im engeren Sinne einordnen lassen, sondern vielmehr Unterschiede in den Normalisierungskonventionen darstellen. So finden wir in der Originalquelle das lange s (ſ, U+017F, LATIN SMALL LETTER LONG S) an Stellen, an denen die moderne Orthographie ein gewöhnliches s (U+0073) vorsieht. Technisch handelt es sich dabei um zwei verschiedene Unicode-Zeichen. Ob eine Normalisierung vorgenommen wird oder nicht, ist letztlich eine Frage der Konvention und des jeweiligen Erkenntnisinteresses. Viele OCR-Engines normalisieren solche historischen Zeichenvarianten stillschweigend, andere bewahren sie im Sinne der editionsphilologischen Treue. Tesseract nimmt hier keine Normalisierung vor.</p>
+<section id="try-it-yourself">
+<h3>🚀 Try It Yourself<a class="headerlink" href="#try-it-yourself" title="Link to this heading">#</a></h3>
+<p>Use the interactive tool below to explore the OCR errors directly.
+Click any of the buttons to highlight substitutions, missing characters, extra characters, or Fraktur confusions. The corresponding parts of the Ground Truth will be highlighted automatically, allowing you to see exactly how and where the OCR diverged from the original text.
+You can also toggle “Show missing GT” to reveal characters the OCR skipped</p>
+<div id="ocr-error-v4" style="font-family: system-ui, monospace; max-width:1000px; margin: 8px 0;">
+
+  <h3 style="margin:0 0 8px 0; color:#ccc;">OCR Output (annotated)</h3>
+
+  <div style="margin:8px 0 12px 0;">
+    <button class="ocrBtn" onclick="toggleErrorsV4('sub')">Substitutions</button>
+    <button class="ocrBtn" onclick="toggleErrorsV4('miss')">Missing (in OCR)</button>
+    <button class="ocrBtn" onclick="toggleErrorsV4('ins')">Extra (in OCR)</button>
+    <button class="ocrBtn" onclick="toggleErrorsV4('frak')">Fraktur confusions</button>
+    <button class="ocrBtn" onclick="toggleGTunderV4()">Show missing GT</button>
+    <button class="ocrBtn" onclick="clearErrorsV4()">Clear</button>
+  </div>
+
+  <div id="ocrBoxV4"
+       style="white-space:pre-wrap; padding:10px; border-radius:6px;
+              background:#1f1f1f; color:#eee; border:1px solid #2f2f2f;
+              font-family:monospace;"></div>
+
+  <div style="margin-top:10px; font-size:1.0rem; color:#fff; margin-bottom:18px;">
+    <strong>Legend:</strong>
+    <span style="margin-left:8px; color:#ff6b6b;">sub</span>
+    <span style="margin-left:8px; color:#47b5ff;">missing</span>
+    <span style="margin-left:8px; color:#7effa2;">extra</span>
+    <span style="margin-left:8px; color:#ffd54d;">fraktur</span>
+  </div>
+
+
+  <h3 style="margin:0 0 10px 0; color:#ccc;">Ground truth (reference)</h3>
+  <div id="gtBoxV4"
+       style="white-space:pre-wrap; padding:10px; border-radius:6px;
+              background:#29313d; color:#e5e5e5; border:1px solid #2f2f2f;
+              font-family:monospace;"></div>
+
+</div>
+
+<style>
+  #ocr-error-v4 .ocrBtn {
+    background:#2d3b4f; color:#fff; border:none;
+    padding:6px 10px; margin-right:6px;
+    border-radius:5px; cursor:pointer; font-size:0.9rem;
+  }
+
+  #ocr-error-v4 .ocrSpan { padding:0 2px; border-radius:3px; display:inline-block; }
+  #ocr-error-v4 .ok   { color:#cfcfcf; }
+  #ocr-error-v4 .sub  { background:#ff6b6b; color:#000; }
+  #ocr-error-v4 .ins  { background:#7effa2; color:#000; }
+  #ocr-error-v4 .miss { background:#47b5ff; color:#000; position:relative; }
+  #ocr-error-v4 .frak { background:#ffd54d; color:#000; }
+
+  #ocr-error-v4 .gtSpan { transition:color 0.2s ease; }
+
+  #ocr-error-v4 .gt-under {
+    display:block; font-size:0.8rem; text-align:center;
+    line-height:0.8; opacity:0; transition:opacity 0.25s ease;
+    color:#000;
+  }
+  #ocr-error-v4 .miss.showGT .gt-under { opacity:1; }
+</style>
+
+<script>
+(function(){
+  const ocrRaw = `Zie Grippe wüfel weiter Zunahme der ſchweren Fälle in Berlin. Die Zahl der Grippefälle iſt in den letzten beider Tagen auch in Groß-Berlin noH erfblih zefitiegen. Die Worenhäuſer und ſon- Haen aroßen GerſHäfte, die Krirgs- und die pri« n Betriebe lagen, daß übermäig viele An« : fich 5cben kren? melden miüen,-und an: ; ew Loſt und 5ei der Straßenbahn iſt der ſoz der Grippekranken bedeuten) g&`.trim();
+  const gtRaw = `Die Grippe wütet weiter Zunahme der schweren Fälle in Berlin. Die Zahl der Grippefälle ist in den letzten beiden Tagen auch in Groß-Berlin noch erheblich gestiegen. Die Warenhäuser und sonstigen großen Geschäfte, die Kriegs- und die privaten Betriebe klagen, daß übermäßig viele An-
+gestellte sich haben krank melden müssen und auch bei der Post und bei der Straßenbahn ist der Prozentsatz der Grippekranken bedeutend gestiegen.`.trim();
+
+  const ocr = ocrRaw.replace(/\s+/g,' ');
+  const gt  = gtRaw.replace(/\s+/g,' ');
+
+  const gtBox = document.getElementById('gtBoxV4');
+  gtBox.innerHTML = gt.split('').map(ch=>`<span class="gtSpan">${ch}</span>`).join('');
+
+  /* Levenshtein diff */
+  function computeEdits(a,b){
+    const n=a.length, m=b.length;
+    const dp=Array.from({length:n+1},()=>Array(m+1).fill(0));
+    for(let i=0;i<=n;i++) dp[i][0]=i;
+    for(let j=0;j<=m;j++) dp[0][j]=j;
+
+    for(let i=1;i<=n;i++){
+      for(let j=1;j<=m;j++){
+        dp[i][j]=Math.min(
+          dp[i-1][j]+1,
+          dp[i][j-1]+1,
+          dp[i-1][j-1] + (a[i-1]===b[j-1]?0:1)
+        );
+      }
+    }
+
+    const ops=[];
+    let i=n,j=m;
+    while(i>0||j>0){
+      if(i>0&&j>0&&a[i-1]===b[j-1]&&dp[i][j]===dp[i-1][j-1]){
+        ops.push({type:'ok', a:a[i-1], b:b[j-1], gi:j-1});
+        i--;j--;continue;
+      }
+      if(i>0&&j>0&&dp[i][j]===dp[i-1][j-1]+1){
+        ops.push({type:'sub', a:a[i-1], b:b[j-1], gi:j-1});
+        i--;j--;continue;
+      }
+      if(i>0&&dp[i][j]===dp[i-1][j]+1){
+        ops.push({type:'ins', a:a[i-1], b:null, gi:null});
+        i--;continue;
+      }
+      if(j>0&&dp[i][j]===dp[i][j-1]+1){
+        ops.push({type:'miss', a:null, b:b[j-1], gi:j-1});
+        j--;continue;
+      }
+    }
+    return ops.reverse();
+  }
+
+  const edits = computeEdits(ocr,gt);
+  const frakPairs = [['ſ','s'],['ſ','f'],['u','n'],['0','o'],['5','s']];
+  function isFrak(op){
+    if(op.type!=='sub') return false;
+    return frakPairs.some(([x,y]) => (op.a===x&&op.b===y)||(op.a===y&&op.b===x));
+  }
+
+  const ocrBox = document.getElementById('ocrBoxV4');
+  let showGT = false;
+  let currentFilter = null;
+
+  function render(){
+    ocrBox.innerHTML='';
+
+    edits.forEach(op=>{
+      if(op.type==='ok'){
+        const s=document.createElement('span');
+        s.className='ocrSpan ok';
+        s.textContent=op.a;
+        s.dataset.type='ok';
+        ocrBox.appendChild(s);
+      }
+      else if(op.type==='sub'){
+        const s=document.createElement('span');
+        s.className='ocrSpan sub';
+        if(isFrak(op)) s.classList.add('frak');
+        s.textContent=op.a;
+        s.dataset.type='sub';
+        s.dataset.gi=op.gi;
+        ocrBox.appendChild(s);
+      }
+      else if(op.type==='ins'){
+        const s=document.createElement('span');
+        s.className='ocrSpan ins';
+        s.textContent=op.a;
+        s.dataset.type='ins';
+        ocrBox.appendChild(s);
+      }
+      else if(op.type==='miss'){
+        const w=document.createElement('span');
+        w.className='ocrSpan miss';
+        w.textContent='⟦ ⟧';
+        w.dataset.type='miss';
+        w.dataset.gi=op.gi;
+
+        const gtline=document.createElement('span');
+        gtline.className='gt-under';
+        gtline.textContent=op.b;
+        w.appendChild(gtline);
+
+        if(showGT) w.classList.add('showGT');
+        ocrBox.appendChild(w);
+      }
+    });
+
+    applyFilter();
+  }
+
+  function applyFilter(){
+    const ocrSpans = ocrBox.querySelectorAll('.ocrSpan');
+    const gtSpans = gtBox.querySelectorAll('.gtSpan');
+
+    gtSpans.forEach(s=>{
+      s.style.color='#e5e5e5';
+      s.style.fontWeight='normal';
+    });
+
+    ocrSpans.forEach(s=>{
+      s.style.opacity='1';
+      s.style.outline='none';
+    });
+
+    if(!currentFilter) return;
+
+    ocrSpans.forEach(s=>{
+      const t = s.dataset.type;
+      const isF = (currentFilter==='frak' && s.classList.contains('frak'));
+      const match = (t===currentFilter) || isF;
+
+      if(!match){
+        s.style.opacity='0.45';
+      } else {
+        s.style.outline='2px solid rgba(255,255,255,0.25)';
+      }
+    });
+
+    // GT coloring
+    edits.forEach(op=>{
+      if(op.gi===null) return;
+      const gtSpan = gtSpans[op.gi];
+      if(!gtSpan) return;
+
+      if(currentFilter==='sub' && op.type==='sub'){
+        gtSpan.style.color='#ff6b6b';
+        gtSpan.style.fontWeight='bold';
+      }
+      if(currentFilter==='miss' && op.type==='miss'){
+        gtSpan.style.color='#47b5ff';
+        gtSpan.style.fontWeight='bold';
+      }
+      if(currentFilter==='frak' && isFrak(op)){
+        gtSpan.style.color='#ffd54d';
+        gtSpan.style.fontWeight='bold';
+      }
+    });
+  }
+
+  window.toggleErrorsV4=function(type){
+    currentFilter=type;
+    render();
+  };
+
+  window.clearErrorsV4=function(){
+    currentFilter=null;
+    render();
+  };
+
+  window.toggleGTunderV4=function(){
+    showGT=!showGT;
+    render();
+  };
+
+  render();
+})();
+</script></section>
+</section>
+<section id="verarbeitung-eines-mehrseitigen-pdfs">
+<h2><span class="section-number">4.2.6. </span>Verarbeitung eines (mehrseitigen) PDFs<a class="headerlink" href="#verarbeitung-eines-mehrseitigen-pdfs" title="Link to this heading">#</a></h2>
+<p>Mit ein wenig mehr Python-Code können wir pytesseract auch verwenden, um gesamte <strong>PDF-Dateien mit vielen Seiten</strong> zu OCRen: <!-- With a bit more Python code, we can also use pytesseract to OCR entire **PDF files with many pages**: --></p>
+<details>
+  <summary><b>Informationen zum Ausführen des Notebooks – Zum Ausklappen klicken ⬇️</b></summary>
+Zuerst wird der Ordner angelegt, in dem die Textdateien gespeichert werden. Der Einfachheit halber wird die gleich Datenablagestruktur wie in dem <a href="https://github.com/quadriga-dk/Text-Fallstudie-1/tree/main">GitHub Repository</a>, in dem die Daten gespeichert sind, vorausgesetzt. </br>
+Der Text wird aus GitHub heruntergeladen und in dem Ordner <i>../data/pdf/</i> abgespeichert. </br>
+Der Pfad kann in der Variable <i>sample_pdf_path</i> angepasst werden. Die einzulesenden Daten müssen die Endung `.pdf` haben. </br>
+</details><details>
+  <summary><b>Was ist ein Dateipfad?</b> (klicken)</summary>
+<p>Ein <strong>Dateipfad</strong> ist eine Zeichenkette, die deinem Programm sagt, wo eine Datei auf deinem Computer oder Server gespeichert ist. Er hilft dem Programm, Dateien zu finden und auf sie zuzugreifen, um sie zu lesen, zu schreiben oder zu bearbeiten.</p>
+<section id="arten-von-dateipfaden">
+<h3>Arten von Dateipfaden:<a class="headerlink" href="#arten-von-dateipfaden" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Absoluter Dateipfad</strong>:<br />
+Ein absoluter Pfad gibt den vollständigen Speicherort einer Datei ausgehend vom Stammverzeichnis deines Systems an.</p>
+<ul class="simple">
+<li><p>Beispiel unter Windows:<br />
+<code class="docutils literal notranslate"><span class="pre">C:\Users\JohnDoe\Documents\file.txt</span></code></p></li>
+<li><p>Beispiel unter macOS/Linux:<br />
+<code class="docutils literal notranslate"><span class="pre">/Users/JohnDoe/Documents/file.txt</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Relativer Dateipfad</strong>:<br />
+Ein relativer Pfad zeigt dem Programm, wie es eine Datei basierend auf dem aktuellen Arbeitsverzeichnis (dem Ordner, in dem dein Skript ausgeführt wird) finden kann.</p>
+<ul class="simple">
+<li><p>Beispiel:<br />
+<code class="docutils literal notranslate"><span class="pre">Documents/file.txt</span></code><br />
+(Dies sucht die Datei in einem Ordner namens <code class="docutils literal notranslate"><span class="pre">Documents</span></code> innerhalb des aktuellen Verzeichnisses).</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="pfadtrennzeichen">
+<h3>Pfadtrennzeichen:<a class="headerlink" href="#pfadtrennzeichen" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Unter Windows verwenden Pfade Backslashes (<code class="docutils literal notranslate"><span class="pre">\</span></code>):<br />
+<code class="docutils literal notranslate"><span class="pre">C:\folder\file.txt</span></code></p></li>
+<li><p>Unter macOS/Linux verwenden Pfade Schrägstriche (<code class="docutils literal notranslate"><span class="pre">/</span></code>):<br />
+<code class="docutils literal notranslate"><span class="pre">/folder/file.txt</span></code></p></li>
+</ul>
+</section>
+<section id="beispiel-in-python">
+<h3>Beispiel in Python:<a class="headerlink" href="#beispiel-in-python" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Absoluter Pfad</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;C:/Users/JohnDoe/Documents/file.txt&#39;</span><span class="p">)</span>
+    
+<span class="c1"># Relativer Pfad</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;Documents/file.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Python bietet auch Tools, um Pfade so zu handhaben, dass sie auf jedem Betriebssystem funktionieren, wie die Module <code class="docutils literal notranslate"><span class="pre">os</span></code> und <code class="docutils literal notranslate"><span class="pre">pathlib</span></code>. Wir verwenden oben <code class="docutils literal notranslate"><span class="pre">pathlib</span></code>, damit dieses Notebook auf jedem Rechner funktioniert. Dadurch können wir Pfade im Unix-Stil schreiben.</p>
+</details><div class="cell tag_skip-execution tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 🚀 Create data directory path</span>
+<span class="n">corpus_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../data/pdf&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">corpus_dir</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+    <span class="n">corpus_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell tag_skip-execution docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 🚀 Load the txt file from GitHub </span>
+<span class="o">!</span><span class="w"> </span>wget<span class="w"> </span>https://raw.githubusercontent.com/quadriga-dk/Text-Fallstudie-1/refs/heads/main/data/pdf/SNP27112366-19181224-0-0-0-0.pdf
+
+<span class="c1"># move the file to the data directory</span>
+<span class="o">!</span><span class="w"> </span>mv<span class="w"> </span>SNP27112366-19181224-0-0-0-0.pdf<span class="w"> </span>../data/pdf
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the path to file to be processed</span>
+<span class="n">sample_pdf_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../data/pdf/SNP27112366-19181224-0-0-0-0.pdf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dieser Code liest eine mehrseitige PDF-Datei mit einer Zeitungsausgabe vollständig ein und führt Seite für Seite eine Texterkennung (OCR) durch. Die Ausführung wird mehrere Minuten dauern</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this code here reads an entire PDF with a newspaper issue </span>
+<span class="c1"># and performs OCR page by page</span>
+<span class="c1"># it will take a couple of minutes to run</span>
+<span class="n">recognized_pages</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">converted_pdf</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">convert_from_path</span><span class="p">(</span><span class="n">sample_pdf_path</span><span class="p">,</span> <span class="n">use_cropbox</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">converted_pdf</span><span class="p">:</span>
+    <span class="n">recognized</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> 
+                                             <span class="n">lang</span><span class="o">=</span><span class="s1">&#39;frk&#39;</span><span class="p">)</span> 
+    <span class="c1">#print(recognized)</span>
+    <span class="n">recognized_pages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">recognized</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Schauen wir uns die erste Seite an: <!-- Let's look at the first page:--></p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">recognized_pages</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Letzte Seite: <!-- Last page: --></p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">recognized_pages</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Keines dieser Ergebnisse sieht besonders gut aus (hauptsächlich aufgrund der Scan-Qualität und allgemeiner Herausforderungen bei der Arbeit mit alten Zeitungen). In den nächsten Abschnitten werden wir lernen, wie man</p>
+<ul class="simple">
+<li><p>a) die OCR-Qualität misst</p></li>
+<li><p>b) die Qualität in der OCR-Nachkorrekturphase verbessert</p></li>
+</ul>
+<!-- None of these results look very good (mostly due to scan quality and general challenges of working with old newspapers). In the next parts we will learn how to 
+* a) measure the OCR quality
+* b) improve the quality at the OCR postcorrection stage --><p>Um die OCR-Funktion auf einer anderen PDF-Datei auszuführen, müssen Sie in der obigen Zeile einen Dateipfad dazu angeben: <code class="docutils literal notranslate"><span class="pre">sample_pdf_path</span> <span class="pre">=</span> <span class="pre">Path('/path/to/your.pdf')</span></code>.</p>
+</section>
+</section>
+<section id="advanced-verarbeitung-des-gesamten-korpus-von-pdfs-mit-derselben-ocr-engine">
+<h2><span class="section-number">4.2.7. </span>(Advanced) Verarbeitung des gesamten Korpus von PDFs mit derselben OCR-Engine <!-- (Advanced) Processing the whole corpus of PDF-s with the same OCR engine --><a class="headerlink" href="#advanced-verarbeitung-des-gesamten-korpus-von-pdfs-mit-derselben-ocr-engine" title="Link to this heading">#</a></h2>
+<p>Der untenstehende Code verarbeitet alle Dateien im Ordner <code class="docutils literal notranslate"><span class="pre">'../data/pdf'</span></code>, die die Endung ‘.pdf’ haben, und speichert die Ergebnisse dann im Ordner <code class="docutils literal notranslate"><span class="pre">'../data/txt'</span></code> (die Dateinamen bleiben gleich, aber mit der Endung ‘.txt’ anstelle von ‘.pdf’). <strong>WARNUNG</strong>: Bei einer großen Anzahl (&gt;5) von PDFs wird dies viel Zeit in Anspruch nehmen.</p>
+<!-- The code below will process all the files in folder `'../data/pdf'` which have '.pdf' as extension, and then put the results into the `'../data/txt'` (the filenames will be the same but with '.txt' extension instead of '.pdf'). **WARNING**: For a large (>5) number of PDF-s this will take a long time. --><div class="cell tag_skip-execution tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 🚀 Create txt directory path</span>
+<span class="n">corpus_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../data/txt&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">corpus_dir</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+    <span class="n">corpus_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pathpdf</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../data/pdf&#39;</span><span class="p">)</span>
+<span class="n">pathtxt</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../data/txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">pathpdf</span><span class="o">.</span><span class="n">iterdir</span><span class="p">()):</span>
+    <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s1">&#39;.pdf&#39;</span><span class="p">:</span>
+        <span class="n">converted_pdf</span> <span class="o">=</span> <span class="n">convert_from_path</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">use_cropbox</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">output_path</span> <span class="o">=</span> <span class="n">pathtxt</span> <span class="o">/</span> <span class="n">filename</span><span class="o">.</span><span class="n">stem</span> 
+        <span class="n">output_path</span> <span class="o">=</span> <span class="n">output_path</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s1">&#39;.txt&#39;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">output_path</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_txt</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">converted_pdf</span><span class="p">:</span>
+                <span class="n">recognized</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> 
+                                                         <span class="n">lang</span><span class="o">=</span><span class="s1">&#39;frk&#39;</span><span class="p">)</span> 
+                <span class="n">output_txt</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">recognized</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./ocr"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ocr.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4.1. </span>OCR als Methode, um Text maschinenlesbar zu machen</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ocr-quality.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.3. </span>Messung der OCR-Qualität</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kurze-einfuhrung-in-jupyter-notebooks">4.2.1. Kurze Einführung in Jupyter-Notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hinweise-zur-ausfuhrung-des-notebooks">Hinweise zur Ausführung des Notebooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kommentare-vs-code-in-jupyter-notebooks">Kommentare 📝 vs. Code in Jupyter-Notebooks ⚙️</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocr-mit-python">4.2.2. OCR mit Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installationen-und-importe">4.2.3. Installationen und Importe <!--Importing tools--></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verarbeitung-eines-bildes">4.2.4. Verarbeitung eines Bildes <!--Processing one image--></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verschiedene-typen-von-ocr-fehlern">4.2.5. Verschiedene Typen von OCR-Fehlern</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-it-yourself">🚀 Try It Yourself</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verarbeitung-eines-mehrseitigen-pdfs">4.2.6. Verarbeitung eines (mehrseitigen) PDFs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arten-von-dateipfaden">Arten von Dateipfaden:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pfadtrennzeichen">Pfadtrennzeichen:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-in-python">Beispiel in Python:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-verarbeitung-des-gesamten-korpus-von-pdfs-mit-derselben-ocr-engine">4.2.7. (Advanced) Verarbeitung des gesamten Korpus von PDFs mit derselben OCR-Engine <!-- (Advanced) Processing the whole corpus of PDF-s with the same OCR engine --></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a ref="https://quadriga-dk.de">QUADRIGA</a>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p xmlns:cc="http://creativecommons.org/ns#" >Dieses Werk ist lizenziert unter der Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" class="external-link" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>. Detailliertere Informationen finden Sie unter <a href="https://github.com/quadriga-dk/Book_Template/blob/main/LICENSE.md" target="_blank" class="external-link">LICENSE.md</a></p> <p>Diese OER wurde im Rahmen des Projekts <a href="https://www.quadriga-dk.de" target="_blank" class="external-link">QUADRIGA</a> erstellt. Das Projekt wurde gefördert durch das <a href="https://www.bmbf.de" target="_blank" class="external-link">Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR)</a>. Mehr Informationen zum Projekt finden Sie auch im <a href="https://quadriga-dk.github.io/Text-Fallstudie-1/epilog/quadriga.html">Epilog</a>.</p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

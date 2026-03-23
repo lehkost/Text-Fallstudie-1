@@ -1,0 +1,1224 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>6.2. 🚀 Korpusverarbeitung – Annotation mit spaCy &#8212; Waves of the Spanish Flu – Case Study</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/carousel.css?v=999f73f4" />
+    <link rel="stylesheet" type="text/css" href="../_static/drag_drop.css?v=2202ffcf" />
+    <link rel="stylesheet" type="text/css" href="../_static/quadriga.css?v=abee4fda" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'corpus_processing/corpus-processing_nlp-annotation';</script>
+    <script src="../_static/assessment.js?v=f23f720b"></script>
+    <script src="../_static/carousel.js?v=a1af88dd"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.3. Resümee" href="corpus-processing_resumee.html" />
+    <link rel="prev" title="6.1. NLP als Methode zur “Semantisierung” von Text" href="corpus-processing_intro-to-nlp.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../front_page/intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/Text1.png" class="logo__image only-light" alt="Waves of the Spanish Flu – Case Study - Home"/>
+    <script>document.write(`<img src="../_static/Text1.png" class="logo__image only-dark" alt="Waves of the Spanish Flu – Case Study - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../front_page/intro.html">
+                    Quantitative Analyse der Medienwellen der Spanischen Grippe (1918/19). Eine Fallstudie
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../pr%C3%A4ambel/einf%C3%BChrung.html">1. Präambel</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/learning-outcomes.html">1.1. Lernziele</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/introduction_requirements.html">1.2. Technische Voraussetzungen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../research_question/research-question_intro.html">2. Fragestellung und Operationalisierung. Einführung in die Fallstudie</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../research_question/research-question_research-question.html">2.1. Fragestellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../research_question/research-question_operationalization.html">2.2. Operationalisierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../research_question/research-question_summary.html">2.3. Resümee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../research_question/research-question_assessment.html">2.4. 🏆Selbsttest: Wissen und Praxis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../corpus_collection/corpus-collection_intro.html">3. Korpusaufbau. Auswählen, sammeln, dokumentieren</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_collection/corpus-collection_corpora-as-research-objects.html">3.1. Korpora als Forschungsobjekte der Digital Humanities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_collection/corpus-collection_text_as_digital_objects.html">3.2. Elemente von Korpora: Texte als digitale Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_collection/corpus-collection_metadata.html">3.3. Metadaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_collection/corpus-collection_building-our-corpus.html">3.4. Aufbau des Forschungskorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_collection/corpus-collection_summary.html">3.5. Resümee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_collection/corpus-collection_assessment.html">3.6. 🏆Selbsttest: Wissen und Praxis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ocr/ocr_intro.html">4. OCR. Von Bild zu Text</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ocr/ocr.html">4.1. OCR als Methode, um Text maschinenlesbar zu machen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ocr/ocr_pytesseract_intro.html">4.2. 🚀 OCR in Python mit PyTesseract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ocr/ocr-quality.html">4.3. Messung der OCR-Qualität</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ocr/ocr_ocr-quality.html">4.4. 🚀 Messung der OCR-Qualität in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ocr/ocr_summary.html">4.5. Resümee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ocr/ocr_assessment.html">4.6. 🏆Selbsttest: Wissen und Praxis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ocr_post_correction/post-correcting_intro.html">5. OCR-Nachbearbeitung: manuell, automatisch, LLMs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ocr_post_correction/post-correcting_ocr.html">5.1. Einführung in die OCR-Nachbearbeitung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ocr_post_correction/post-correcting_correction.html">5.2. 🚀 Regelbasierte OCR-Nachbearbeitung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ocr_post_correction/post-correcting_llm.html">5.3. LLM-basierte OCR-Nachbearbeitung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ocr_post_correction/post-correcting_summary.html">5.4. Resümee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ocr_post_correction/post-correcting_assessment.html">5.5. 🏆Selbsttest: Wissen und Praxis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="corpus-processing_intro.html">6. Korpusverarbeitung. Von Strings zu Token</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="corpus-processing_intro-to-nlp.html">6.1. NLP als Methode zur “Semantisierung” von Text</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.2. 🚀 Korpusverarbeitung – Annotation mit spaCy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpus-processing_resumee.html">6.3. Resümee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpus-processing_assessment.html">6.4. 🏆Selbsttest: Wissen und Praxis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../corpus_analysis/corpus-analysis_intro.html">7. Korpusanalyse. Von Häufigkeiten zu Diagrammen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_analysis/corpus-analysis_analysis.html">7.1. Häufigkeitenanalyse, Visualisierung und KWIC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_analysis/corpus-analysis_diachronic-analysis.html">7.2. 🚀 Analyse 1: Diachrone Frequenzdiagramme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_analysis/corpus-analysis_KWIC.html">7.3. 🚀 Analyse 2: Keyword in Context (KWIC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_analysis/corpus-analysis_resumee.html">7.4. Resümee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../corpus_analysis/corpus-analysis_assessment.html">7.5. 🏆Selbsttest: Wissen und Praxis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../reflection/reflection_reflection.html">8. Reflexion</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reflection/reflection_LLM-post-correction.html">8.1. Ausblick: Die Auswirkung der LLM-Nachkorrektur auf die Suche nach Textspuren der Spanischen Grippe <!-- Outlook: LLM postcorrection effect on the search for Spanish Flu --></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../epilog/toc.html">9. Epilog</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../epilog/fragen_und_feedback.html">9.1. Fragen und Feedback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../epilog/literaturverzeichnis.html">9.2. Literaturverzeichnis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../epilog/authors.html">9.3. Autor*innen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../epilog/quadriga.html">9.4. QUADRIGA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../epilog/impressum.html">9.5. Impressum</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/quadriga-dk/Text-Fallstudie-1/blob/main/corpus_processing/corpus-processing_nlp-annotation.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/quadriga-dk/Text-Fallstudie-1" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quadriga-dk/Text-Fallstudie-1/issues/new?title=Issue%20on%20page%20%2Fcorpus_processing/corpus-processing_nlp-annotation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/corpus_processing/corpus-processing_nlp-annotation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>🚀 Korpusverarbeitung – Annotation mit spaCy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hinweise-zur-ausfuhrung-des-notebooks">6.2.1. Hinweise zur Ausführung des Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht">6.2.2. Übersicht</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einlesen-des-textes">6.2.3. Einlesen des Textes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worthaufigkeiten-ohne-echte-tokenisierung">6.2.4. Worthäufigkeiten ohne echte Tokenisierung</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-in-worter-aufteilen">Text in Wörter aufteilen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anzeigen-von-worthaufigkeiten">Anzeigen von Worthäufigkeiten</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-mit-spacy">6.2.5. Annotation mit spaCy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sprachmodell-laden">Sprachmodell laden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysekomponenten-auswahlen">Analysekomponenten auswählen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotieren-des-textes-token-lemma">Annotieren des Textes: Token, Lemma</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worthaufigkeit-mit-echter-tokenisierung">Worthäufigkeit mit echter Tokenisierung</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-speichern">6.2.6. Annotation speichern</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prozess-fur-das-gesamte-korpus-ausfuhren">6.2.7. Prozess für das gesamte Korpus ausführen</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="korpusverarbeitung-annotation-mit-spacy">
+<h1><span class="section-number">6.2. </span>🚀 Korpusverarbeitung – Annotation mit spaCy<a class="headerlink" href="#korpusverarbeitung-annotation-mit-spacy" title="Link to this heading">#</a></h1>
+<section id="hinweise-zur-ausfuhrung-des-notebooks">
+<h2><span class="section-number">6.2.1. </span>Hinweise zur Ausführung des Notebooks<a class="headerlink" href="#hinweise-zur-ausfuhrung-des-notebooks" title="Link to this heading">#</a></h2>
+<p>Dieses Notebook kann auf unterschiedlichen Levels erarbeitet werden (siehe Abschnitt <a class="reference internal" href="../introduction/introduction_requirements.html"><span class="doc std std-doc">“Technische Voraussetzungen”</span></a>):</p>
+<ol class="arabic simple">
+<li><p>Book-Only Mode</p></li>
+<li><p>Cloud Mode: Dafür auf 🚀 klicken und z.B. in Colab ausführen.</p></li>
+<li><p>Local Mode: Dafür auf Herunterladen ↓ klicken und “.ipynb” wählen.</p></li>
+</ol>
+</section>
+<section id="ubersicht">
+<h2><span class="section-number">6.2.2. </span>Übersicht<a class="headerlink" href="#ubersicht" title="Link to this heading">#</a></h2>
+<p>Im Folgenden wird exemplarisch ein Text (txt-Datei) mit der Bibliothek <a class="reference external" href="https://spacy.io">spaCy</a> annotiert. Dafür werden folgende Schritte durchgeführt:</p>
+<ol class="arabic simple">
+<li><p>Einlesen des Texts</p></li>
+<li><p>Worthäufigkeiten ohne echte Tokenisierung</p>
+<ul class="simple">
+<li><p>Aufteilen des Texts in Wörter auf Grundlage von Leerzeichen</p></li>
+<li><p>Abfrage von Häufigkeiten</p></li>
+</ul>
+</li>
+<li><p>Annotation mit spaCy</p>
+<ul class="simple">
+<li><p>Laden des Sprachmodells</p></li>
+<li><p>Analysekomponenten auswählen</p></li>
+<li><p>Text annotieren</p></li>
+<li><p>Worthäufigkeiten anzeigen</p></li>
+</ul>
+</li>
+<li><p>Annotation speichern</p></li>
+<li><p>Prozess für das gesamte Korpus ausführen</p></li>
+</ol>
+<details>
+  <summary><b>Informationen zum Ausführen des Notebooks – Zum Ausklappen klicken ⬇️</b></summary>
+<p><b>Voraussetzungen zur Ausführung des Jupyter Notebooks</b></p>
+<ol>
+<li> Installieren der Bibliotheken </li>
+<li>2. Laden der Daten (z.B. über den Command `wget` (s.u.))</li>
+<li>3. Pfad zu den Daten setzen</li>
+</ol>
+Zum Testen: Ausführen der Zelle "load libraries" und der Sektion "Einlesen des Texts". </br>
+Alle Zellen, die mit 🚀 gekennzeichnet sind, werden nur bei der Ausführung des Notebooks in Colab / JupyterHub bzw. lokal ausgeführt. 
+</details><div class="cell tag_skip-execution tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  🚀 Install libraries </span>
+<span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>tqdm<span class="w"> </span>pandas<span class="w"> </span>numpy<span class="w"> </span>spacy<span class="w"> </span>bokeh<span class="w"> </span>
+
+<span class="c1">#  🚀 Load german language model for annotation</span>
+<span class="o">!</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>spacy<span class="w"> </span>download<span class="w"> </span>de_core_news_sm
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load libraries </span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">typing</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrderedDict</span><span class="p">,</span> <span class="n">Counter</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">spacy</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">output_notebook</span><span class="p">,</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">CustomJS</span><span class="p">,</span> <span class="n">TextInput</span><span class="p">,</span> <span class="n">Div</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">time</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrderedDict</span><span class="p">,</span> <span class="n">Counter</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;tqdm&#39;
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="einlesen-des-textes">
+<h2><span class="section-number">6.2.3. </span>Einlesen des Textes<a class="headerlink" href="#einlesen-des-textes" title="Link to this heading">#</a></h2>
+<p>Um eine Datei mit Python bearbeiten zu können, muss die Datei zuerst ausgewählt werden, d.h. der <a class="reference external" href="https://en.wikipedia.org/wiki/Path_(computing)">Pfad</a> zur Datei wird gesetzt und dann eingelesen werden.</p>
+<details>
+  <summary><b>Informationen zum Ausführen des Notebooks – Zum Ausklappen klicken ⬇️</b></summary>
+Zuerst wird der Ordner angelegt, in dem die Textdateien gespeichert werden. Der Einfachheit halber wird die gleiche Datenablagestruktur wie in dem <a href="https://github.com/quadriga-dk/Text-Fallstudie-1/tree/main">GitHub Repository</a>, in dem die Daten gespeichert sind, vorausgesetzt. </br>
+Der Text wird aus GitHub heruntergeladen und in dem Ordner <i>../data/txt/</i> abgespeichert. </br>
+Der Pfad kann in der Variable <i>text_path</i> angepasst werden. Die einzulesenden Daten müssen die Endung `.txt` haben. </br>
+</details><div class="cell tag_skip-execution tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 🚀 Create data directory path</span>
+<span class="n">corpus_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../data/txt&quot;</span><span class="p">)</span>
+<span class="n">corpus_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell tag_skip-execution docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 🚀 Load the txt file from GitHub </span>
+<span class="o">!</span><span class="w"> </span>wget<span class="w"> </span>https://raw.githubusercontent.com/quadriga-dk/Text-Fallstudie-1/refs/heads/main/data/txt/SNP2719372X-19181015-0-0-0-0.txt<span class="w"> </span>-P<span class="w"> </span>../data/txt
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the path to file to be processed</span>
+<span class="n">text_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../data/txt/SNP2719372X-19181015-0-0-0-0.txt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read text and print some parts of the text</span>
+<span class="k">if</span> <span class="n">text_path</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">text_path</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Textauszug:</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">text</span><span class="p">[</span><span class="mi">10280</span><span class="p">:</span><span class="mi">10400</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The file path does not exist. Set the variable text_path to an existing path.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="worthaufigkeiten-ohne-echte-tokenisierung">
+<h2><span class="section-number">6.2.4. </span>Worthäufigkeiten ohne echte Tokenisierung<a class="headerlink" href="#worthaufigkeiten-ohne-echte-tokenisierung" title="Link to this heading">#</a></h2>
+<section id="text-in-worter-aufteilen">
+<h3>Text in Wörter aufteilen<a class="headerlink" href="#text-in-worter-aufteilen" title="Link to this heading">#</a></h3>
+<p>Der einfachste Weg, einen Text automatisch in Wörter aufzuteilen, ist anzunehmen, dass Wörter durch Leerzeichen getrennt sind.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># split the text into words by space</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Prüfen</strong>: Wie sieht die Wortliste aus?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print the 100th up the 120th words</span>
+<span class="n">words</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">120</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wie viele Wörter gibt es insgesamt?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print the length of the word list</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wie zu sehen ist, hat diese Art der “falschen” Tokenisierung den Nachteil, dass Satzzeichen nicht von Wörtern abgetrennt werden. <br />
+Die Wortanzahl ist dementsprechend auch nicht genau.</p>
+</section>
+<section id="anzeigen-von-worthaufigkeiten">
+<h3>Anzeigen von Worthäufigkeiten<a class="headerlink" href="#anzeigen-von-worthaufigkeiten" title="Link to this heading">#</a></h3>
+<p>Auf Grundlage dieser Wortliste kann trotzdem schon eine erste basale Häufigkeitenabfrage erfolgen. Dafür werden die Wörter zuerst gezählt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Count the words with Counter and save the result to a variable</span>
+<span class="n">word_frequencies</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+  <summary><b>Informationen zum Ausführen des Notebooks – Zum Ausklappen klicken ⬇️</b></summary>
+Um die Häufigkeit nur mit Python abzufragen, kann folgende Zeile ausgeführt werden:
+</details><div class="cell tag_hide-cell tag_skip-execution docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 🚀 get the number of the word &quot;Grippe&quot; in the word frequencies </span>
+<span class="n">word_frequencies</span><span class="p">[</span><span class="s2">&quot;Grippe&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Dann kann die Häufigkeit abgefragt werden:</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ensure Bokeh output is displayed in the notebook</span>
+<span class="n">output_notebook</span><span class="p">()</span>
+
+<span class="c1"># Convert the dictionary to a JSON string to be passed to javascript</span>
+<span class="n">word_freq_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">word_frequencies</span><span class="p">)</span>
+
+<span class="c1"># Create the text input widget</span>
+<span class="n">text_input</span> <span class="o">=</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Geben Sie ein Wort ein:&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a Div to display the frequency</span>
+<span class="n">frequency_display</span> <span class="o">=</span> <span class="n">Div</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Häufigkeit: &quot;</span><span class="p">)</span>
+
+<span class="c1"># JavaScript callback to update the frequency display</span>
+<span class="c1"># Only needed for graphical interface </span>
+<span class="n">callback</span> <span class="o">=</span> <span class="n">CustomJS</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">frequency_display</span><span class="o">=</span><span class="n">frequency_display</span><span class="p">,</span> <span class="n">text_input</span><span class="o">=</span><span class="n">text_input</span><span class="p">),</span> <span class="n">code</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    var word = text_input.value.trim();</span>
+
+<span class="s2">    // Parse the word frequency dictionary from Python</span>
+<span class="s2">    var word_freq = </span><span class="si">{</span><span class="n">word_freq_json</span><span class="si">}</span><span class="s2">;</span>
+
+<span class="s2">    var frequency = word in word_freq ? word_freq[word] : &quot;Nicht gefunden&quot;;</span>
+<span class="s2">    frequency_display.text = &quot;Häufigkeit: &quot; + frequency;</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">text_input</span><span class="o">.</span><span class="n">js_on_change</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">callback</span><span class="p">)</span>
+
+<span class="c1"># Layout and display</span>
+<span class="n">layout</span> <span class="o">=</span> <span class="n">column</span><span class="p">(</span><span class="n">text_input</span><span class="p">,</span> <span class="n">frequency_display</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+</section>
+<section id="annotation-mit-spacy">
+<h2><span class="section-number">6.2.5. </span>Annotation mit spaCy<a class="headerlink" href="#annotation-mit-spacy" title="Link to this heading">#</a></h2>
+<p>Um eine präzisere Einteilung in Wörter zu erhalten (Tokenisierung) und um flektierte Wörter aufeinander abbildbar zu machen (Lemmatisierung), wird der Text im Folgenden durch die Bibliothek <a class="reference external" href="https://spacy.io/">spaCy</a> annotiert. Dafür werden folgende Schritte ausgeführt:</p>
+<ol class="arabic simple">
+<li><p>Das sprachspezifische Modell wird geladen. Wir arbeiten mit dem weniger akkuraten, aber schnellsten spaCy Modell <code class="docutils literal notranslate"><span class="pre">de_core_news_sm</span></code>.</p></li>
+<li><p>Für eine erhöhte Annotationsgeschwindigkeit werden nur bestimmte Analysekomponenten geladen. Dies ist vor allem für größere Textmengen sinnvoll.</p></li>
+<li><p>Der Text wird annotiert und die Token sowie die dazugehörigen Lemmata werden extrahiert.</p></li>
+</ol>
+<section id="sprachmodell-laden">
+<h3>Sprachmodell laden<a class="headerlink" href="#sprachmodell-laden" title="Link to this heading">#</a></h3>
+<p>Das sprachspezifische Modell wird geladen. Es handelt sich dabei um das am wenigsten akkurate aber schnellste Modell.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;de_core_news_sm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="analysekomponenten-auswahlen">
+<h3>Analysekomponenten auswählen<a class="headerlink" href="#analysekomponenten-auswahlen" title="Link to this heading">#</a></h3>
+<p>Es werden einige Analysekomponenten wie z. B. das Aufteilen des Texts in Sätze (sentencizer) oder die <a class="reference external" href="https://en.wikipedia.org/wiki/Named-entity_recognition">Named Entity Recognition</a> (ner) ausgeschlossen, da diese für die Tokenisierung und die Lemmatisierung nicht benötigt werden. Der Ausschluss der Komponenten erhöht die Annotationsgeschwindigkeit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">disable_components</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ner&#39;</span><span class="p">,</span> <span class="s1">&#39;morphologizer&#39;</span><span class="p">,</span> <span class="s1">&#39;attribute_ruler&#39;</span><span class="p">,</span> <span class="s1">&#39;sentencizer&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="annotieren-des-textes-token-lemma">
+<h3>Annotieren des Textes: Token, Lemma<a class="headerlink" href="#annotieren-des-textes-token-lemma" title="Link to this heading">#</a></h3>
+<p>Der ausgewählte Text wird mit spaCy annotiert und die Token sowie die dazugehörigen Lemmata werden extrahiert und in einer Tabelle gespeichert. Das Tabellenformat wurde gewählt, da sich darin gut relationale Daten speichern lassen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the current time to display how long the annotation took</span>
+<span class="n">current</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+
+<span class="c1"># annotate with spacy</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="c1"># extract tokens and lemmata, save them to a dictionary</span>
+<span class="n">text_annotated</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">text_annotated</span><span class="p">[</span><span class="s1">&#39;Token&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">tok</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">tok</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">]</span>
+<span class="n">text_annotated</span><span class="p">[</span><span class="s1">&#39;Lemma&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">tok</span><span class="o">.</span><span class="n">lemma_</span> <span class="k">for</span> <span class="n">tok</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">]</span>
+
+<span class="c1"># convert the dictionary to a dataframe </span>
+<span class="n">text_annotated_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">text_annotated</span><span class="p">)</span>
+
+<span class="c1"># calculate how long the annotation and extraction took and print result</span>
+<span class="n">took</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">current</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Annotation hat </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">took</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> Sekunden gedauert.&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Auszug aus der Tabelle, in der der annotierte Text gespeichert ist:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print first five lines of the annotation</span>
+<span class="n">text_annotated_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="worthaufigkeit-mit-echter-tokenisierung">
+<h3>Worthäufigkeit mit echter Tokenisierung<a class="headerlink" href="#worthaufigkeit-mit-echter-tokenisierung" title="Link to this heading">#</a></h3>
+<p>Durch die Tokenisierung wurden z. B. Satzzeichen von Wörtern abgetrennt. An der Textlänge lässt sich dies schon erkennen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the lemmata </span>
+<span class="n">text_tokenized</span> <span class="o">=</span> <span class="n">text_annotated_df</span><span class="o">.</span><span class="n">Lemma</span>
+
+<span class="c1"># print the length</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">text_tokenized</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Auf Grundlage des tokenisierten und lemmatisierten Textes, kann die Häufigkeitenabfrage erneut ausgeführt werden. Da durch die Lemmatisierung flektierte Wortformen auf die Grundformen zurückgeführt wurden, erwarten wir, dass die Häufigkeit einer Wortgrundform im Gegensatz zur vorherigen Abfrage erhöht ist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Count the words with Counter and save the result to a variable</span>
+<span class="n">token_frequencies</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">text_tokenized</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+  <summary><b>Informationen zum Ausführen des Notebooks – Zum Ausklappen klicken ⬇️</b></summary>
+Um die Häufigkeit nur mit Python abzufragen, kann folgende Zeile ausgeführt werden:
+</details><div class="cell tag_hide-cell tag_skip-execution docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 🚀 get the number of the word &quot;Grippe&quot; in the word frequencies </span>
+<span class="n">token_frequencies</span><span class="p">[</span><span class="s2">&quot;Grippe&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ensure Bokeh output is displayed in the notebook</span>
+<span class="n">output_notebook</span><span class="p">()</span>
+
+<span class="c1"># Convert the dictionary to a JSON string</span>
+<span class="n">tok_freq_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">token_frequencies</span><span class="p">)</span>
+
+<span class="c1"># Create the text input widget</span>
+<span class="n">token_input</span> <span class="o">=</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Geben Sie ein Wort ein:&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a Div to display the frequency</span>
+<span class="n">token_frequency_display</span> <span class="o">=</span> <span class="n">Div</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Häufigkeit: &quot;</span><span class="p">)</span>
+
+<span class="c1"># JavaScript callback to update the frequency display</span>
+<span class="c1"># Only needed for graphical interface </span>
+<span class="n">tok_callback</span> <span class="o">=</span> <span class="n">CustomJS</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">frequency_display</span><span class="o">=</span><span class="n">token_frequency_display</span><span class="p">,</span> <span class="n">text_input</span><span class="o">=</span><span class="n">token_input</span><span class="p">),</span> <span class="n">code</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    var tok = text_input.value.trim();</span>
+
+<span class="s2">    // Parse the word frequency dictionary from Python</span>
+<span class="s2">    var word_freq = </span><span class="si">{</span><span class="n">tok_freq_json</span><span class="si">}</span><span class="s2">;</span>
+
+<span class="s2">    var frequency = tok in word_freq ? word_freq[tok] : &quot;Nicht gefunden&quot;;</span>
+<span class="s2">    frequency_display.text = &quot;Häufigkeit: &quot; + frequency;</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">token_input</span><span class="o">.</span><span class="n">js_on_change</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">tok_callback</span><span class="p">)</span>
+
+<span class="c1"># Layout and display</span>
+<span class="n">layout</span> <span class="o">=</span> <span class="n">column</span><span class="p">(</span><span class="n">token_input</span><span class="p">,</span> <span class="n">token_frequency_display</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+</section>
+<section id="annotation-speichern">
+<h2><span class="section-number">6.2.6. </span>Annotation speichern<a class="headerlink" href="#annotation-speichern" title="Link to this heading">#</a></h2>
+<p>Um den annotierten Text zu speichern, wird zuerst der Dateiname festgelegt. Dafür wird die Dateiendung ersetzt von <code class="docutils literal notranslate"><span class="pre">.txt</span></code> zu <code class="docutils literal notranslate"><span class="pre">.csv</span></code>.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> (comma-separated value) ist das Standardformat um tabellarische Daten im Klartext zu speichern.</p>
+<details>
+  <summary><b>Informationen zum Ausführen des Notebooks</b></summary>
+Um dieselbe Ordnerstruktur wie in dem GitHub-Repositorium zu erhalten wird in der nächsten Zelle ein Ordner `data` erstellt, in dem ein Ordner `csv` erstellt wird. In dem Ordner `csv` wird die Annotation gespeichert. 
+</details><div class="cell tag_skip-execution tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 🚀 Create output folder </span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;../data/csv&quot;</span><span class="p">)</span>
+<span class="n">output_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set output path, change file extension</span>
+<span class="n">output_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;../data/csv&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="n">text_path</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der Text wird dann unter dem festgelegten Dateinamen gespeichert.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># save the annotation as csv</span>
+<span class="n">text_annotated_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="prozess-fur-das-gesamte-korpus-ausfuhren">
+<h2><span class="section-number">6.2.7. </span>Prozess für das gesamte Korpus ausführen<a class="headerlink" href="#prozess-fur-das-gesamte-korpus-ausfuhren" title="Link to this heading">#</a></h2>
+<div class="zeitinfo admonition">
+<p class="admonition-title">Dauer der Annotation</p>
+<p>Die Annotation des gesamten Korpus kann je nach Leistungsfähigkeit und Arbeitsspeicher (RAM) des Computers mehrere Stunden in Anspruch nehmen.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">stream_texts_from_directory</span><span class="p">(</span><span class="n">corpus_filepaths</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Generator</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A generator that yields texts from files in the file list one by one.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">filepath</span> <span class="ow">in</span> <span class="n">corpus_filepaths</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">filepath</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">process_corpus</span><span class="p">(</span><span class="n">corpus_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reads files from corpus_dir, annotates the files with spacy and writes the result</span>
+<span class="sd">    to the output_dir</span>
+<span class="sd">    :param Path corpus_dir: The directory in which the txt files are saved</span>
+<span class="sd">    :param Path output_dir: The directory in which the annotations are written to as csv</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">corpus_filepaths</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">corpus_dir</span><span class="o">.</span><span class="n">iterdir</span><span class="p">()</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="ow">and</span> <span class="n">f</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">&quot;.txt&quot;</span><span class="p">]</span>
+
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">filepath</span><span class="p">,</span> <span class="n">doc</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">corpus_filepaths</span><span class="p">,</span> <span class="n">nlp</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">stream_texts_from_directory</span><span class="p">(</span><span class="n">corpus_filepaths</span><span class="p">),</span> 
+                                                        <span class="n">disable</span><span class="o">=</span><span class="n">disable_components</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+        <span class="c1"># Save the token and lemma information to a dictionary</span>
+        <span class="n">text_annotated</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">text_annotated</span><span class="p">[</span><span class="s1">&#39;Token&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">tok</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">tok</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">]</span>
+        <span class="n">text_annotated</span><span class="p">[</span><span class="s1">&#39;Lemma&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">tok</span><span class="o">.</span><span class="n">lemma_</span> <span class="k">for</span> <span class="n">tok</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">]</span>
+        <span class="n">annotation_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">text_annotated</span><span class="p">)</span>
+        
+        <span class="n">output_path</span> <span class="o">=</span> <span class="n">output_dir</span> <span class="o">/</span> <span class="n">filepath</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">annotation_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;Processed </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">corpus_filepaths</span><span class="p">)</span><span class="si">}</span><span class="s2"> texts with spacy.</span>
+<span class="s2">    Took </span><span class="si">{</span><span class="nb">round</span><span class="p">((</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">)</span><span class="w">  </span><span class="o">/</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s2"> minutes in total.&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+  <summary><b>Informationen zum Ausführen des Notebooks – Zum Ausklappen klicken ⬇️</b></summary>
+Im folgenden werden alle Textdateien im Korpus heruntergeladen und gespeichert. Dafür sind folgende Schritte nötig:
+<ol>
+    <li>Es wird eine Liste erstellt, die die URLs zu den einzelnen Textdateien beinhaltet.</li>
+    <li>Die Liste wird als txt-Datei gespeichert.</li>
+    <li>Alle Dateien aus der Liste werden heruntergeladen und in dem Ordner <i>../data/txt</i> gespeichert.</li>
+</ol>
+Sollten die Dateien schon an einem anderen Ort vorhanden sein, können die Dateipfade zu den Ordnern angepasst werden. </br>
+Des Weiteren wird der Ordner für die annotierten Dateien angelegt: <i>../data/csv</i>
+</details><div class="cell tag_skip-execution tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 🚀 Create download list </span>
+<span class="n">github_api_txt_dir_path</span> <span class="o">=</span> <span class="s2">&quot;https://api.github.com/repos/quadriga-dk/Text-Fallstudie-1/contents/data/txt&quot;</span>
+<span class="n">txt_dir_info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">github_api_txt_dir_path</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">url_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">entry</span><span class="p">[</span><span class="s2">&quot;download_url&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">txt_dir_info</span><span class="p">]</span>
+
+<span class="c1"># 🚀 Write download list as txt file</span>
+<span class="n">url_list_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;github_txt_file_urls.txt&quot;</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">url_list_path</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_txt</span><span class="p">:</span>
+    <span class="n">output_txt</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">url_list</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_skip-execution tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ⚠️ Only execute, if you haven&#39;t downloaded the files yet!</span>
+<span class="c1"># 🚀 Download all txt files – this step will take a while</span>
+<span class="o">!</span><span class="w"> </span>wget<span class="w"> </span>-i<span class="w"> </span>github_txt_file_urls.txt<span class="w"> </span>-P<span class="w"> </span>../data/txt
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_skip-execution tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 🚀 Create output folder </span>
+<span class="c1"># if create before, this cell can be skipped</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;../data/csv&quot;</span><span class="p">)</span>
+<span class="n">output_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<details>
+  <summary><b>Informationen zum Ausführen des Notebooks – Zum Ausklappen klicken ⬇️</b></summary>
+Bei Computern mit kleinerem Arbeitsspeicher (weniger als 12 GB), sollte der Parameter "batch_size" verkleinert werden (z.B. auf 5), da der Arbeitsspeicher ansonsten 'überlaufen' könnte (das nennt sich auch "out of memory"). Das bedeutet, es gibt nicht mehr genug Arbeitsspeicher, um die Annotation wie auch andere laufende Programme durchzuführen. Der Computer wird dann langsamer oder reagiert nicht mehr.
+</details><div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set path to corpus and output dir</span>
+<span class="n">corpus_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;../data/txt/&quot;</span><span class="p">)</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;../data/csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Read, annotate, write </span>
+<span class="n">process_corpus</span><span class="p">(</span><span class="n">corpus_dir</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./corpus_processing"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="corpus-processing_intro-to-nlp.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6.1. </span>NLP als Methode zur “Semantisierung” von Text</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="corpus-processing_resumee.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6.3. </span>Resümee</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hinweise-zur-ausfuhrung-des-notebooks">6.2.1. Hinweise zur Ausführung des Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht">6.2.2. Übersicht</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einlesen-des-textes">6.2.3. Einlesen des Textes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worthaufigkeiten-ohne-echte-tokenisierung">6.2.4. Worthäufigkeiten ohne echte Tokenisierung</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-in-worter-aufteilen">Text in Wörter aufteilen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anzeigen-von-worthaufigkeiten">Anzeigen von Worthäufigkeiten</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-mit-spacy">6.2.5. Annotation mit spaCy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sprachmodell-laden">Sprachmodell laden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysekomponenten-auswahlen">Analysekomponenten auswählen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotieren-des-textes-token-lemma">Annotieren des Textes: Token, Lemma</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worthaufigkeit-mit-echter-tokenisierung">Worthäufigkeit mit echter Tokenisierung</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-speichern">6.2.6. Annotation speichern</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prozess-fur-das-gesamte-korpus-ausfuhren">6.2.7. Prozess für das gesamte Korpus ausführen</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a ref="https://quadriga-dk.de">QUADRIGA</a>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p xmlns:cc="http://creativecommons.org/ns#" >Dieses Werk ist lizenziert unter der Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" class="external-link" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>. Detailliertere Informationen finden Sie unter <a href="https://github.com/quadriga-dk/Book_Template/blob/main/LICENSE.md" target="_blank" class="external-link">LICENSE.md</a></p> <p>Diese OER wurde im Rahmen des Projekts <a href="https://www.quadriga-dk.de" target="_blank" class="external-link">QUADRIGA</a> erstellt. Das Projekt wurde gefördert durch das <a href="https://www.bmbf.de" target="_blank" class="external-link">Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR)</a>. Mehr Informationen zum Projekt finden Sie auch im <a href="https://quadriga-dk.github.io/Text-Fallstudie-1/epilog/quadriga.html">Epilog</a>.</p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
