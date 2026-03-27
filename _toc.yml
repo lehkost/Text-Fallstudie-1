@@ -25,6 +25,7 @@ chapters:
     sections:
     - file: ocr/ocr
     - file: ocr/ocr_tesseract-installation
+    - file: ocr/ocr_jupyter_intro
     - file: ocr/ocr_pytesseract_intro
     - file: ocr/ocr-quality
     - file: ocr/ocr_ocr-quality
