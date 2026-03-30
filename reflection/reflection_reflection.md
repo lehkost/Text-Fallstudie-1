@@ -16,7 +16,7 @@ Mit Ihren Rückmeldungen können wir unser interaktives Lehrbuch gezielt an Ihre
 
 ```
 ````
-Auch wenn es uns gelungen ist, das Ziel der Fallstudie zu erreichen und unsere eingangs formulierte [Forschungsfrage](research-question_research-question) nach den "Medienwellen" der Spanischen Grippe insofern exemplarisch zu beantworten, als wir tatsächlich eine [wellenartige Entwicklung der quantitativ verstandenen Aufmerksamkeit in ausgewählten Berliner Tageszeitungen](../corpus_analysis/corpus-analysis_diachronic-analysis) nachweisen konnten, gibt es mehrere Punkte, die abschließend kritisch zu reflektieren sind.
+Auch wenn es uns gelungen ist, das Ziel der Fallstudie zu erreichen und unsere eingangs formulierte [Forschungsfrage](research-question_research-question) nach den „Medienwellen“ der Spanischen Grippe insofern exemplarisch zu beantworten, als wir tatsächlich eine [wellenartige Entwicklung der quantitativ verstandenen Aufmerksamkeit in ausgewählten Berliner Tageszeitungen](../corpus_analysis/corpus-analysis_diachronic-analysis) nachweisen konnten, gibt es mehrere Punkte, die abschließend kritisch zu reflektieren sind.
 
 ```{include} ../introduction/learning-outcomes.md
 :start-after: "<!-- START: Reflexion -->"
@@ -31,7 +31,7 @@ Auch wenn es uns gelungen ist, das Ziel der Fallstudie zu erreichen und unsere e
 3. Wie wir bereits durch die [OCR-Evaluation](../ocr/ocr_ocr-quality) deutlich gemacht haben, ist die **Qualität der Volltexte im Korpus**, die als prozessiertes Forschungskorpus das epistemische Objekt unserer Studie bilden, dürftig. Um die Aussagekraft und die Präzision der Analyse zu erhöhen, müsste erheblich mehr Arbeit in die Verbesserung der Textqualität der Korpuselemente investiert werden. 
 
 
-4. Für die **Korpusverarbeitung** wurde mit [spaCy ein Tool aus dem Natural Language Processing](../corpus_processing/corpus-processing_nlp-annotation) verwendet, das für die Verarbeitung von Gegenwartssprache optimiert ist. Wie gut dieses Tool auf der spezifischen Domäne ("Zeitungssprache des frühen 20. Jahrhunderts") operiert, die wir in unserem Projekt untersucht haben, ist nicht abschließend geklärt und könnte in Evaluationstests im Vorfeld geprüft werden.
+4. Für die **Korpusverarbeitung** wurde mit [spaCy ein Tool aus dem Natural Language Processing](../corpus_processing/corpus-processing_nlp-annotation) verwendet, das für die Verarbeitung von Gegenwartssprache optimiert ist. Wie gut dieses Tool auf der spezifischen Domäne („Zeitungssprache des frühen 20. Jahrhunderts“) operiert, die wir in unserem Projekt untersucht haben, ist nicht abschließend geklärt und könnte in Evaluationstests im Vorfeld geprüft werden.
 
 5. Mit der [Methode der Berechnung von Worthäufigkeiten](../corpus_analysis/corpus-analysis_analysis) haben wir ein sehr simples Analyseverfahren gewählt. Das **Methodenspektrum der Digital Humanities** bietet hier eine ganze Reihe anderer Verfahren – etwa Topic Modelling oder die Arbeit mit Word Embeddings – die z.B. stärker auch die Kontextinformationen von Wörtern oder die Nähe von Wörtern berücksichtigen. Die Anwendung avancierter Methoden der computationellen Analyse von Texten könnte in diesem Sinne ebenfalls zur Erhöhung der Aussagekraft und der Präzision der Ergebnisse der vorliegenden Fallstudie beitragen.
 

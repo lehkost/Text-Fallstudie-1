@@ -38,7 +38,7 @@ Eine Sammlung, deren Auswahl nur durch die Verfügbarkeit von Daten geleitet wir
  
 - **Voraussetzung:** Digitale Verfügbarkeit der Daten.
 - **Anwendung:** Geeignet für wenig erschlossene Forschungsbereiche oder erste Explorationen, bleibt allerdings insgesamt unbefriedigend, da nicht beurteilt werden kann, was die Sammlung abbildet. 
-- **Beispiel:** Das <a href="https://github.com/tnhaider/DLK" class="external-link" target="_blank">"Deutsche Lyrik Korpus (DLK)"</a>, das alle verfügbaren Gedichte in deutscher Sprache zu aggregieren versucht, oder das <a href="https://dracor.org/ger" class="external-link" target="_blank">German Drama Corpus (GerDraCor)</a>, das sukzessive digital verfügbare deutschsprachige Dramen sammelt.
+- **Beispiel:** Das <a href="https://github.com/tnhaider/DLK" class="external-link" target="_blank">„Deutsche Lyrik Korpus (DLK)“</a>, das alle verfügbaren Gedichte in deutscher Sprache zu aggregieren versucht, oder das <a href="https://dracor.org/ger" class="external-link" target="_blank">German Drama Corpus (GerDraCor)</a>, das sukzessive digital verfügbare deutschsprachige Dramen sammelt.
 
 ## Zusammenfassung 
 Mit welcher Strategie und nach welchen Kriterien ein Korpus aufgebaut wird, entscheidet darüber, welche Forschungsfragen sich mit ihm überhaupt sinnvoll und belastbar beantworten lassen. Mit dem Korpusaufbau wird dabei das epistemische Objekt der Forschung konstruiert. Entsprechend reflektiert sollte man bei diesem Vorgang vorgehen. Darüber hinaus ist eine Reflexion auf die korpusbedingten Grenzen der Analyseergebnisse unabdingbarer Bestandteil von Digital Humanities-Forschungsprojekten.
@@ -46,7 +46,7 @@ Mit welcher Strategie und nach welchen Kriterien ein Korpus aufgebaut wird, ents
 
 `````{admonition} Weiterführende Links
 :class: seealso
-- <a href="https://fortext.net/routinen/methoden/korpusbildung" class="external-link" target="_blank">forTextArtikel "Korpusbildung"</a>,  mit Fokus auf literaturwissenschafliche Korpora. {cite:p}`fortext-2020-id-203`
+- <a href="https://fortext.net/routinen/methoden/korpusbildung" class="external-link" target="_blank">forTextArtikel „Korpusbildung“</a>,  mit Fokus auf literaturwissenschafliche Korpora. {cite:p}`fortext-2020-id-203`
 `````
 
 ## Bibliographie

@@ -8,7 +8,7 @@ Die Nachbearbeitung umfasst verschiedene Schritte, die sicherstellen, dass der u
 
 #### 1. Korrektur von Erkennungsfehlern
 
-OCR-Software kann Buchstaben oder Wörter falsch erkennen, insbesondere wenn die Qualität des Originaldokuments schlecht ist. Häufige Fehler sind die Verwechslung von ähnlichen Buchstaben wie "l" (kleines L) und "1" (Eins), "O" (großes O) und "0" (Null) oder "rn" (r und n) als "m".
+OCR-Software kann Buchstaben oder Wörter falsch erkennen, insbesondere wenn die Qualität des Originaldokuments schlecht ist. Häufige Fehler sind die Verwechslung von ähnlichen Buchstaben wie „l“ (kleines L) und „1“ (Eins), „O“ (großes O) und „0“ (Null) oder „rn“ (r und n) als „m“.
 
 **Original (nach OCR):**
 ```

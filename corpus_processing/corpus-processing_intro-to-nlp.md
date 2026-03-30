@@ -1,4 +1,4 @@
-# NLP als Methode zur "Semantisierung" von Text
+# NLP als Methode zur „Semantisierung“ von Text
 
 ````{margin}
 ```{admonition} Fragen oder Feedback 
@@ -26,7 +26,7 @@ Ein Phänomen wie die Spanische Grippe kann in einem Textkorpus untersucht werde
 
 `````{admonition} Beispiel
 :class: hinweis
-Ursprünglicher Satz: "Die Grippe wütet weiter." \
+Ursprünglicher Satz: „Die Grippe wütet weiter.“ \
 In tokenisierter und lemmatisierter Form:
 
 ```{table}
@@ -75,4 +75,4 @@ Die NLP-Methoden, die für die Vorverarbeitung von Texten notwendig sind, wurden
 ## Mögliche Fragen für das Assessment
 * Welche der folgenden Methoden wird benutzt, um einen Text in Wörter aufzuteilen: Lemmatisierung, Tokenisierung, PoS-Tagging?
 * Ist die Anwendung von NLP-Methoden notwendig, um aus einem Bild einen Text zu extrahieren? 
-* Was ist die lemmatisierte Form von "ärmer"? 
+* Was ist die lemmatisierte Form von „ärmer“? 

@@ -4,7 +4,7 @@
 Texte können digital auf sehr unterschiedliche Weisen gespeichert, prozessiert und repräsentiert werden. Die vielfältigen Formen von Text im Digitalen weisen dabei jeweils spezifische Eigenschaften und Einsatzmöglichkeiten auf. In diesem Abschnitt werden vier weit verbreitete Erscheinungsformen digitaler Texte vorgestellt: 
 
 - Bilddigitalisate von Text (z.B. PDF, PNG, JPG, TIFF)
-- Reiner Text, auch "Plain Text" (TXT)
+- Reiner Text, auch „Plain Text“ (TXT)
 - XML/TEI
 - CSV
 
@@ -28,7 +28,7 @@ name: Snippet eines Bilddigitalisats
 
 *Beispiel für ein Bilddigitalisat von Text, hier ein Ausschnitt eines historischen Zeitungsartikels als PNG-Datei*
 
-## Reiner Text, "Plain Text"
+## Reiner Text, „Plain Text“
 
 **Charakteristika:**
 
@@ -116,7 +116,7 @@ ID,TOKEN,LEMMA,POS
 12,.,.,PUNCT
 ```
 
-*CSV-Datei, bei der in der ersten Zeile ein Tabellenkopf steht, in den dann folgenden Zeilen jeweils zunächst eine durchzählende ID, dann ein Wort, gefolgt von  weiteren linguistischen Informationen: der Grundform ("Lemma") und der Wortart ("POS", "Part of Speech")*
+*CSV-Datei, bei der in der ersten Zeile ein Tabellenkopf steht, in den dann folgenden Zeilen jeweils zunächst eine durchzählende ID, dann ein Wort, gefolgt von  weiteren linguistischen Informationen: der Grundform („Lemma“) und der Wortart („POS“, „Part of Speech“)*
 
 
 | ID  | TOKEN    | LEMMA   | POS   |

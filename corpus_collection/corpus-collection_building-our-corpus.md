@@ -16,8 +16,8 @@ Um das Korpus für unser Forschungsprojekt aufzubauen, müssen nun drei Punkte a
 
 
 ## Korpuskonzept
-Als Untersuchungsgegenstand wurde [oben](research-question_operationalization) "Texte in Berliner Tageszeitungen" angegeben, wobei wir uns auf den Zeitraum der Spanischen Grippe-Pandemie beschränken wollen. Als Zeitraum für die Spanische Grippe gibt <a href="https://en.wikipedia.org/wiki/Spanish_flu" class="external-link" target="_blank">Wikipedia</a> "February 1918 – April 1920" an. Ebenfalls auf <a href="https://de.wikipedia.org/wiki/Liste_Berliner_Tageszeitungen" class="external-link" target="_blank">Wikipedia</a> wird angegeben, dass es um 1925 in Berlin "30 Tageszeitungen" gab. Geht man nur von einer Ausgabe pro Tag aus (was wenig ist, da viele Zeitungen in dieser Zeit in Morgen- und Abendausgabe erscheinen), würde ein vollständiges Korpus für diesen Untersuchungsgegenstand 24.570 Ausgaben von Tageszeitungen umfassen. 
-Bei unseren Recherchen haben wir als mögliche Quelle für die Korpuselemente das <a href="https://zefys.staatsbibliothek-berlin.de/" class="external-link" target="_blank">"ZEitungsinFormationssYStem der Staatsbibliothek zu Berlin"</a>, kurz "ZEFYS", identifiziert, das zu zahlreichen Berliner Tageszeitungen unseres Untersuchungszeitraums Bilddigitalisate (u.a. im PDF-Format) führt. Eine von uns durchgeführte Stichprobe hat dabei ergeben, dass das PDF einer Ausgabe im Durchschnitt etwa 74 MB groß ist. Eine erste Grobschätzung für ein Korpus ergab damit eine Größe von 
+Als Untersuchungsgegenstand wurde [oben](research-question_operationalization) „Texte in Berliner Tageszeitungen“ angegeben, wobei wir uns auf den Zeitraum der Spanischen Grippe-Pandemie beschränken wollen. Als Zeitraum für die Spanische Grippe gibt <a href="https://en.wikipedia.org/wiki/Spanish_flu" class="external-link" target="_blank">Wikipedia</a> „February 1918 – April 1920“ an. Ebenfalls auf <a href="https://de.wikipedia.org/wiki/Liste_Berliner_Tageszeitungen" class="external-link" target="_blank">Wikipedia</a> wird angegeben, dass es um 1925 in Berlin „30 Tageszeitungen“ gab. Geht man nur von einer Ausgabe pro Tag aus (was wenig ist, da viele Zeitungen in dieser Zeit in Morgen- und Abendausgabe erscheinen), würde ein vollständiges Korpus für diesen Untersuchungsgegenstand 24.570 Ausgaben von Tageszeitungen umfassen. 
+Bei unseren Recherchen haben wir als mögliche Quelle für die Korpuselemente das <a href="https://zefys.staatsbibliothek-berlin.de/" class="external-link" target="_blank">„ZEitungsinFormationssYStem der Staatsbibliothek zu Berlin“</a>, kurz „ZEFYS“, identifiziert, das zu zahlreichen Berliner Tageszeitungen unseres Untersuchungszeitraums Bilddigitalisate (u.a. im PDF-Format) führt. Eine von uns durchgeführte Stichprobe hat dabei ergeben, dass das PDF einer Ausgabe im Durchschnitt etwa 74 MB groß ist. Eine erste Grobschätzung für ein Korpus ergab damit eine Größe von 
 
 ```
 24.570 x 75 MB = 1.818,18 GB
@@ -32,16 +32,16 @@ Dieses Korpus konzentriert sich dabei
 
 Das Korpus soll ausgehend von den über ZEFYS verfügbaren PDF-Dateien aufgebaut werden. Am Ende des weiter unten genauer erläuterten Korpusaufbau-Prozesses stand damit schließlich ein Korpus, das sich mit folgenden Metadaten beschreiben lässt: 
 
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/title/" class="external-link" target="_blank">DC.title</a>**: "Zeitungskorpus zur Spanischen Grippe in Berlin, 1918/1919"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/description/" class="external-link" target="_blank">DC.description</a>**: "Sammlung sämtlicher verfügbarer Morgenausgaben der beiden Berliner Zeitungen "Vossische" und "Berliner Morgenpost aus den Jahren 1918 und 1919"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/creator/" class="external-link" target="_blank">DC.creator</a>**: "Henny Sluyter-Gäthje, Daniil Skorinkin, Peer Trilcke für QUADRIGA. Berlin-Brandenburgische Datenkompetenzzentrum für Digital Humanities und Verwaltungswissenschaft"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/publisher/" class="external-link" target="_blank">DC.publisher</a>**: <a href="https://zefys.staatsbibliothek-berlin.de/" class="external-link" target="_blank">"ZEitungsinFormationssYStem der Staatsbibliothek zu Berlin"</a>
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/date/" class="external-link" target="_blank">DC.date</a>**: "2024-06-01"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/" class="external-link" target="_blank">DC.format</a>**: "PDF"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/language/" class="external-link" target="_blank">DC.language</a>**: "Deutsch"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/subject/" class="external-link" target="_blank">DC.subject</a>**: "Geschichte, Medienwissenschaft"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/coverage/" class="external-link" target="_blank">DC.coverage</a>**: "1918-01-01 bis 1919-12-31, Berlin"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/identifier/" class="external-link" target="_blank">DC.identifier</a>**: "QUADRIGA\_FS-Text-01\_Data01_Corpus-Table"
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/title/" class="external-link" target="_blank">DC.title</a>**: „Zeitungskorpus zur Spanischen Grippe in Berlin, 1918/1919“
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/description/" class="external-link" target="_blank">DC.description</a>**: „Sammlung sämtlicher verfügbarer Morgenausgaben der beiden Berliner Zeitungen ‚Vossische' und ‚Berliner Morgenpost' aus den Jahren 1918 und 1919“
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/creator/" class="external-link" target="_blank">DC.creator</a>**: „Henny Sluyter-Gäthje, Daniil Skorinkin, Peer Trilcke für QUADRIGA. Berlin-Brandenburgische Datenkompetenzzentrum für Digital Humanities und Verwaltungswissenschaft“
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/publisher/" class="external-link" target="_blank">DC.publisher</a>**: <a href="https://zefys.staatsbibliothek-berlin.de/" class="external-link" target="_blank">„ZEitungsinFormationssYStem der Staatsbibliothek zu Berlin“</a>
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/date/" class="external-link" target="_blank">DC.date</a>**: „2024-06-01“
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/" class="external-link" target="_blank">DC.format</a>**: „PDF“
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/language/" class="external-link" target="_blank">DC.language</a>**: „Deutsch“
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/subject/" class="external-link" target="_blank">DC.subject</a>**: „Geschichte, Medienwissenschaft“
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/coverage/" class="external-link" target="_blank">DC.coverage</a>**: „1918-01-01 bis 1919-12-31, Berlin“
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/identifier/" class="external-link" target="_blank">DC.identifier</a>**: „QUADRIGA\_FS-Text-01\_Data01_Corpus-Table“
 
 ## Elemente des Korpus
 Mit dem eben ausgeführten Korpuskonzept sind auch die Elemente des Korpus definiert. Wir entscheiden uns für ein basales Metadatenschema, das folgende Felder umfasst:
@@ -66,7 +66,7 @@ Wie Stichproben zeigen, werden die Links des ZEFYS-Portals erfreulich systematis
 
 Die Analyse der ZEFYS API macht es möglich, unsere Metadaten-Tabelle semi-automatisch etwa mit Excel oder Open Office zu befüllen. Ausgehend vom 
 
-- Wissen über die ID der Zeitung (`SNP27112366` für die "Vossin" und `SNP2719372X` für die "Berliner Morgenpost"), 
+- Wissen über die ID der Zeitung (`SNP27112366` für die „Vossin“ und `SNP2719372X` für die „Berliner Morgenpost“), 
 - unserer Festlegung des Zeitraums, also Daten von `19180101` bis `19191231`
 - und der Kenntnis der anderen Link-Bestandteile 
 
@@ -103,7 +103,7 @@ https://content.staatsbibliothek-berlin.de/zefys/SNP2719372X-19180101-0-0-0-0.pd
 ```
 Ruft man den [Link](https://content.staatsbibliothek-berlin.de/zefys/SNP2719372X-19180101-0-0-0-0.pdf) etwa im Browser auf, wird die PDF angezeigt oder heruntergeladen. Auf diese Weise ließen sich sukzessive, Klick für Klick, sämtliche Elemente des Korpus sammeln. Dieser Prozess kann dabei automatisiert werden. 
 
-Dafür erstellen wir aus der CSV-Datei zunächst eine einfache Link-Liste mit allen Links und speichern diese als TXT-Datei, der wir in unserem Fall den Dateinamen "QUADRIGA_FS-Text-01_Data01_Link-List.txt" geben. Diese Datei lässt sich [hier](https://github.com/quadriga-dk/Text-Fallstudie-1/blob/main/data/metadata/QUADRIGA_FS-Text-01_Data01_Link-List.txt) herunterladen.
+Dafür erstellen wir aus der CSV-Datei zunächst eine einfache Link-Liste mit allen Links und speichern diese als TXT-Datei, der wir in unserem Fall den Dateinamen „QUADRIGA_FS-Text-01_Data01_Link-List.txt“ geben. Diese Datei lässt sich [hier](https://github.com/quadriga-dk/Text-Fallstudie-1/blob/main/data/metadata/QUADRIGA_FS-Text-01_Data01_Link-List.txt) herunterladen.
 
 Sofern Sie mit der PowerShell (Windows) oder dem Terminal Ihres Computers umgehen können, können Sie nun Folgendes machen: Legen Sie Link-Liste in einem Ordner ab und navigieren Sie in der PowerShell/im Terminal in diesen Ordner. 
 
