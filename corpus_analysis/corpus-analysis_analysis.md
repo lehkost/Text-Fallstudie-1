@@ -43,7 +43,7 @@ Influenza, Grippe, Grippeepidemie, Grippewelle, Grippekranke, Grippepandemie, Lu
 ## Häufigkeit als Analysemethode 
 
 ### Warum die Häufigkeit analysieren?
-Die Analyse von Worthäufigkeiten ist sowohl in der Korpuslinguistik als auch in den Digital Humanities [p. 73] weit verbreitet. Für die Analyse von Inhaltswörtern (Nomen, Verben, Adjektive, Adverben) wird angenommen, dass ein hohes Vorkommen mit der Wichtigkeit der Wörter im Text korreliert. Besonders bei einer vergleichenden Analyse (etwa von zwei Zeitungen oder einem Thema über Zeit) ist die Häufigkeitsanalyse sinnvoll, da der Vergleich so quantisierbar wird. 
+Die Analyse von Worthäufigkeiten ist sowohl in der Korpuslinguistik als auch in den Digital Humanities weit verbreitet. Für die Analyse von Inhaltswörtern (Nomen, Verben, Adjektive, Adverben) wird angenommen, dass ein hohes Vorkommen mit der Wichtigkeit der Wörter im Text korreliert. Besonders bei einer vergleichenden Analyse (etwa von zwei Zeitungen oder einem Thema über Zeit) ist die Häufigkeitsanalyse sinnvoll, da der Vergleich so quantisierbar wird. 
 
 ### Häufigkeit von Grippe
 Um die Wichtigkeit eines Themenfelds wie der Spanischen Grippe zu untersuchen, bietet es sich an, nicht nur das Vorkommen eines einzelnen Wortes wie "Grippe" zu untersuchen, sondern andere, mit Grippe im Zusammenhang stehende Wörter zu sammeln. Die Wörter werden in der Grundform angegeben, sodass sie mit den Lemmata im Text verglichen werden können.
