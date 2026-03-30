@@ -84,6 +84,8 @@ können wir die URLs bauen und parallel die anderen Datenfelder befüllen. Die s
 | SNP27112366-19180103-0-0-0-0         | Vossische Zeitung           | 1918-01-03  | [https://content.staatsbibliothek-berlin.de/zefys/SNP27112366-19180103-0-0-0-0.pdf](https://content.staatsbibliothek-berlin.de/zefys/SNP27112366-19180103-0-0-0-0.pdf) |
 | SNP27112366-19180104-0-0-0-0         | Vossische Zeitung           | 1918-01-04  | [https://content.staatsbibliothek-berlin.de/zefys/SNP27112366-19180104-0-0-0-0.pdf](https://content.staatsbibliothek-berlin.de/zefys/SNP27112366-19180104-0-0-0-0.pdf) |
 
+Diese Daten können auch mit Python unter Verwendung von Standardwerkzeugen zur Tabellenmanipulation (z. B. `pandas`) verarbeitet werden.
+
 ```{code-cell} python3
 import pandas as pd
 df = pd.read_csv("../data/metadata/QUADRIGA_FS-Text-01_Data01_Corpus-Table.csv", sep=";")
