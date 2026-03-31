@@ -80,7 +80,7 @@ chapters:
     des Erkenntnisinteresses, das die dann folgende Vorbereitung und Aufbereitung
     des Forschungsgegenstands (Korpus) und schließlich die Analyse leitet.
   learning-goal: Grundlagen korpusbasierter geisteswissenschaftlicher Forschung
-  time-required: 45min
+  time-required: PT45M
   learning-objectives:
   - learning-objective: Die Entwicklung einer Digital Humanities-Fragestellung kann
       am Beispiel der Medienwellen-Forschung zur Spanischen Grippe nachvollzogen und
@@ -97,7 +97,7 @@ chapters:
   url: https://quadriga-dk.github.io/Text-Fallstudie-1/corpus_collection/corpus-collection_intro.html
   description: Der Forschungsgegenstand wird in Form eines Korpus aufbereitet.
   learning-goal: Ansätze des Korpusaufbaus und Erstellung basaler Metadaten
-  time-required: 90min
+  time-required: PT90M
   learning-objectives:
   - learning-objective: Korpora können als geisteswissenschaftliche Forschungsobjekte
       definiert und deren wesentliche Merkmale beschrieben werden.
@@ -126,7 +126,7 @@ chapters:
   url: https://quadriga-dk.github.io/Text-Fallstudie-1/ocr/ocr_intro.html
   description: In diesem Kapitel lernen wir, wie man mit OCR Bilder in Text umwandelt.
   learning-goal: OCR-basierte Korpuserstellung und Qualitätsbewertung
-  time-required: 120min
+  time-required: PT120M
   learning-objectives:
   - learning-objective: Der Prozess der Optical Character Recognition (OCR) für die
       Korpuserstellung kann beschrieben und Tools zur Durchführung der OCR aufgezählt
@@ -155,7 +155,7 @@ chapters:
   url: https://quadriga-dk.github.io/Text-Fallstudie-1/ocr_post_correction/post-correcting_intro.html
   description: In diesem Kapitel werden wir die Ergebnisse der OCR nachbearbeiten.
   learning-goal: OCR-Nachbearbeitung und Qualitätsverbesserung
-  time-required: 90min
+  time-required: PT90M
   learning-objectives:
   - learning-objective: Verschiedene Verfahren der OCR-Nachbearbeitung können beschrieben
       und deren Einsatzzwecke unterschieden werden.
@@ -177,7 +177,7 @@ chapters:
   description: Die im Korpus enthaltenen Textdateien werden mit linguistischen Informationen
     angereichert.
   learning-goal: Korpusverarbeitung mit Natural Language Processing
-  time-required: 60min
+  time-required: PT60M
   learning-objectives:
   - learning-objective: Die Grundkonzepte des Natural Language Processing können erklärt
       und die Funktionen von Tokenisierung und Lemmatisierung für die Textanalyse
@@ -199,7 +199,7 @@ chapters:
     derjenigen Wörter gemessen werden, die direkt oder indirekt auf die spanische
     Grippe verweisen.
   learning-goal: Frequenzanalysen semantischer Felder
-  time-required: 90min
+  time-required: PT90M
   learning-objectives:
   - learning-objective: Das Konzept des semantischen Feldes kann erklärt, der Unterschied
       zwischen absoluten und relativen Häufigkeiten beschrieben und die Darstellungsmethoden
@@ -228,7 +228,7 @@ chapters:
     Tageszeitungen nachweisen konnten, gibt es mehrere Punkte, die abschließend kritisch
     zu reflektieren sind.
   learning-goal: Kritische Bewertung der Reichweite und Limitationen
-  time-required: 30min
+  time-required: PT30M
   learning-objectives:
   - learning-objective: Die methodischen Limitationen einer Digital Humanities-Fallstudie
       können benannt werden.
