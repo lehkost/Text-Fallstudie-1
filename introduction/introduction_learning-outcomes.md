@@ -30,7 +30,7 @@
 
 1. Der Prozess der Optical Character Recognition (OCR) für die Korpuserstellung kann beschrieben und Tools zur Durchführung der OCR aufgezählt werden.
 
-2. Die notwendigen Schritte zur Verarbeitung ein- und mehrseitiger PDFs zu Text können aufgezählt und die Unterschiede zwischen Ursprungs- und Zielformat erklärt werden.
+2. Die notwendigen Schritte für die Verarbeitung ein- und mehrseitiger PDFs zu Text können aufgezählt und die Unterschiede zwischen Ursprungs- und Zielformat erklärt werden.
 
 3. Die grundlegenden Metriken zur OCR-Qualitätsevaluation (Präzision, Recall, F1-Score) können erläutert und deren Bedeutung für die Bewertung von OCR-Systemen beschrieben werden.
 
@@ -68,7 +68,7 @@
 
 2. Die notwendigen Schritte zur Frequenzanalyse eines semantischen Felds können aufgezählt, Unterschiede in der Berechnung der Häufigkeiten benannt und die Ergebnisse reflektiert werden.
 
-3. Die Darstellungsmethode Keywords in Context kann beschrieben, Wörter zur Anzeige ausgewählt und diese angezeigt werden.
+3. Die Darstellungsmethode Key Words in Context kann beschrieben, Wörter zur Anzeige ausgewählt und diese angezeigt werden.
 ```
 
 

@@ -14,14 +14,14 @@ kernelspec:
 
 ````{admonition} Hinweis
 :class: hinweis
-Diese Übungsaufgaben dienen Ihrer Selbsteinschätzung und helfen Ihnen, das im Kapitel Gelernte zu reflektieren.
+Diese Übungsaufgaben dienen Ihrer Selbsteinschätzung und helfen Ihnen dabei, das im Kapitel Gelernte zu reflektieren.
 
-Sie können die Fragen in beliebiger Reihenfolge beantworten und auch mehrfach versuchen. 
+Sie können die Fragen in beliebiger Reihenfolge beantworten und jeden Versuch bei Bedarf mehrfach wiederholen.
 
 **So funktioniert es:**
-- Wählen Sie bei jeder Frage die Antwort(en), die Sie für richtig halten
+- Wählen Sie bei jeder Frage die Antwort(en) aus, die Sie für richtig halten
 - Lesen Sie das Feedback zu den einzelnen Antwortoptionen sorgfältig durch
-- Die Erklärungen helfen Ihnen, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten 
+- Die Erklärungen helfen Ihnen dabei, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten
 
 Es erfolgt keine Bewertung oder Speicherung Ihrer Ergebnisse. Nutzen Sie dieses Assessment, um Wissenslücken zu identifizieren und gegebenenfalls die entsprechenden Abschnitte des Kapitels noch einmal zu bearbeiten.
 
@@ -159,7 +159,7 @@ display_quiz(multiple_choice_3, colors=colors.jupyterquiz)
 
 ## Frage 4
 
-Ein Text hat eine Länge von 500 Wörtern und enthält 15 Wörter aus dem semantischen Feld "Grippe". Ein zweiter Text hat eine Länge von 800 Wörtern und enthält 20 Wörter aus demselben semantischen Feld. 
+Ein Text hat eine Länge von 500 Wörtern und enthält 15 Wörter aus dem semantischen Feld "Grippe". Ein zweiter Text hat eine Länge von 800 Wörtern und enthält 20 Wörter aus demselben semantischen Feld.
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -202,8 +202,8 @@ display_quiz(multiple_choice_4, colors=colors.jupyterquiz)
 ## Frage 5
 Betrachten Sie folgende drei Texte und ihre Häufigkeitswerte:
 
-- Text A: 30 Grippewörter bei 600 Wörtern Gesamtlänge 
-- Text B: 25 Grippewörter bei 400 Wörtern Gesamtlänge 
+- Text A: 30 Grippewörter bei 600 Wörtern Gesamtlänge
+- Text B: 25 Grippewörter bei 400 Wörtern Gesamtlänge
 - Text C: 20 Grippewörter bei 500 Wörtern Gesamtlänge
 
 ```{code-cell} ipython3

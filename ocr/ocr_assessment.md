@@ -14,16 +14,16 @@ kernelspec:
 
 ````{admonition} Hinweis
 :class: hinweis
-Diese Übungsaufgaben dienen Ihrer Selbsteinschätzung und helfen Ihnen, das im Kapitel Gelernte zu reflektieren.
+Diese Übungsaufgaben dienen Ihrer Selbsteinschätzung und helfen Ihnen dabei, das im Kapitel Gelernte zu reflektieren.
 
-Sie können die Fragen in beliebiger Reihenfolge beantworten und auch mehrfach versuchen. 
+Sie können die Fragen in beliebiger Reihenfolge beantworten und jeden Versuch bei Bedarf mehrfach wiederholen.
 
 **So funktioniert es:**
-- Wählen Sie bei jeder Frage die Antwort(en), die Sie für richtig halten
+- Wählen Sie bei jeder Frage die Antwort(en) aus, die Sie für richtig halten
 - Lesen Sie das Feedback zu den einzelnen Antwortoptionen sorgfältig durch
-- Die Erklärungen helfen Ihnen, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten 
+- Die Erklärungen helfen Ihnen dabei, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten
 
-Es erfolgt keine Bewertung oder Speicherung Ihrer Ergebnisse. Nutzen Sie dieses Assessment, um Wissenslücken zu identifizieren und gegebenenfalls die entsprechenden Abschnitte des Kapitels noch einmal zu bearbeiten. 
+Es erfolgt keine Bewertung oder Speicherung Ihrer Ergebnisse. Nutzen Sie dieses Assessment, um Wissenslücken zu identifizieren und gegebenenfalls die entsprechenden Abschnitte des Kapitels noch einmal zu bearbeiten.
 
 **Geschätzte Zeit**: 1h 10min
 
@@ -37,8 +37,8 @@ Viel Erfolg!
 :tags: [remove-input]
 from jupyterquiz import display_quiz
 
-""" 
-Lernziel: 
+"""
+Lernziel:
      Sie können den Prozess der Optical Character Recognition (OCR) für die Korpuserstellung beschreiben und dessen Qualität systematisch analysieren.
 Bloom-Stufe: Verstehen
 Format: Multiple Choice
@@ -158,7 +158,7 @@ quiz = DragDropQuiz()
 
 quiz.create_matching_quiz(
     title="Ordnen Sie die folgenden Schritte der OCR-Pipeline in die richtige Reihenfolge:",
-    descriptions=["Texterkennung", 
+    descriptions=["Texterkennung",
         "Bildvorverarbeitung",
         "Qualitätskontrolle"],
     options=["1", "2", "3"],
@@ -178,8 +178,8 @@ quiz.create_matching_quiz(
 :tags: [remove-input]
 from jupyterquiz import display_quiz
 
-""" 
-Lernziel: 
+"""
+Lernziel:
      Sie können die notwendigen Schritte zur Verarbeitung eines einseitigen und eines mehrseitigen PDFs zu einem Text aufzählen und das Ursprungs- sowie das Zielformat nennen und Unterschiede erklären.
 Bloom-Stufe: Verstehen
 Format: Tool-Vergleich und Zuordnungsaufgabe
@@ -412,7 +412,7 @@ quiz = DragDropQuiz()
 quiz.create_matching_quiz(
     title="Ordnen Sie die folgenden Schritte bei der OCR-Verarbeitung eines mehrseitigen PDFs in die richtige Reihenfolge:",
     descriptions=[
-        "OCR auf jeder Seite durchführen", 
+        "OCR auf jeder Seite durchführen",
         "PDF in Einzelseiten konvertieren",
         "Erkannten Text speichern"],
     options=["1", "2", "3"],
@@ -487,8 +487,8 @@ display_quiz(question4, colors=colors.jupyterquiz)
 :tags: [remove-input]
 from jupyterquiz import display_quiz
 
-""" 
-Lernziel: 
+"""
+Lernziel:
      Sie können die grundlegenden Metriken zur OCR-Qualitätsevaluation (Präzision, Recall, F1-Score) erläutern und ihre Bedeutung für die Bewertung von OCR-Systemen beschreiben.
 Bloom-Stufe: Verstehen, Analysieren
 Format: Vergleichsmatrix + Multiple Choice
@@ -581,7 +581,7 @@ question6 = [
                 """
             }
         ]
-    } 
+    }
 ]
 display_quiz(question6, colors=colors.jupyterquiz)
 ```
@@ -646,7 +646,7 @@ Wichtig zu verstehen:
 - Fokus auf Recall kann Präzision verringern
 - F1-Score hilft bei Ausgleich
 
-**Beispiel:** 
+**Beispiel:**
 "Strengere Erkennungsregeln erhöhen Präzision, können aber Recall senken."
 ````
 ### Frage 10(b)
@@ -859,7 +859,7 @@ quiz = DragDropQuiz()
 
 quiz.create_matching_quiz(
     title="Ordnen Sie die folgenden Schritte zur Messung der OCR-Qualität in die richtige Reihenfolge:",
-    descriptions=["Erstellung der Ground Truth", 
+    descriptions=["Erstellung der Ground Truth",
         "Durchführung der OCR",
         "Berechnung der Qualitätsmetriken"],
     options=["1", "2", "3"],

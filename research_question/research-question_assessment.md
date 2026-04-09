@@ -14,16 +14,16 @@ kernelspec:
 
 ````{admonition} Hinweis
 :class: hinweis
-Diese Übungsaufgaben dienen Ihrer Selbsteinschätzung und helfen Ihnen, das im Kapitel Gelernte zu reflektieren.
+Diese Übungsaufgaben dienen Ihrer Selbsteinschätzung und helfen Ihnen dabei, das im Kapitel Gelernte zu reflektieren.
 
-Sie können die Fragen in beliebiger Reihenfolge beantworten und auch mehrfach versuchen. 
+Sie können die Fragen in beliebiger Reihenfolge beantworten und jeden Versuch bei Bedarf mehrfach wiederholen.
 
 **So funktioniert es:**
-- Wählen Sie bei jeder Frage die Antwort(en), die Sie für richtig halten
+- Wählen Sie bei jeder Frage die Antwort(en) aus, die Sie für richtig halten
 - Lesen Sie das Feedback zu den einzelnen Antwortoptionen sorgfältig durch
-- Die Erklärungen helfen Ihnen, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten 
+- Die Erklärungen helfen Ihnen dabei, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten
 
-Es erfolgt keine Bewertung oder Speicherung Ihrer Ergebnisse. Nutzen Sie dieses Assessment, um Wissenslücken zu identifizieren und gegebenenfalls die entsprechenden Abschnitte des Kapitels noch einmal zu bearbeiten. 
+Es erfolgt keine Bewertung oder Speicherung Ihrer Ergebnisse. Nutzen Sie dieses Assessment, um Wissenslücken zu identifizieren und gegebenenfalls die entsprechenden Abschnitte des Kapitels noch einmal zu bearbeiten.
 
 **Geschätzte Zeit**: 15min
 
@@ -32,7 +32,7 @@ Viel Erfolg!
 
 ## Frage 1
 
-Eine Forschungsfrage im Bereich der Digital Humanities lautet: "Wie entwickelte sich die öffentliche Aufmerksamkeit für Umweltthemen in deutschen Tageszeitungen zwischen 1960-1980?"
+Eine Forschungsfrage im Bereich der Digital Humanities lautet: "Wie entwickelte sich die öffentliche Aufmerksamkeit für Umweltthemen in deutschen Tageszeitungen zwischen 1960–1980?"
 
 (Wählen Sie alle zutreffenden Antworten aus)
 
@@ -46,7 +46,7 @@ from quadriga import colors
 
 question2 = [
     {
-        "question": "Welche der folgenden Operationalisierungen eignen sich, um die öffentliche Aufmerksamkeit für Umweltthemen in deutschen Tageszeitungen zwischen 1960-1980 messbar zu machen? (Mehrere Antworten sind korrekt)",
+        "question": "Welche der folgenden Operationalisierungen eignen sich, um die öffentliche Aufmerksamkeit für Umweltthemen in deutschen Tageszeitungen zwischen 1960–1980 messbar zu machen? (Mehrere Antworten sind korrekt)",
         "type": "multiple_choice",
         "answers": [
             {
@@ -101,7 +101,7 @@ display_quiz(question2, colors=colors.jupyterquiz, max_width=1000)
 ```
 
 ## Frage 2
-Entwickeln Sie eine Operationalisierung für folgende Forschungsfrage: "Wie veränderte sich die Berichterstattung über wissenschaftliche Themen in der Wochenzeitung 'Die Zeit' zwischen 1950-1970?"
+Entwickeln Sie eine Operationalisierung für folgende Forschungsfrage: "Wie veränderte sich die Berichterstattung über wissenschaftliche Themen in der Wochenzeitung 'Die Zeit' zwischen 1950–1970?"
 
 ### Frage 2(a)
 Formulieren Sie zunächst selbst eine mögliche Operationalisierung
@@ -160,14 +160,14 @@ questions = [
             {
                 "answer": "Nein",
                 "correct": False,
-                "feedback": """× Nicht korrekt! Alle Messungen müssen im Korpus der "Zeit" durchführbar sein. 
+                "feedback": """× Nicht korrekt! Alle Messungen müssen im Korpus der "Zeit" durchführbar sein.
                 - Zu beachten:
-                Verfügbarkeit aller Ausgaben im Untersuchungszeitraum, 
-                Konsistenz des Zeitungsformats, 
-                Zugänglichkeit der relevanten Artikel. 
+                Verfügbarkeit aller Ausgaben im Untersuchungszeitraum,
+                Konsistenz des Zeitungsformats,
+                Zugänglichkeit der relevanten Artikel.
                 - Nicht geeignet sind Messungen, die:
-                Andere Zeitungen einbeziehen, 
-                Externe Datenquellen erfordern, 
+                Andere Zeitungen einbeziehen,
+                Externe Datenquellen erfordern,
                 Nicht im Zeitungskorpus enthaltene Informationen benötigen"""
             }
         ]
@@ -184,14 +184,14 @@ questions = [
             {
                 "answer": "Nein",
                 "correct": False,
-                "feedback": """× Nicht korrekt! Die Messungen müssen von 1950-1970 konsistent möglich sein
+                "feedback": """× Nicht korrekt! Die Messungen müssen von 1950–1970 konsistent möglich sein
                 - Wichtige Aspekte:
-                Gleichbleibende Verfügbarkeit der Daten, 
-                Vergleichbarkeit der Messungen über Zeit, 
-                Berücksichtigung möglicher Formatänderungen. 
+                Gleichbleibende Verfügbarkeit der Daten,
+                Vergleichbarkeit der Messungen über Zeit,
+                Berücksichtigung möglicher Formatänderungen.
                 - Problematisch wären:
-                Indikatoren, die nur für Teilzeiträume verfügbar sind, 
-                Messungen, die durch Änderungen der Zeitung beeinflusst werden, 
+                Indikatoren, die nur für Teilzeiträume verfügbar sind,
+                Messungen, die durch Änderungen der Zeitung beeinflusst werden,
                 Nicht durchgängig dokumentierte Aspekte"""
             }
         ]
@@ -210,12 +210,12 @@ questions = [
                 "correct": False,
                 "feedback": """× Nicht korrekt! - Die Methoden müssen mit verfügbaren Ressourcen durchführbar sein
                 - Praktische Aspekte:
-                Verfügbare Zeit und Personal, 
-                Technische Möglichkeiten (z.B. OCR, Textanalysetools), 
-                Aufwand-Nutzen-Verhältnis. 
+                Verfügbare Zeit und Personal,
+                Technische Möglichkeiten (z.B. OCR, Textanalysetools),
+                Aufwand-Nutzen-Verhältnis.
                 - Problematisch wären:
-                Zu zeitaufwendige manuelle Analysen, 
-                Technisch nicht realisierbare Messungen, 
+                Zu zeitaufwendige manuelle Analysen,
+                Technisch nicht realisierbare Messungen,
                 Unverhältnismäßig komplexe Verfahren"""
             }
         ]
@@ -239,10 +239,10 @@ Bei der Bewertung Ihrer Operationalisierung:
 **Beispielhafte Anwendung**
 Ein Indikator wie "Anzahl wissenschaftlicher Artikel pro Ausgabe":
 - ✓ Quantifizierbar (zählbare Einheit)
-- ✓ Basiert auf Quellenkorpus (nur Zeit-Artikel) 
+- ✓ Basiert auf Quellenkorpus (nur Zeit-Artikel)
 - ✓ Durchgängig messbar (über gesamten Zeitraum)
 - ✓ Praktisch umsetzbar (mit klarer Definition und OCR)
 
-**Hinweis** 
+**Hinweis**
 Es gibt nicht die eine "richtige" Operationalisierung. Verschiedene Ansätze können geeignet sein, solange sie den grundlegenden Kriterien entsprechen und praktisch umsetzbar sind.
 ````

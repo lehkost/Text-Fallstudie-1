@@ -16,14 +16,14 @@ kernelspec:
 :class: hinweis
 Diese Übungsaufgaben dienen Ihrer Selbsteinschätzung und helfen Ihnen, das im Kapitel Gelernte zu reflektieren.
 
-Sie können die Fragen in beliebiger Reihenfolge beantworten und auch mehrfach versuchen. 
+Sie können die Fragen in beliebiger Reihenfolge beantworten und auch mehrfach versuchen.
 
 **So funktioniert es:**
 - Wählen Sie bei jeder Frage die Antwort(en), die Sie für richtig halten
 - Lesen Sie das Feedback zu den einzelnen Antwortoptionen sorgfältig durch
-- Die Erklärungen helfen Ihnen, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten 
+- Die Erklärungen helfen Ihnen, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten
 
-Es erfolgt keine Bewertung oder Speicherung Ihrer Ergebnisse. Nutzen Sie dieses Assessment, um Wissenslücken zu identifizieren und gegebenenfalls die entsprechenden Abschnitte des Kapitels noch einmal zu bearbeiten. 
+Es erfolgt keine Bewertung oder Speicherung Ihrer Ergebnisse. Nutzen Sie dieses Assessment, um Wissenslücken zu identifizieren und gegebenenfalls die entsprechenden Abschnitte des Kapitels noch einmal zu bearbeiten.
 
 **Geschätzte Zeit**: 1h
 
@@ -42,7 +42,7 @@ sys.path.append("..")
 from quadriga import colors
 
 """
-Lernziel: 
+Lernziel:
     Sie können Korpora als geisteswissenschaftliche Forschungsobjekte definieren und ihre wesentlichen Merkmale beschreiben.
 Bloom-Stufe: Verstehen
 Format: Multiple Choice + Zuordnungsaufgabe
@@ -267,7 +267,7 @@ Bilddigitalisate (PDF):
 - Nachteil: automatische Prozessierung und Verknüpfung zu Plain Text ist nicht möglich
 
 Plain Text (nach OCR):
-- Ermöglicht automatische Textanalysen  
+- Ermöglicht automatische Textanalysen
 - Einfach zu verarbeiten
 - Geringer Speicherbedarf
 
@@ -501,7 +501,7 @@ Format: Multiple Choice + Selbsteinschätzung
 Zeitaufwand: 25 Minuten
 Schwerpunkte:
     - Verständnis verschiedener Metadatenschemata (Dublin Core, TEI, MODS, METS)
-    - Kenntnis charakteristischer Elemente 
+    - Kenntnis charakteristischer Elemente
     - Unterscheidung Korpus- und Dokumentebene
 """
 
@@ -889,7 +889,7 @@ quiz.create_matching_quiz(
     descriptions=["Entwicklung des Korpuskonzepts",
         "Test der Sammlungsmethodik",
         "Festlegung des Metadatenstruktur",
-        "Dokumentation der Auswahlkriterien", 
+        "Dokumentation der Auswahlkriterien",
         "Durchführung der Datensammlung"],
     options=["1", "2", "3", "4", "5"],
     correct_mapping={

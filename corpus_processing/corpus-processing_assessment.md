@@ -14,14 +14,14 @@ kernelspec:
 
 ````{admonition} Hinweis
 :class: hinweis
-Diese Übungsaufgaben dienen Ihrer Selbsteinschätzung und helfen Ihnen, das im Kapitel Gelernte zu reflektieren.
+Diese Übungsaufgaben dienen Ihrer Selbsteinschätzung und helfen Ihnen dabei, das im Kapitel Gelernte zu reflektieren.
 
-Sie können die Fragen in beliebiger Reihenfolge beantworten und auch mehrfach versuchen. 
+Sie können die Fragen in beliebiger Reihenfolge beantworten und jeden Versuch bei Bedarf mehrfach wiederholen.
 
 **So funktioniert es:**
-- Wählen Sie bei jeder Frage die Antwort(en), die Sie für richtig halten
+- Wählen Sie bei jeder Frage die Antwort(en) aus, die Sie für richtig halten
 - Lesen Sie das Feedback zu den einzelnen Antwortoptionen sorgfältig durch
-- Die Erklärungen helfen Ihnen, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten 
+- Die Erklärungen helfen Ihnen dabei, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten
 
 Es erfolgt keine Bewertung oder Speicherung Ihrer Ergebnisse. Nutzen Sie dieses Assessment, um Wissenslücken zu identifizieren und gegebenenfalls die entsprechenden Abschnitte des Kapitels noch einmal zu bearbeiten.
 
@@ -366,7 +366,7 @@ multiple_choice_2 = [{
         {
             "answer": "Sie ermöglicht die Lemmatisierung der Tokens",
             "correct": False,
-            "feedback": """x Nicht korrekt: Auch wenn im Notebook die Tokenisierung und die Lemmatisierung im selben Schritt erfolgen, ist die Lemmatisierung kein Teil der Tokenisierung, sondern erfolgt aufbauend auf dieser.""" 
+            "feedback": """x Nicht korrekt: Auch wenn im Notebook die Tokenisierung und die Lemmatisierung im selben Schritt erfolgen, ist die Lemmatisierung kein Teil der Tokenisierung, sondern erfolgt aufbauend auf dieser."""
         },
         {
             "answer": "Sie korrigiert automatisch OCR-Fehler im Text",
@@ -514,7 +514,7 @@ quiz.create_matching_quiz(
     descriptions=["Einlesen des Textes",
         "Durchführung der Annotation mit nlp(text)",
         "Auswahl der Analysekomponenten",
-        "Laden des Sprachmodells", 
+        "Laden des Sprachmodells",
         "Speichern der Annotation als CSV-Datei"],
     options=["1", "2", "3", "4", "5"],
     correct_mapping={
