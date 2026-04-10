@@ -15,9 +15,6 @@ Diese Übungsaufgaben dienen Ihrer Selbsteinschätzung und helfen Ihnen, das im 
 Sie können die Fragen in beliebiger Reihenfolge beantworten und auch mehrfach versuchen.
 
 **So funktioniert es:**
-- Wählen Sie bei jeder Frage die Antwort(en), die Sie für richtig halten
-- Lesen Sie das Feedback zu den einzelnen Antwortoptionen sorgfältig durch
-- Die Erklärungen helfen Ihnen, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten
 - Wählen Sie bei jeder Frage die Antwort(en), die Sie für richtig halten.
 - Lesen Sie das Feedback zu den einzelnen Antwortoptionen sorgfältig durch.
 - Die Erklärungen helfen Ihnen, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten.
