@@ -1,10 +1,10 @@
 (corpus-collection_text_as_digital_objects)=
 # Elemente von Korpora: Texte als digitale Objekte
 
-Texte können digital auf sehr unterschiedliche Weisen gespeichert, prozessiert und repräsentiert werden. Die vielfältige Formen von Text im Digitalen weisen dabei jeweils spezifische Eigenschaften und Einsatzmöglichkeiten auf. In diesem Abschnitt werden vier weit verbreitete Erscheinungsformen digitaler Texte vorgestellt:
+Texte können digital auf sehr unterschiedliche Weisen gespeichert, prozessiert und repräsentiert werden. Die vielfältigen Formen von Text im Digitalen weisen dabei jeweils spezifische Eigenschaften und Einsatzmöglichkeiten auf. In diesem Abschnitt werden vier weit verbreitete Erscheinungsformen digitaler Texte vorgestellt:
 
 - Bilddigitalisate von Text (z.B. PDF, PNG, JPG, TIFF)
-- Reiner Text, auch "Plain Text" (TXT)
+- Reiner Text, auch „Plain Text“ (TXT)
 - XML/TEI
 - CSV
 
@@ -28,13 +28,13 @@ name: Snippet eines Bilddigitalisats
 
 *Beispiel für ein Bilddigitalisat von Text, hier ein Ausschnitt eines historischen Zeitungsartikels als PNG-Datei*
 
-## Reiner Text, "Plain Text"
+## Reiner Text, „Plain Text“
 
 **Charakteristika:**
 
 - **Repräsentation:** Plain Text ist eine einfache, unformatierte Textdatei, die nur den reinen Text ohne jegliche Stilelemente oder Metadaten enthält.
 - **Formate:** Das gängigste Format ist TXT.
-- **Nutzung:** Plain Text ist ideal für einfache Textanalysen und die Datenverarbeitung, da er leicht zu bearbeiten und in verschiedene Softwareumgebungen zu importieren ist.
+- **Nutzung:** Plain Text ist ideal für einfache Textanalysen und die Datenverarbeitung, da er leicht zu bearbeiten und in verschiedenen Softwareumgebungen zu importieren ist.
 - **Einschränkungen:** Es fehlen strukturelle und semantische Informationen, etwa in Form von Textauszeichnungen, die für komplexere Analysen oder Darstellungen notwendig sind.
 
 **Beispiel:**
@@ -88,7 +88,7 @@ Die Zahl der Grippefälle ist in den letzten beiden Tagen auch in Groß-Berlin n
 </TEI>
 ```
 
-*Beispiel für eine XML-Kodierung nach TEI-Standard. Am Anfang der Datei steht der `<teiHeader>` mit Metadaten, es folgt das `<text>`-Element, in dem der Text mit Strukturinformationen (z.B. `<head>` für Überschrift) gesoeichert wird*
+*Beispiel für eine XML-Kodierung nach TEI-Standard. Am Anfang der Datei steht der `<teiHeader>` mit Metadaten, es folgt das `<text>`-Element, in dem der Text mit Strukturinformationen (z.B. `<head>` für Überschrift) gespeichert wird*
 
 ## CSV für annotierte Texte
 
@@ -116,7 +116,7 @@ ID,TOKEN,LEMMA,POS
 12,.,.,PUNCT
 ```
 
-*CSV-Datei, deren erste Zeile die Spaltenüberschriften enthält und in deren nachfolgenden Zeilen jeweils zunächst eine fortlaufende ID, dann ein Wort sowie weitere linguistische Informationen aufgeführt sind: Grundform ("Lemma") und Wortart ("POS", "Part of Speech")*
+*CSV-Datei, deren erste Zeile die Spaltenüberschriften enthält und in deren nachfolgenden Zeilen jeweils zunächst eine fortlaufende ID, dann ein Wort sowie weitere linguistische Informationen aufgeführt sind: Grundform („Lemma”) und Wortart („POS”, „Part of Speech”)*
 
 
 | ID  | TOKEN    | LEMMA   | POS   |

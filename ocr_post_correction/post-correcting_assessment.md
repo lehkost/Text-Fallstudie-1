@@ -4,10 +4,6 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
 ---
 
 # 🏆Selbsttest: Wissen und Praxis
@@ -19,19 +15,19 @@ Diese Übungsaufgaben dienen Ihrer Selbsteinschätzung und helfen Ihnen dabei, d
 Sie können die Fragen in beliebiger Reihenfolge beantworten und jeden Versuch bei Bedarf mehrfach wiederholen.
 
 **So funktioniert es:**
-- Wählen Sie bei jeder Frage die Antwort(en) aus, die Sie für richtig halten
-- Lesen Sie das Feedback zu den einzelnen Antwortoptionen sorgfältig durch
-- Die Erklärungen helfen Ihnen dabei, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten
+- Wählen Sie bei jeder Frage die Antwort(en) aus, die Sie für richtig halten.
+- Lesen Sie das Feedback zu den einzelnen Antwortoptionen sorgfältig durch.
+- Die Erklärungen helfen Ihnen dabei, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten.
 
 Es erfolgt keine Bewertung oder Speicherung Ihrer Ergebnisse. Nutzen Sie dieses Assessment, um Wissenslücken zu identifizieren und gegebenenfalls die entsprechenden Abschnitte des Kapitels noch einmal zu bearbeiten.
 
 **Geschätzte Zeit**: 45min
 
-Viel Erfolg!
+**Viel Erfolg!**
 ````
 
 ## Frage 1
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 
 ```{code-cell} ipython3
@@ -81,7 +77,7 @@ display_quiz(multiple_choice_1, colors=colors.jupyterquiz)
 ```
 
 ## Frage 2
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -122,7 +118,7 @@ display_quiz(multiple_choice_2, colors=colors.jupyterquiz)
 ```
 
 ## Frage 3
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -163,7 +159,7 @@ display_quiz(multiple_choice_3, colors=colors.jupyterquiz)
 ```
 
 ## Frage 4
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -229,7 +225,7 @@ quiz.create_matching_quiz(
 ```
 
 ## Frage 6
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -277,7 +273,7 @@ display_quiz(multiple_choice_6, colors=colors.jupyterquiz)
 ```
 
 ## Frage 7
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -331,7 +327,7 @@ Nach Korrektur:
 - Recall: 0.8248
 - F1-score: 0.8169
 
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -436,7 +432,7 @@ quiz.create_matching_quiz(
 ```
 
 ## Frage 11
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -478,7 +474,7 @@ display_quiz(multiple_choice_11, colors=colors.jupyterquiz)
 
 ## Frage 12
 
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -500,7 +496,7 @@ multiple_choice_12 = [{
     "type": "multiple_choice",
     "answers": [
         {
-            "answer": "LLMs benötigen erhebliche Rechenressourcen und können typischerweise nicht auf einem gewöhnlichen PC ausgeführt werden",
+            "answer": "LLMs benötigen erhebliche Rechenressourcen und können typischerweise nicht auf einem herkömmlichen PC ausgeführt werden",
             "correct": True,
             "feedback": """✓ Richtig! LLMs haben einen hohen Bedarf an Rechenleistung, verbrauchen viel Energie, benötigen großen Speicher und erfordern spezielle Infrastruktur."""
         },
@@ -526,7 +522,7 @@ display_quiz(multiple_choice_12, colors=colors.jupyterquiz)
 ```
 
 ## Frage 13
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -567,7 +563,7 @@ display_quiz(multiple_choice_13, colors=colors.jupyterquiz)
 ```
 
 ## Frage 14
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -608,7 +604,7 @@ display_quiz(multiple_choice_14, colors=colors.jupyterquiz)
 ```
 
 ## Frage 15
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -619,7 +615,7 @@ sys.path.append("..")
 from quadriga import colors
 
 multiple_choice_15 = [{
-    "question": """Eine Forschungsgruppe plant, einen historischen Zeitungskorpus von 10.000 Seiten mit LLMs nachzukorrigieren. Welche Herausforderungen sind dabei zu erwarten?""",
+    "question": """Eine Forschungsgruppe plant, ein historisches Zeitungskorpus von 10.000 Seiten mit LLMs nachzukorrigieren. Welche Herausforderungen sind dabei zu erwarten?""",
     "type": "multiple_choice",
     "answers": [
         {
@@ -638,7 +634,7 @@ multiple_choice_15 = [{
             "feedback": """✓ Richtig! Aufgrund der \"Black-Box\"-Natur von LLMs kann es schwierig sein nachzuvollziehen, welche Änderungen vorgenommen wurden und warum, was die Qualitätskontrolle erschwert."""
         },
         {
-            "answer": "Gleichbleibende Qualität bei allen Korrekturen",
+            "answer": "Gleichbleibend hohe Qualität bei allen Korrekturen",
             "correct": False,
             "feedback": """× Nicht korrekt. Wegen der nicht-deterministischen Natur von LLMs und variierenden Texteigenschaften ist eine gleichbleibende Korrekturqualität über den gesamten Korpus hinweg nicht garantiert."""
         }
@@ -649,7 +645,7 @@ display_quiz(multiple_choice_15, colors=colors.jupyterquiz)
 ```
 
 ## Frage 16
-(Wählen Sie alle zutreffenden Antworten aus)
+(Wählen Sie alle zutreffenden Antworten aus.)
 
 ```{code-cell} ipython3
 :tags: [remove-input]

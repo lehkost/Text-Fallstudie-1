@@ -8,7 +8,7 @@ Die Nachbearbeitung umfasst verschiedene Schritte, die sicherstellen, dass der u
 
 #### 1. Korrektur von Erkennungsfehlern
 
-OCR-Software kann Buchstaben oder Wörter falsch erkennen, insbesondere wenn die Qualität des Originaldokuments schlecht ist. Häufige Fehler sind die Verwechslung von ähnlichen Buchstaben wie "l" (kleines L) und "1" (Eins), "O" (großes O) und "0" (Null) oder "rn" (r und n) als "m".
+OCR-Software kann Buchstaben oder Wörter falsch erkennen, insbesondere wenn die Qualität des Originaldokuments schlecht ist. Häufige Fehler sind die Verwechslung von ähnlichen Buchstaben wie „l“ (kleines L) und „1“ (Eins), „O“ (großes O) und „0“ (Null) oder „rn“ (r und n) als „m“.
 
 **Original (nach OCR):**
 ```
@@ -24,7 +24,7 @@ Das wird ein intensives Jahr.
 
 #### 2. Korrektur von Tippfehlern und Grammatik
 
-Selbst wenn die OCR-Erkennung korrekt ist, können Tippfehler und grammatikalische Fehler aus dem Originaldokument übernommen werden. Hier ist eine gründliche Überprüfung erforderlich.
+Selbst wenn die OCR-Erkennung korrekt ist, können Tipp- und Grammatikfehler aus dem Originaldokument übernommen werden. Hier ist eine gründliche Überprüfung erforderlich.
 
 **Original (nach OCR):**
 ```
@@ -82,4 +82,4 @@ Zur weiteren Überprüfung der Ergebnisse wurde eine zweite Studie durchgeführt
 
 ### Fazit
 
-Die OCR-Nachbearbeitung ist ein entscheidender Schritt, um sicherzustellen, dass digitalisierte Texte korrekt und nützlich sind. Obwohl OCR-Technologie kontinuierlich verbessert wird, bleibt die Nachbearbeitung ein wichtiger Bestandteil des Workflows zur Textdigitalisierung. Indem Sie sorgfältig Erkennungsfehler korrigieren, Tippfehler und Grammatik überprüfen, die Formatierung wiederherstellen und die Vollständigkeit sicherstellen, können Sie die Qualität Ihrer digitalisierten Dokumente erheblich verbessern.
+Die OCR-Nachbearbeitung ist ein entscheidender Schritt, um sicherzustellen, dass digitalisierte Texte korrekt und nützlich sind. Obwohl die OCR-Technologie kontinuierlich verbessert wird, bleibt die Nachbearbeitung ein wichtiger Bestandteil des Workflows zur Textdigitalisierung. Indem Sie sorgfältig Erkennungsfehler korrigieren, Tippfehler und Grammatik überprüfen, die Formatierung wiederherstellen und die Vollständigkeit sicherstellen, können Sie die Qualität Ihrer digitalisierten Dokumente erheblich verbessern.

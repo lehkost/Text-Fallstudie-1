@@ -3,6 +3,6 @@ lang: de-DE
 ---
 # Präambel
 
-- [Lernziele](../introduction/introduction_learning-outcomes) 
+- [Lernziele](../introduction/learning-outcomes) 
 - [Technische Voraussetzungen](../introduction/introduction_requirements) 
 

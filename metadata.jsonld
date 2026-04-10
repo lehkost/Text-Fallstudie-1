@@ -195,20 +195,20 @@
       "name": "Fragestellung und Operationalisierung. Einführung in die Fallstudie",
       "description": "Dieses Kapitel bildet den Auftakt der Fallstudie und dient der Klärung des Erkenntnisinteresses, das die dann folgende Vorbereitung und Aufbereitung des Forschungsgegenstands (Korpus) und schließlich die Analyse leitet.",
       "url": "https://quadriga-dk.github.io/Text-Fallstudie-1/research_question/research-question_intro.html",
-      "timeRequired": "45min",
+      "timeRequired": "PT45M",
       "teaches": "Grundlagen korpusbasierter geisteswissenschaftlicher Forschung",
       "educationalAlignment": [
         {
           "@type": "AlignmentObject",
           "targetName": "Die Entwicklung einer Digital Humanities-Fragestellung kann am Beispiel der Medienwellen-Forschung zur Spanischen Grippe nachvollzogen und erläutert werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: 1 Planung"
+          "targetDescription": "Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar"
         },
         {
           "@type": "AlignmentObject",
           "targetName": "Der Operationalisierungsprozess kann am Beispiel der Spanischen Grippe nachvollzogen und auf andere Forschungsfragen übertragen werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 3 Anwenden | Data Flow: 2 Erhebung und Aufbereitung"
+          "targetDescription": "Competency: nicht anwendbar | Bloom's: 3 Anwenden | Data Flow: nicht anwendbar"
         }
       ]
     },
@@ -217,14 +217,14 @@
       "name": "Korpusaufbau. Auswählen, sammeln, dokumentieren",
       "description": "Der Forschungsgegenstand wird in Form eines Korpus aufbereitet.",
       "url": "https://quadriga-dk.github.io/Text-Fallstudie-1/corpus_collection/corpus-collection_intro.html",
-      "timeRequired": "90min",
+      "timeRequired": "PT90M",
       "teaches": "Ansätze des Korpusaufbaus und Erstellung basaler Metadaten",
       "educationalAlignment": [
         {
           "@type": "AlignmentObject",
           "targetName": "Korpora können als geisteswissenschaftliche Forschungsobjekte definiert und deren wesentliche Merkmale beschrieben werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: 2 Erhebung und Aufbereitung"
+          "targetDescription": "Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar"
         },
         {
           "@type": "AlignmentObject",
@@ -236,7 +236,7 @@
           "@type": "AlignmentObject",
           "targetName": "Die grundlegenden Metadatenschemata (Dublin Core, TEI, MODS, METS) und deren charakteristische Elemente für Korpora und Einzeldokumente können beschrieben werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: 2 Erhebung und Aufbereitung"
+          "targetDescription": "Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar"
         },
         {
           "@type": "AlignmentObject",
@@ -251,7 +251,7 @@
       "name": "OCR. Von Bild zu Text",
       "description": "In diesem Kapitel lernen wir, wie man mit OCR Bilder in Text umwandelt.",
       "url": "https://quadriga-dk.github.io/Text-Fallstudie-1/ocr/ocr_intro.html",
-      "timeRequired": "120min",
+      "timeRequired": "PT120M",
       "teaches": "OCR-basierte Korpuserstellung und Qualitätsbewertung",
       "educationalAlignment": [
         {
@@ -282,10 +282,10 @@
     },
     {
       "@type": "LearningResource",
-      "name": "OCR-Nachbereitung. Manuell, automatisch, LLMs",
+      "name": "OCR-Nachbearbeitung: manuell, automatisch, LLMs",
       "description": "In diesem Kapitel werden wir die Ergebnisse der OCR nachbearbeiten.",
       "url": "https://quadriga-dk.github.io/Text-Fallstudie-1/ocr_post_correction/post-correcting_intro.html",
-      "timeRequired": "90min",
+      "timeRequired": "PT90M",
       "teaches": "OCR-Nachbearbeitung und Qualitätsverbesserung",
       "educationalAlignment": [
         {
@@ -313,7 +313,7 @@
       "name": "Korpusverarbeitung. Von Strings zu Token",
       "description": "Die im Korpus enthaltenen Textdateien werden mit linguistischen Informationen angereichert.",
       "url": "https://quadriga-dk.github.io/Text-Fallstudie-1/corpus_processing/corpus-processing_intro.html",
-      "timeRequired": "60min",
+      "timeRequired": "PT60M",
       "teaches": "Korpusverarbeitung mit Natural Language Processing",
       "educationalAlignment": [
         {
@@ -335,7 +335,7 @@
       "name": "Korpusanalyse. Von Häufigkeiten zu Diagrammen",
       "description": "Nachdem die Korpuserstellung und -anreicherung abgeschlossen ist, wird in diesem Kapitel zur Forschungsfrage zurückgekehrt. Es soll die öffentliche Aufmerksamkeit für die spanische Grippe im Zeitaum von 1918-1920 an Hand von Worthäufigkeiten derjenigen Wörter gemessen werden, die direkt oder indirekt auf die spanische Grippe verweisen.",
       "url": "https://quadriga-dk.github.io/Text-Fallstudie-1/corpus_analysis/corpus-analysis_intro.html",
-      "timeRequired": "90min",
+      "timeRequired": "PT90M",
       "teaches": "Frequenzanalysen semantischer Felder",
       "educationalAlignment": [
         {
@@ -363,7 +363,7 @@
       "name": "Reflexion",
       "description": "Auch wenn es uns gelungen ist, das Ziel der Fallstudie zu erreichen und unsere eingangs formulierte Forschungsfrage nach den \"Medienwellen\" der Spanischen Grippe insofern exemplarisch zu beantworten, als wir tatsächliche eine wellenartige Entwicklung der quantitative verstandenen Aufmerksamkeit in ausgewählten Berliner Tageszeitungen nachweisen konnten, gibt es mehrere Punkte, die abschließend kritisch zu reflektieren sind.",
       "url": "https://quadriga-dk.github.io/Text-Fallstudie-1/reflection/reflection_reflection.html",
-      "timeRequired": "30min",
+      "timeRequired": "PT30M",
       "teaches": "Kritische Bewertung der Reichweite und Limitationen",
       "educationalAlignment": [
         {
@@ -375,7 +375,7 @@
       ]
     }
   ],
-  "dcterms:tableOfContents": "- Präambel\n- Fragestellung und Operationalisierung. Einführung in die Fallstudie\n- Korpusaufbau. Auswählen, sammeln, dokumentieren\n- OCR. Von Bild zu Text\n- OCR-Nachbereitung. Manuell, automatisch, LLMs\n- Korpusverarbeitung. Von Strings zu Token\n- Korpusanalyse. Von Häufigkeiten zu Diagrammen\n- Reflexion\n- Epilog",
+  "dcterms:tableOfContents": "- Präambel\n- Fragestellung und Operationalisierung. Einführung in die Fallstudie\n- Korpusaufbau. Auswählen, sammeln, dokumentieren\n- OCR. Von Bild zu Text\n- OCR-Nachbearbeitung: manuell, automatisch, LLMs\n- Korpusverarbeitung. Von Strings zu Token\n- Korpusanalyse. Von Häufigkeiten zu Diagrammen\n- Reflexion\n- Epilog",
   "funding": "Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.\n\nFörderkennzeichen: 16DKZ2034",
   "learningResourceType": "Jupyter Book",
   "lrmi:learningResourceType": "Jupyter Book",

@@ -103,7 +103,7 @@ class DragDropQuiz:
             </div>
             
             <div class="options-container">
-                <div class="options-title">Ziehen Sie diese zu den passenden Beschreibungen</div>
+                <div class="options-title">Ziehen Sie die Elemente zu den passenden Beschreibungen.</div>
                 <div class="options-list" id="{quiz_id}_options">
                     {draggable_options}
                 </div>

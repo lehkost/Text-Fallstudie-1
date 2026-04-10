@@ -1,6 +1,6 @@
 # Messung der OCR-Qualität
 
-In Bezug auf die optische Zeichenerkennung (OCR) werden Präzision, Recall und F-Maß zur Bewertung der Genauigkeit und Effizienz von OCR-Systemen verwendet. Diese Metriken helfen zu verstehen, wie gut ein OCR-System arbeitet, insbesondere in Bezug auf die korrekte Identifizierung von Zeichen, Wörtern oder spezifischen Informationen in Dokumenten. Hier ist, wie diese Metriken auf die Qualitätsevaluation von OCR angewendet werden:
+In Bezug auf die optische Zeichenerkennung (OCR) werden Präzision, Recall und F-Score zur Bewertung der Genauigkeit und Effizienz von OCR-Systemen verwendet. Diese Metriken helfen zu verstehen, wie gut ein OCR-System arbeitet, insbesondere in Bezug auf die korrekte Identifizierung von Zeichen, Wörtern oder spezifischen Informationen in Dokumenten. Hier ist, wie diese Metriken auf die Qualitätsevaluation von OCR angewendet werden:
 
 ### Präzision in der OCR
 Bei der OCR misst die Präzision die Genauigkeit des erkannten Textes im Vergleich zum tatsächlichen Text in den Dokumentenbildern. Sie berechnet den Anteil der korrekt erkannten Zeichen oder Wörter an allen Zeichen oder Wörtern, die vom OCR-System identifiziert wurden. Hohe Präzision bedeutet, dass die meisten vom OCR-System als vorhanden erkannten Texte tatsächlich korrekt sind, was auf weniger falsch-positive Erkennungen hinweist (d.h. falsch als vorhanden identifiziert).

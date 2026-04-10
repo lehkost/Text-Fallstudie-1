@@ -27,15 +27,15 @@ Bei der Beschreibung eines gesamten Korpus sind die Metadaten entscheidend, um d
 
 Ein beispielhaftes Metadaten-Set für ein Korpus könnte unter Verwendung von Dublin Core so aussehen:
 
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/title/" class="external-link" target="_blank">DC.title</a>**: "Zeitungskorpus zur Spanischen Grippe in Berlin, 1918/1919"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/description/" class="external-link" target="_blank">DC.description</a>**: "Eine Sammlung digitalisierter Zeitungsartikel aus deutschen Zeitungen mit Erscheinungsort Berlin aus den Jahren 1918 und 1919"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/creator/" class="external-link" target="_blank">DC.creator</a>**: "Henny Sluyter-Gäthje, Daniil Skorinkin, Peer Trilcke für QUADRIGA. Berlin-Brandenburgisches Datenkompetenzzentrum für Digital Humanities und Verwaltungswissenschaft"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/publisher/" class="external-link" target="_blank">DC.publisher</a>**: <a href="https://zefys.staatsbibliothek-berlin.de/" class="external-link" target="_blank">"ZEitungsinFormationssYStem der Staatsbibliothek zu Berlin"</a>
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/date/" class="external-link" target="_blank">DC.date</a>**: "2024-06-01"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/" class="external-link" target="_blank">DC.format</a>**: "PDF, TXT, CSV"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/language/" class="external-link" target="_blank">DC.language</a>**: "Deutsch"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/subject/" class="external-link" target="_blank">DC.subject</a>**: "Geschichte, Medienwissenschaft"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/coverage/" class="external-link" target="_blank">DC.coverage</a>**: "20. Jahrhundert, Deutschland"
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/title/” class=”external-link” target=”_blank”>DC.title</a>**: „Zeitungskorpus zur Spanischen Grippe in Berlin, 1918/1919”
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/description/” class=”external-link” target=”_blank”>DC.description</a>**: „Eine Sammlung digitalisierter Zeitungsartikel aus deutschen Zeitungen mit Erscheinungsort Berlin aus den Jahren 1918 und 1919”
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/creator/” class=”external-link” target=”_blank”>DC.creator</a>**: „Henny Sluyter-Gäthje, Daniil Skorinkin, Peer Trilcke für QUADRIGA. Berlin-Brandenburgisches Datenkompetenzzentrum für Digital Humanities und Verwaltungswissenschaft”
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/publisher/” class=”external-link” target=”_blank”>DC.publisher</a>**: <a href=”https://zefys.staatsbibliothek-berlin.de/” class=”external-link” target=”_blank”>„ZEitungsinFormationssYStem der Staatsbibliothek zu Berlin”</a>
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/date/” class=”external-link” target=”_blank”>DC.date</a>**: „2024-06-01”
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/” class=”external-link” target=”_blank”>DC.format</a>**: „PDF, TXT, CSV”
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/language/” class=”external-link” target=”_blank”>DC.language</a>**: „Deutsch”
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/subject/” class=”external-link” target=”_blank”>DC.subject</a>**: „Geschichte, Medienwissenschaft”
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/coverage/” class=”external-link” target=”_blank”>DC.coverage</a>**: „20. Jahrhundert, Deutschland”
 
 ## Metadaten für einzelne Korpus-Elemente
 
@@ -51,13 +51,13 @@ Für einzelne Elemente eines Korpus, wie beispielsweise einzelne Artikel oder Do
 
 Für einen einzelnen Zeitungsartikel könnten die Metadaten so aussehen:
 
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/title/" class="external-link" target="_blank">DC.title</a>**: "Die Grippe wütet weiter"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/creator/" class="external-link" target="_blank">DC.creator</a>**: "N.N."
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/date/" class="external-link" target="_blank">DC.date</a>**: "1918-10-15"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/publisher/" class="external-link" target="_blank">DC.publisher</a>**: "Berliner Morgenpost"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/subject/" class="external-link" target="_blank">DC.subject</a>**: "Spanische Grippe"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/coverage/" class="external-link" target="_blank">DC.coverage</a>**: "1918, Berlin"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/language/" class="external-link" target="_blank">DC.language</a>**: "Deutsch"
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/identifier/" class="external-link" target="_blank">DC.identifier</a>**: "SNP2719372X-19181015-0-0-0-0"
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/title/" class="external-link" target="_blank">DC.title</a>**: „Die Grippe wütet weiter“
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/creator/" class="external-link" target="_blank">DC.creator</a>**: „N.N.“
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/date/" class="external-link" target="_blank">DC.date</a>**: „1918-10-15“
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/publisher/" class="external-link" target="_blank">DC.publisher</a>**: „Berliner Morgenpost“
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/subject/" class="external-link" target="_blank">DC.subject</a>**: „Spanische Grippe“
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/coverage/" class="external-link" target="_blank">DC.coverage</a>**: „1918, Berlin“
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/language/" class="external-link" target="_blank">DC.language</a>**: „Deutsch“
+- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/identifier/" class="external-link" target="_blank">DC.identifier</a>**: „SNP2719372X-19181015-0-0-0-0“
 
 Durch die sorgfältige Erfassung und Verwaltung von Metadaten auf beiden Ebenen – sowohl für das gesamte Korpus als auch für einzelne Elemente – wird die Nutzbarkeit und Nachnutzbarkeit von Forschungsdaten in den Digital Humanities erheblich verbessert. Dies trägt zur besseren Auffindbarkeit, Nachvollziehbarkeit und langfristigen Erhaltung der Daten bei.

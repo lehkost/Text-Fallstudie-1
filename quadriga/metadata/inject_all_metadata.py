@@ -67,7 +67,7 @@ def get_html_path_from_url(url: str, build_dir: Path) -> Path | None:
     Extract the HTML file path from a chapter URL.
 
     Args:
-        url (str): Full URL like "https://quadriga-dk.github.io/Book_Template/präambel/toc.html"
+        url (str): Full URL like "https://quadriga-dk.github.io/QUADRIGA-OER-Manual/präambel/toc.html"
         build_dir (Path): Path to _build/html directory
 
     Returns
@@ -82,7 +82,7 @@ def get_html_path_from_url(url: str, build_dir: Path) -> Path | None:
         path = path.removeprefix("/")
 
         # If base_url provided, try to extract relative path
-        # e.g., from "https://quadriga-dk.github.io/Book_Template/präambel/toc.html"
+        # e.g., from "https://quadriga-dk.github.io/QUADRIGA-OER-Manual/präambel/toc.html"
         # we want "präambel/toc.html"
         parts = path.split("/")
         if len(parts) > 1:

@@ -22,11 +22,10 @@ Der Fokus des Lehrbuchs liegt auf der Korpuserstellung mittels Optical Character
 Das Lehrbuch ist in sechs Kapiteln aufgeteilt. Es wird zuerst in die Fragestellung und deren Operationalisierung eingeführt, dann werden Methoden des Korpusaufbaus beschrieben. Danach wird in die Methode der OCR sowie in die Nachbereichtung des Outputs eingeführt. Das Textkorpus wird dann mit scrapy lemmatisiert und schlussendlich wird eine diachrone Frequenzanalyse auf dem annotierten Korpus ausgeführt.
 
 ## Adaptionen
-* Kapitel 6.2 "<a href="https://github.com/quadriga-dk/Text-Fallstudie-1/blob/main/corpus_processing/corpus-processing_nlp-annotation.ipynb" class="external-link" target="_blank">Korpusverarbeitung – Annotation mit spaCy</a>" wurde für das <a href="https://www.uni-potsdam.de/de/digital-humanities/events/digital-humanities-early-career-fellowship" class="external-link" target="_blank">Digital Humanities Early Career Fellowship 2025</a> weiterentwickelt und ist verfügbar in dem <a href="https://github.com/dh-network/dh-ecf/blob/main/data-processing/Data_Processing.ipynb" class="external-link" target="_blank">GitHub Repositorium des Programms</a>.
+* Kapitel 6.2 „<a href="https://github.com/quadriga-dk/Text-Fallstudie-1/blob/main/corpus_processing/corpus-processing_nlp-annotation.ipynb" class="external-link" target="_blank">Korpusverarbeitung – Annotation mit spaCy</a>“ wurde für das <a href="https://www.uni-potsdam.de/de/digital-humanities/events/digital-humanities-early-career-fellowship" class="external-link" target="_blank">Digital Humanities Early Career Fellowship 2025</a> weiterentwickelt und ist verfügbar in dem <a href="https://github.com/dh-network/dh-ecf/blob/main/data-processing/Data_Processing.ipynb" class="external-link" target="_blank">GitHub Repositorium des Programms</a>.
 
 ## Ansprechpartner:innen
 
 QUADRIGA ist ein Verbundprojekt mehrerer Institutionen, das von der Universität Potsdam koordiniert wird. Partner sind die Fachhochschule Potsdam, die Filmuniversität Babelsberg, das Fraunhofer FOKUS, die Freie Universität Berlin, die Humboldt-Universität zu Berlin, die Technische Universität Berlin und die Gesellschaft für Informatik.  
 
-Fragen und Feedback zu dieser OER können Sie uns sowohl über GitHub Issues als auch über Email zukommen lassen.  
-
+Fragen und Feedback zu dieser OER können Sie uns sowohl über GitHub Issues als auch über Email zukommen lassen.

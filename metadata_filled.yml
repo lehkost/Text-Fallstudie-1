@@ -36,7 +36,7 @@ table-of-contents: '- Präambel
 
   - OCR. Von Bild zu Text
 
-  - OCR-Nachbereitung. Manuell, automatisch, LLMs
+  - "OCR-Nachbearbeitung: manuell, automatisch, LLMs"
 
   - Korpusverarbeitung. Von Strings zu Token
 
@@ -146,7 +146,7 @@ chapters:
     competency: nicht anwendbar
     data-flow: 3 Anreicherung
     blooms-category: 3 Anwenden
-- title: OCR-Nachbereitung. Manuell, automatisch, LLMs
+- title: "OCR-Nachbearbeitung: manuell, automatisch, LLMs"
   url: https://quadriga-dk.github.io/Text-Fallstudie-1/ocr_post_correction/post-correcting_intro.html
   description: In diesem Kapitel werden wir die Ergebnisse der OCR nachbearbeiten.
   learning-goal: OCR-Nachbearbeitung und Qualitätsverbesserung

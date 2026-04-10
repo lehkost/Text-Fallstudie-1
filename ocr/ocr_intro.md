@@ -7,10 +7,10 @@
 :class: frage-feedback
 
 <a href="https://github.com/quadriga-dk/Text-Fallstudie-1/issues/new?assignees=&labels=question&projects=&template=frage.yml" class="external-link" target="_blank">
-    Stellen Sie eine Frage
+    Stellen Sie eine Frage.
 </a> <br>
 <a href="https://github.com/quadriga-dk/Text-Fallstudie-1/issues/new?assignees=&labels=feedback&projects=&template=feedback.yml" class="external-link" target="_blank">
-    Geben Sie uns Feedback
+    Geben Sie uns Feedback.
 </a>
 
 Mit Ihren Rückmeldungen können wir unser interaktives Lehrbuch gezielt an Ihre Bedürfnisse anpassen.
@@ -28,17 +28,9 @@ Skorinkin, D., Sluyter-Gäthje, H. & Trilcke, P. (2024). _Quantitative Analyse d
 
 `````
 
-
-```{admonition} OCR-basierte Korpuserstellung und Qualitätsbewertung
-:class: lernziele
-
-1. Der Prozess der Optical Character Recognition (OCR) für die Korpuserstellung kann beschrieben und Tools zur Durchführung der OCR aufgezählt werden.
-
-2. Die notwendigen Schritte zur Verarbeitung ein- und mehrseitiger PDFs zu Text können aufgezählt und die Unterschiede zwischen Ursprungs- und Zielformat erklärt werden.
-
-3. Die grundlegenden Metriken zur OCR-Qualitätsevaluation (Präzision, Recall, F1-Score) können erläutert und deren Bedeutung für die Bewertung von OCR-Systemen beschrieben werden.
-
-4. Die Schritte zur Qualitätsmessung eines OCR-Outputs können aufgezählt und die Qualitätsmaße interpretiert werden.
+```{include} ../introduction/learning-outcomes.md
+:start-after: "<!-- START: OCR. Von Bild zu Text -->"
+:end-before: "<!-- END: OCR. Von Bild zu Text -->"
 ```
 
 Nach dem vorherigen [Kapitel](../corpus_collection/corpus-collection_summary) haben wir also ein Korpus als Sammlung gescannter Bilder. Ein Korpus in dieser Form ist jedoch noch **nicht maschinenlesbar** und kann nicht direkt verarbeitet werden. In diesem Kapitel lernen wir, wie man mit OCR **Bilder in Text umwandelt**.
