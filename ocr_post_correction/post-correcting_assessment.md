@@ -10,14 +10,14 @@ jupytext:
 
 ````{admonition} Hinweis
 :class: hinweis
-Diese Übungsaufgaben dienen Ihrer Selbsteinschätzung und helfen Ihnen, das im Kapitel Gelernte zu reflektieren.
+Diese Übungsaufgaben dienen Ihrer Selbsteinschätzung und helfen Ihnen dabei, das im Kapitel Gelernte zu reflektieren.
 
-Sie können die Fragen in beliebiger Reihenfolge beantworten und auch mehrfach versuchen. 
+Sie können die Fragen in beliebiger Reihenfolge beantworten und jeden Versuch bei Bedarf mehrfach wiederholen.
 
 **So funktioniert es:**
-- Wählen Sie bei jeder Frage die Antwort(en), die Sie für richtig halten.
+- Wählen Sie bei jeder Frage die Antwort(en) aus, die Sie für richtig halten.
 - Lesen Sie das Feedback zu den einzelnen Antwortoptionen sorgfältig durch.
-- Die Erklärungen helfen Ihnen, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten.
+- Die Erklärungen helfen Ihnen dabei, Ihr Verständnis zu vertiefen – auch bei korrekten Antworten.
 
 Es erfolgt keine Bewertung oder Speicherung Ihrer Ergebnisse. Nutzen Sie dieses Assessment, um Wissenslücken zu identifizieren und gegebenenfalls die entsprechenden Abschnitte des Kapitels noch einmal zu bearbeiten.
 
@@ -34,8 +34,8 @@ Es erfolgt keine Bewertung oder Speicherung Ihrer Ergebnisse. Nutzen Sie dieses 
 :tags: [remove-input]
 from jupyterquiz import display_quiz
 
-""" 
-Lernziel: 
+"""
+Lernziel:
      Sie können verschiedene Verfahren der OCR-Nachbearbeitung beschreiben und deren Einsatzzwecke unterscheiden
 Bloom-Stufe: Verstehen
 Format: Multiple Choice
@@ -212,7 +212,7 @@ quiz = DragDropQuiz()
 quiz.create_matching_quiz(
     title="Ordnen Sie die folgenden Schritte der OCR-Nachbearbeitung in die richtige Reihenfolge:",
     descriptions=[
-        "Formatierungswiederherstellung", 
+        "Formatierungswiederherstellung",
         "Grundlegende Zeichenkorrektur",
         "Vollständigkeitsprüfung"],
     options=["1", "2", "3"],

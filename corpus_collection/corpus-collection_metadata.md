@@ -1,7 +1,7 @@
 (corpus-collection_metadata)=
 # Metadaten
 
-Metadaten sind Daten über Daten. Sie liefern kontextuelle Informationen, die helfen, die Bedeutung, Herkunft, Struktur und Nutzungsmöglichkeiten eines Datensatzes besser zu verstehen. In den Digital Humanities sind Metadaten unerlässlich, um die Volltextkorpora systematisch zu organisieren, auffindbar zu machen und deren inhaltliche und strukturelle Qualität zu sichern.
+Metadaten sind Daten über Daten. Sie liefern Kontextinformationen, die dazu beitragen, die Bedeutung, Herkunft, Struktur und Nutzungsmöglichkeiten eines Datensatzes besser zu verstehen. In den Digital Humanities sind Metadaten unerlässlich, um die Volltextkorpora systematisch zu organisieren, auffindbar zu machen und deren inhaltliche und strukturelle Qualität zu sichern.
 
 **Metadatenschemata**
 
@@ -18,24 +18,24 @@ Bei der Beschreibung eines gesamten Korpus sind die Metadaten entscheidend, um d
 
 - **Titel und Beschreibung**: Um das Korpus eindeutig zu identifizieren und dessen Inhalt zu beschreiben.
 - **Ersteller:innen und/oder Herausgeber:innen**: Angaben zu den Personen oder Institutionen, die das Korpus erstellt und veröffentlicht haben.
-- **Datum**: Zeitangaben zur Erstellung und Veröffentlichung des Korpus.
+- **Datum**: Angaben zum Erstellungs- und Veröffentlichungszeitpunkt des Korpus.
 - **Umfang und Format**: Informationen über die Anzahl der enthaltenen Dokumente und deren Dateiformate.
 - **Sprache**: Die im Korpus vertretenen Sprachen.
 - **Thematik und Schlagworte**: Stichworte, die die inhaltlichen Schwerpunkte des Korpus beschreiben.
 
-**Beispiel unter Verwendung Dublin Core**
+**Beispiel unter Verwendung von Dublin Core**
 
 Ein beispielhaftes Metadaten-Set für ein Korpus könnte unter Verwendung von Dublin Core so aussehen:
 
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/title/" class="external-link" target="_blank">DC.title</a>**: „Zeitungskorpus zur Spanischen Grippe in Berlin, 1918/1919“
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/description/" class="external-link" target="_blank">DC.description</a>**: „Eine Sammlung digitalisierter Zeitungsartikel aus deutschen Zeitungen mit Erscheinungsort Berlin aus den Jahren 1918 und 1919“
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/creator/" class="external-link" target="_blank">DC.creator</a>**: „Henny Sluyter-Gäthje, Daniil Skorinkin, Peer Trilcke für QUADRIGA. Berlin-Brandenburgische Datenkompetenzzentrum für Digital Humanities und Verwaltungswissenschaft“
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/publisher/" class="external-link" target="_blank">DC.publisher</a>**: <a href="https://zefys.staatsbibliothek-berlin.de/" class="external-link" target="_blank">„ZEitungsinFormationssYStem der Staatsbibliothek zu Berlin“</a>
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/date/" class="external-link" target="_blank">DC.date</a>**: „2024-06-01“
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/" class="external-link" target="_blank">DC.format</a>**: „PDF, TXT, CSV“
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/language/" class="external-link" target="_blank">DC.language</a>**: „Deutsch“
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/subject/" class="external-link" target="_blank">DC.subject</a>**: „Geschichte, Medienwissenschaft“
-- **<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/coverage/" class="external-link" target="_blank">DC.coverage</a>**: „20. Jahrhundert, Deutschland“
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/title/” class=”external-link” target=”_blank”>DC.title</a>**: „Zeitungskorpus zur Spanischen Grippe in Berlin, 1918/1919”
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/description/” class=”external-link” target=”_blank”>DC.description</a>**: „Eine Sammlung digitalisierter Zeitungsartikel aus deutschen Zeitungen mit Erscheinungsort Berlin aus den Jahren 1918 und 1919”
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/creator/” class=”external-link” target=”_blank”>DC.creator</a>**: „Henny Sluyter-Gäthje, Daniil Skorinkin, Peer Trilcke für QUADRIGA. Berlin-Brandenburgisches Datenkompetenzzentrum für Digital Humanities und Verwaltungswissenschaft”
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/publisher/” class=”external-link” target=”_blank”>DC.publisher</a>**: <a href=”https://zefys.staatsbibliothek-berlin.de/” class=”external-link” target=”_blank”>„ZEitungsinFormationssYStem der Staatsbibliothek zu Berlin”</a>
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/date/” class=”external-link” target=”_blank”>DC.date</a>**: „2024-06-01”
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/format/” class=”external-link” target=”_blank”>DC.format</a>**: „PDF, TXT, CSV”
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/language/” class=”external-link” target=”_blank”>DC.language</a>**: „Deutsch”
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/subject/” class=”external-link” target=”_blank”>DC.subject</a>**: „Geschichte, Medienwissenschaft”
+- **<a href=”https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/coverage/” class=”external-link” target=”_blank”>DC.coverage</a>**: „20. Jahrhundert, Deutschland”
 
 ## Metadaten für einzelne Korpus-Elemente
 
