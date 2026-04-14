@@ -1,6 +1,5 @@
 name: deploy-book
 
-# Run this when the master or main branch changes
 on:
   workflow_run:
     workflows: ["Update Metadata"]
@@ -9,7 +8,8 @@ on:
     branches:
       - main
 
-# This job installs dependencies, builds the book, and pushes it to `gh-pages`
+# This job installs dependencies, builds the book, and deploys it to GitHub Pages
+# only runs if "Update Metadata" workflow is successful
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
@@ -18,37 +18,54 @@ jobs:
       id-token: write
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-    - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    # Install dependencies
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version-file: .python-version
-        cache: pip
+      # Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: .python-version
+          cache: pip
 
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-    
-    #required packages
-    - name: Install packages
-      run: | 
-        sudo apt-get update
-        sudo apt-get install --fix-missing tesseract-ocr-frk poppler-utils 
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
 
-    # Build the book
-    - name: Build the book
-      run: |
-        jupyter-book build .
+      # check all kernels
+      - name: Log all available kernels
+        run: |
+          jupyter kernelspec list
 
-    # Upload the book's HTML as an artifact
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: "_build/html"
+      # only caches if set up in _config.yml with:
+      # execute:
+      #   execute_notebooks: cache
+      - name: Cache executed notebooks
+        uses: actions/cache@v3
+        with:
+          path: _build/.jupyter_cache
+          key: jupyter-book-cache-${{ hashFiles('requirements.txt') }}
 
-    # Deploy the book's HTML to GitHub Pages
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+      - name: Build the book
+        run: |
+          jupyter-book build .
+
+      - name: Inject all metadata into HTML
+        run: |
+          python -m quadriga.metadata.inject_all_metadata
+          echo "Injected all metadata (OpenGraph, JSON-LD, and RDF links) into HTML head"
+
+      - name: Copy metadata files to build directory
+        run: |
+          cp metadata.jsonld _build/html/metadata.jsonld
+          cp metadata.rdf _build/html/metadata.rdf
+          echo "Copied metadata files to _build/html for discovery"
+
+      - name: Upload book artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "_build/html"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
