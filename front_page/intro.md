@@ -50,7 +50,6 @@ Die Gliederung der Fallstudie lässt sich jederzeit durch die Menüleiste links 
 
 ```{figure} ../assets/images/flow-chart.gif
 ---
-height:
 name: Flussdiagramm der Fallstudie
 ---
 Flussdiagramm der Fallstudie, die sich aus sechs Arbeitspaketen zusammensetzt.
