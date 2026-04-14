@@ -1,8 +1,8 @@
 ---
 lang: de-DE
 ---
-# Präambel
+# Einstieg
 
-- [Lernziele](../introduction/learning-outcomes) 
-- [Technische Voraussetzungen](../introduction/introduction_requirements) 
-
+Machen Sie sich zunächst mit den
+- [Lernzielen](../introduction/introduction_learning-outcomes) sowie den 
+- [Technische Voraussetzungen](../introduction/introduction_requirements) vertraut.
