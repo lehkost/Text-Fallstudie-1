@@ -322,7 +322,7 @@ Förderkennzeichen: 16DKZ2034</schema:funding>
         <schema:name>Content</schema:name>
       </schema:CreativeWork>
     </schema:license>
-    <schema:name>Waves of the Spanish Flu – Case Study</schema:name>
+    <schema:name>Quantitative Analyse der Medienwellen der Spanischen Grippe (1918/19). Eine Fallstudie</schema:name>
     <schema:schemaVersion>1.0.0</schema:schemaVersion>
     <schema:timeRequired>PT12H</schema:timeRequired>
     <schema:url rdf:resource="https://quadriga-dk.github.io/Text-Fallstudie-1/" />
