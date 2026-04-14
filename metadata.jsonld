@@ -12,7 +12,7 @@
     "LearningResource"
   ],
   "name": "Quantitative Analyse der Medienwellen der Spanischen Grippe (1918/19). Eine Fallstudie",
-  "description": "Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte für Nutzer:innen der OERs und dient gleichzeitig als Template für die Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.",
+  "description": "Dieses interaktive Lehrbuch vermittelt Methoden für die automatische Erstellung, Aufbereitung und Analyse eines Textkorpus. Im Zentrum steht die Frage, wie sich die mediale Aufmerksamkeit auf die Spanische Grippe in zeitgenössischen Berliner Zeitungen verändert. Der Fokus des Lehrbuchs liegt auf der Korpuserstellung mittels Optical Character Recognition (OCR) mit pytesseract. Das Lehrbuch ist in sechs Kapitel aufgeteilt. Es wird zuerst in die Fragestellung und deren Operationalisierung eingeführt, dann werden Methoden des Korpusaufbaus beschrieben. Danach wird in die Methode der OCR sowie in die Nachbereichtung des Outputs eingeführt. Das Textkorpus wird dann mit spacy lemmatisiert und schlussendlich wird eine diachrone Frequenzanalyse auf dem annotierten Korpus ausgeführt.",
   "identifier": {
     "@type": "PropertyValue",
     "propertyID": "DOI",
