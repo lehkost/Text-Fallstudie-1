@@ -24,6 +24,7 @@ bibtex_bibfiles:
 sphinx:
   config:
     bibtex_reference_style: author_year
+    html_show_copyright: false
 
 # Information about where the book exists on the web
 #repository:
