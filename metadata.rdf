@@ -201,7 +201,7 @@
         <schema:name>Lamia Islam</schema:name>
       </schema:Person>
     </schema:contributor>
-    <schema:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-19</schema:dateModified>
+    <schema:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-04-14</schema:dateModified>
     <schema:datePublished rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-17</schema:datePublished>
     <schema:description>Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte für Nutzer:innen der OERs und dient gleichzeitig als Template für die Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.</schema:description>
     <schema:funding>Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.
@@ -322,11 +322,11 @@ Förderkennzeichen: 16DKZ2034</schema:funding>
         <schema:name>Content</schema:name>
       </schema:CreativeWork>
     </schema:license>
-    <schema:name>Waves of the Spanish Flu – Case Study</schema:name>
+    <schema:name>Quantitative Analyse der Medienwellen der Spanischen Grippe (1918/19). Eine Fallstudie</schema:name>
     <schema:schemaVersion>1.0.0</schema:schemaVersion>
     <schema:timeRequired>PT12H</schema:timeRequired>
     <schema:url rdf:resource="https://quadriga-dk.github.io/Text-Fallstudie-1/" />
-    <schema:version>1.0.0-beta.3</schema:version>
+    <schema:version>1.0.0-beta.4</schema:version>
     <schema:workExample>
       <schema:SoftwareSourceCode rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#repository">
         <schema:codeRepository rdf:resource="https://github.com/quadriga-dk/Text-Fallstudie-1" />
