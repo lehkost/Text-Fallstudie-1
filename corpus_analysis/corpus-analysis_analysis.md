@@ -106,7 +106,7 @@ Um Muster zu erkennen, ist es sinnvoll die erhobenen Häufigkeiten in größere 
 Eine zweite Möglichkeit, die Häufigkeiten über einen Zeitraum zusammenzufassen, bestünde darin, den Durchschnitt der Häufigkeiten zu nehmen. Diese Methode ist davon von schwankenden Textlängen an verschiedenen Tagen abhängig. Eine Folge davon wäre, dass Tage mit kurzen Texten und einer hohen Anzahl an Grippewörtern den Durchschnitt stark in die Höhe ziehen würden, obwohl die absolute Anzahl an Wörtern geringer ist als an Tagen, für die längere Texte vorliegen. 
 
 ```{table}
-:name: Beispiel: Methoden des Zusammenfügens
+:name: "Beispiel: Methoden des Zusammenfügens"
 
 | Tag  | Absolute Häufigkeit| Textlänge | 
 |------|--------------------|-----------|
