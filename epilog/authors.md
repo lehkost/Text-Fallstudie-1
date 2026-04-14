@@ -10,7 +10,7 @@ lang: de-DE
 <table style="margin-left: 0">
 <tr>
 <td><b>Rolle in QUADRIGA:</b></td>
-<td></td>
+<td>Konzeption und Umsetzung der Fallstudien des Datentyps Text sowie Testing und Iteration.</td>
 </tr>
 <tr>
 <td><b>Einrichtung:</b></td>
@@ -26,7 +26,7 @@ lang: de-DE
 <table style="margin-left: 0">
 <tr>
 <td><b>Rolle in QUADRIGA:</b></td>
-<td></td>
+<td>Konzeption und Umsetzung der Fallstudien des Datentyps Text sowie Testing und Iteration.</td>
 </tr>
 <tr>
 <td><b>Einrichtung:</b></td>
@@ -42,6 +42,7 @@ lang: de-DE
 <table style="margin-left: 0">
 <tr>
 <td><b>Rolle in QUADRIGA:</b></td>
+<td>Fallstudienleitung, Konzeption und Umsetzung der Fallstudien des Datentyps Text sowie Testing und Iteration.</td>
 <td></td>
 </tr>
 <tr>
