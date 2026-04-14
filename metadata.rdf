@@ -203,7 +203,7 @@
     </schema:contributor>
     <schema:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-04-14</schema:dateModified>
     <schema:datePublished rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-17</schema:datePublished>
-    <schema:description>Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte für Nutzer:innen der OERs und dient gleichzeitig als Template für die Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.</schema:description>
+    <schema:description>Dieses interaktive Lehrbuch vermittelt Methoden für die automatische Erstellung, Aufbereitung und Analyse eines Textkorpus. Im Zentrum steht die Frage, wie sich die mediale Aufmerksamkeit auf die Spanische Grippe in zeitgenössischen Berliner Zeitungen verändert. Der Fokus des Lehrbuchs liegt auf der Korpuserstellung mittels Optical Character Recognition (OCR) mit pytesseract. Das Lehrbuch ist in sechs Kapitel aufgeteilt. Es wird zuerst in die Fragestellung und deren Operationalisierung eingeführt, dann werden Methoden des Korpusaufbaus beschrieben. Danach wird in die Methode der OCR sowie in die Nachbereichtung des Outputs eingeführt. Das Textkorpus wird dann mit spacy lemmatisiert und schlussendlich wird eine diachrone Frequenzanalyse auf dem annotierten Korpus ausgeführt.</schema:description>
     <schema:funding>Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.
 
 Förderkennzeichen: 16DKZ2034</schema:funding>
