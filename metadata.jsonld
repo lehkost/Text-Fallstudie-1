@@ -375,7 +375,7 @@
       ]
     }
   ],
-  "dcterms:tableOfContents": "- Präambel\n- Fragestellung und Operationalisierung. Einführung in die Fallstudie\n- Korpusaufbau. Auswählen, sammeln, dokumentieren\n- OCR. Von Bild zu Text\n- OCR-Nachbearbeitung: manuell, automatisch, LLMs\n- Korpusverarbeitung. Von Strings zu Token\n- Korpusanalyse. Von Häufigkeiten zu Diagrammen\n- Reflexion\n- Epilog",
+  "dcterms:tableOfContents": "- Einstieg\n- Fragestellung und Operationalisierung. Einführung in die Fallstudie\n- Korpusaufbau. Auswählen, sammeln, dokumentieren\n- OCR. Von Bild zu Text\n- OCR-Nachbearbeitung: manuell, automatisch, LLMs\n- Korpusverarbeitung. Von Strings zu Token\n- Korpusanalyse. Von Häufigkeiten zu Diagrammen\n- Reflexion\n- Abschluss",
   "funding": "Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.\n\nFörderkennzeichen: 16DKZ2034",
   "learningResourceType": "Jupyter Book",
   "lrmi:learningResourceType": "Jupyter Book",
