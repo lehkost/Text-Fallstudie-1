@@ -4,9 +4,9 @@ Während OCR-Software heutzutage sehr leistungsfähig ist, sind die Ergebnisse n
 
 Die Nachbearbeitung umfasst verschiedene Schritte, die sicherstellen, dass der umgewandelte Text korrekt und lesbar ist. Diese Schritte können manuell oder automatisiert durchgeführt werden und umfassen unter anderem die Korrektur von Tippfehlern, die Formatierung des Textes und die Überprüfung auf Vollständigkeit und Genauigkeit.
 
-### Grundlegende Beispiele für die OCR-Nachbearbeitung
+## Grundlegende Beispiele für die OCR-Nachbearbeitung
 
-#### 1. Korrektur von Erkennungsfehlern
+### 1. Korrektur von Erkennungsfehlern
 
 OCR-Software kann Buchstaben oder Wörter falsch erkennen, insbesondere wenn die Qualität des Originaldokuments schlecht ist. Häufige Fehler sind die Verwechslung von ähnlichen Buchstaben wie „l“ (kleines L) und „1“ (Eins), „O“ (großes O) und „0“ (Null) oder „rn“ (r und n) als „m“.
 
@@ -22,7 +22,7 @@ Der heutige Wert beläuft sich auf 1000€.
 Das wird ein intensives Jahr.
 ```
 
-#### 2. Korrektur von Tippfehlern und Grammatik
+### 2. Korrektur von Tippfehlern und Grammatik
 
 Selbst wenn die OCR-Erkennung korrekt ist, können Tipp- und Grammatikfehler aus dem Originaldokument übernommen werden. Hier ist eine gründliche Überprüfung erforderlich.
 
@@ -36,7 +36,7 @@ Die Vereinbarung wurde am 15. März 2023 unterschireben.
 Die Vereinbarung wurde am 15. März 2023 unterschrieben.
 ```
 
-#### 3. Wiederherstellung der Formatierung
+### 3. Wiederherstellung der Formatierung
 
 OCR kann die Formatierung von Texten, wie z.B. Absätze, Überschriften, und Aufzählungen, nicht immer richtig interpretieren. Eine manuelle Nachbearbeitung ist oft notwendig, um die ursprüngliche Struktur des Dokuments wiederherzustellen.
 
@@ -64,7 +64,7 @@ Kapitel 2: Methodik
 Die Methode basiert auf...
 ```
 
-#### 4. Überprüfung auf Vollständigkeit
+### 4. Überprüfung auf Vollständigkeit
 
 Manchmal fehlen nach der OCR-Erkennung Teile des Textes, insbesondere wenn das Originaldokument beschädigt ist oder schlecht gescannt wurde. 
 
@@ -80,6 +80,6 @@ Die Forschungsergebnisse zeigen, dass die Effizienz der neuen Methode signifikan
 Zur weiteren Überprüfung der Ergebnisse wurde eine zweite Studie durchgeführt.
 ```
 
-### Fazit
+## Fazit
 
 Die OCR-Nachbearbeitung ist ein entscheidender Schritt, um sicherzustellen, dass digitalisierte Texte korrekt und nützlich sind. Obwohl die OCR-Technologie kontinuierlich verbessert wird, bleibt die Nachbearbeitung ein wichtiger Bestandteil des Workflows zur Textdigitalisierung. Indem Sie sorgfältig Erkennungsfehler korrigieren, Tippfehler und Grammatik überprüfen, die Formatierung wiederherstellen und die Vollständigkeit sicherstellen, können Sie die Qualität Ihrer digitalisierten Dokumente erheblich verbessern.
