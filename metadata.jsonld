@@ -208,7 +208,7 @@
           "@type": "AlignmentObject",
           "targetName": "Der Operationalisierungsprozess kann am Beispiel der Spanischen Grippe nachvollzogen und auf andere Forschungsfragen übertragen werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 3 Anwenden | Data Flow: nicht anwendbar"
+          "targetDescription": "Competency: 1.1 Identifikation | Bloom's: 3 Anwenden | Data Flow: 1 Planung"
         }
       ]
     },
@@ -224,25 +224,25 @@
           "@type": "AlignmentObject",
           "targetName": "Korpora können als geisteswissenschaftliche Forschungsobjekte definiert und deren wesentliche Merkmale beschrieben werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar"
+          "targetDescription": "Competency: 3.2 Erschließung | Bloom's: 2 Verstehen | Data Flow: 3 Management"
         },
         {
           "@type": "AlignmentObject",
           "targetName": "Die vier Hauptformate digitaler Texte (Bilddigitalisate, Plain Text, XML/TEI, CSV) können anhand ihrer charakteristischen Eigenschaften unterschieden und deren Vor- und Nachteile für spezifische Anwendungsfälle analysiert werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 4 Analysieren | Data Flow: nicht anwendbar"
+          "targetDescription": "Competency: 3.2 Erschließung | Bloom's: 4 Analysieren | Data Flow: 3 Management"
         },
         {
           "@type": "AlignmentObject",
           "targetName": "Die grundlegenden Metadatenschemata (Dublin Core, TEI, MODS, METS) und deren charakteristische Elemente für Korpora und Einzeldokumente können beschrieben werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar"
+          "targetDescription": "Competency: 3.2 Erschließung | Bloom's: 2 Verstehen | Data Flow: 3 Management"
         },
         {
           "@type": "AlignmentObject",
           "targetName": "Der schrittweise Prozess des praktischen Korpusaufbaus (Konzeptentwicklung, Metadatenerstellung und Datensammlung) kann am Beispiel eines Zeitungskorpus beschrieben werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar"
+          "targetDescription": "Competency: 3.2 Erschließung | Bloom's: 2 Verstehen | Data Flow: 3 Management"
         }
       ]
     },
@@ -258,25 +258,25 @@
           "@type": "AlignmentObject",
           "targetName": "Der Prozess der Optical Character Recognition (OCR) für die Korpuserstellung kann beschrieben und Tools zur Durchführung der OCR aufgezählt werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar"
+          "targetDescription": "Competency: 2.1 Erhebung | Bloom's: 2 Verstehen | Data Flow: 2 Erhebung und Aufbereitung"
         },
         {
           "@type": "AlignmentObject",
           "targetName": "Die notwendigen Schritte zur Verarbeitung ein- und mehrseitiger PDFs zu Text können aufgezählt und die Unterschiede zwischen Ursprungs- und Zielformat erklärt werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar"
+          "targetDescription": "Competency: 2.1 Erhebung | Bloom's: 2 Verstehen | Data Flow: 2 Erhebung und Aufbereitung"
         },
         {
           "@type": "AlignmentObject",
           "targetName": "Die grundlegenden Metriken zur OCR-Qualitätsevaluation (Präzision, Recall, F1-Score) können erläutert und deren Bedeutung für die Bewertung von OCR-Systemen beschrieben werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar"
+          "targetDescription": "Competency: 2.1 Erhebung | Bloom's: 2 Verstehen | Data Flow: 2 Erhebung und Aufbereitung"
         },
         {
           "@type": "AlignmentObject",
           "targetName": "Die Schritte zur Qualitätsmessung eines OCR-Outputs können aufgezählt und die Qualitätsmaße interpretiert werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 3 Anwenden | Data Flow: nicht anwendbar"
+          "targetDescription": "Competency: 2.1 Erhebung | Bloom's: 3 Anwenden | Data Flow: 2 Erhebung und Aufbereitung"
         }
       ]
     },
@@ -292,19 +292,19 @@
           "@type": "AlignmentObject",
           "targetName": "Verschiedene Verfahren der OCR-Nachbearbeitung können beschrieben und deren Einsatzzwecke unterschieden werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar"
+          "targetDescription": "Competency: 2.3 Aufbereitung | Bloom's: 2 Verstehen | Data Flow: 2 Erhebung und Aufbereitung"
         },
         {
           "@type": "AlignmentObject",
           "targetName": "Regelbasierte Ansätze zur OCR-Nachkorrektur können beschrieben und deren Auswirkungen auf die OCR-Qualität anhand von Metriken erläutert werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 4 Analysieren | Data Flow: nicht anwendbar"
+          "targetDescription": "Competency: 2.2 Validierung | Bloom's: 4 Analysieren | Data Flow: 2 Erhebung und Aufbereitung"
         },
         {
           "@type": "AlignmentObject",
           "targetName": "Die grundlegenden Herausforderungen beim Einsatz von Large Language Models für die OCR-Nachbearbeitung können beschrieben werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar"
+          "targetDescription": "Competency: 2.3 Aufbereitung | Bloom's: 2 Verstehen | Data Flow: 2 Erhebung und Aufbereitung"
         }
       ]
     },
@@ -320,13 +320,13 @@
           "@type": "AlignmentObject",
           "targetName": "Die Grundkonzepte des Natural Language Processing können erklärt und die Funktionen von Tokenisierung und Lemmatisierung für die Textanalyse beschrieben werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar"
+          "targetDescription": "Competency: 2.3 Aufbereitung | Bloom's: 2 Verstehen | Data Flow: 2 Erhebung und Aufbereitung"
         },
         {
           "@type": "AlignmentObject",
           "targetName": "Die notwendigen Schritte zur automatischen Annotation eines Texts können aufgezählt und Vorteile der Tokenisierung gegenüber einfacheren Methoden der Worttrennung genannt werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 3 Anwenden | Data Flow: nicht anwendbar"
+          "targetDescription": "Competency: 2.3 Aufbereitung | Bloom's: 1 Erinnern | Data Flow: 2 Erhebung und Aufbereitung"
         }
       ]
     },
@@ -342,7 +342,7 @@
           "@type": "AlignmentObject",
           "targetName": "Das Konzept des semantischen Feldes kann erklärt, der Unterschied zwischen absoluten und relativen Häufigkeiten beschrieben und die Darstellungsmethoden des Liniendiagramms und der Key Word in Context (KWIC)-Anzeige interpretiert werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: 4.1 Datenanalyse | Bloom's: 2 Verstehen | Data Flow: 4 Analyse"
+          "targetDescription": "Competency: 4.1 Datenanalyse | Bloom's: 5 Bewerten | Data Flow: 4 Analyse"
         },
         {
           "@type": "AlignmentObject",
