@@ -12,77 +12,77 @@
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#chapter_1_objective_1">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: nicht anwendbar | Bloom's: 3 Anwenden | Data Flow: nicht anwendbar</schema:targetDescription>
+    <schema:targetDescription>Competency: 1.1 Identifikation | Bloom's: 3 Anwenden | Data Flow: 1 Planung</schema:targetDescription>
     <schema:targetName>Der Operationalisierungsprozess kann am Beispiel der Spanischen Grippe nachvollzogen und auf andere Forschungsfragen übertragen werden.</schema:targetName>
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#chapter_2_objective_0">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar</schema:targetDescription>
+    <schema:targetDescription>Competency: 3.2 Erschließung | Bloom's: 2 Verstehen | Data Flow: 3 Management</schema:targetDescription>
     <schema:targetName>Korpora können als geisteswissenschaftliche Forschungsobjekte definiert und deren wesentliche Merkmale beschrieben werden.</schema:targetName>
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#chapter_2_objective_1">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: nicht anwendbar | Bloom's: 4 Analysieren | Data Flow: nicht anwendbar</schema:targetDescription>
+    <schema:targetDescription>Competency: 3.2 Erschließung | Bloom's: 4 Analysieren | Data Flow: 3 Management</schema:targetDescription>
     <schema:targetName>Die vier Hauptformate digitaler Texte (Bilddigitalisate, Plain Text, XML/TEI, CSV) können anhand ihrer charakteristischen Eigenschaften unterschieden und deren Vor- und Nachteile für spezifische Anwendungsfälle analysiert werden.</schema:targetName>
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#chapter_2_objective_2">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar</schema:targetDescription>
+    <schema:targetDescription>Competency: 3.2 Erschließung | Bloom's: 2 Verstehen | Data Flow: 3 Management</schema:targetDescription>
     <schema:targetName>Die grundlegenden Metadatenschemata (Dublin Core, TEI, MODS, METS) und deren charakteristische Elemente für Korpora und Einzeldokumente können beschrieben werden.</schema:targetName>
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#chapter_2_objective_3">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar</schema:targetDescription>
+    <schema:targetDescription>Competency: 3.2 Erschließung | Bloom's: 2 Verstehen | Data Flow: 3 Management</schema:targetDescription>
     <schema:targetName>Der schrittweise Prozess des praktischen Korpusaufbaus (Konzeptentwicklung, Metadatenerstellung und Datensammlung) kann am Beispiel eines Zeitungskorpus beschrieben werden.</schema:targetName>
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#chapter_3_objective_0">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar</schema:targetDescription>
+    <schema:targetDescription>Competency: 2.1 Erhebung | Bloom's: 2 Verstehen | Data Flow: 2 Erhebung und Aufbereitung</schema:targetDescription>
     <schema:targetName>Der Prozess der Optical Character Recognition (OCR) für die Korpuserstellung kann beschrieben und Tools zur Durchführung der OCR aufgezählt werden.</schema:targetName>
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#chapter_3_objective_1">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar</schema:targetDescription>
+    <schema:targetDescription>Competency: 2.1 Erhebung | Bloom's: 2 Verstehen | Data Flow: 2 Erhebung und Aufbereitung</schema:targetDescription>
     <schema:targetName>Die notwendigen Schritte zur Verarbeitung ein- und mehrseitiger PDFs zu Text können aufgezählt und die Unterschiede zwischen Ursprungs- und Zielformat erklärt werden.</schema:targetName>
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#chapter_3_objective_2">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar</schema:targetDescription>
+    <schema:targetDescription>Competency: 2.1 Erhebung | Bloom's: 2 Verstehen | Data Flow: 2 Erhebung und Aufbereitung</schema:targetDescription>
     <schema:targetName>Die grundlegenden Metriken zur OCR-Qualitätsevaluation (Präzision, Recall, F1-Score) können erläutert und deren Bedeutung für die Bewertung von OCR-Systemen beschrieben werden.</schema:targetName>
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#chapter_3_objective_3">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: nicht anwendbar | Bloom's: 3 Anwenden | Data Flow: nicht anwendbar</schema:targetDescription>
+    <schema:targetDescription>Competency: 2.1 Erhebung | Bloom's: 3 Anwenden | Data Flow: 2 Erhebung und Aufbereitung</schema:targetDescription>
     <schema:targetName>Die Schritte zur Qualitätsmessung eines OCR-Outputs können aufgezählt und die Qualitätsmaße interpretiert werden.</schema:targetName>
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#chapter_4_objective_0">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar</schema:targetDescription>
+    <schema:targetDescription>Competency: 2.3 Aufbereitung | Bloom's: 2 Verstehen | Data Flow: 2 Erhebung und Aufbereitung</schema:targetDescription>
     <schema:targetName>Verschiedene Verfahren der OCR-Nachbearbeitung können beschrieben und deren Einsatzzwecke unterschieden werden.</schema:targetName>
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#chapter_4_objective_1">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: nicht anwendbar | Bloom's: 4 Analysieren | Data Flow: nicht anwendbar</schema:targetDescription>
+    <schema:targetDescription>Competency: 2.2 Validierung | Bloom's: 4 Analysieren | Data Flow: 2 Erhebung und Aufbereitung</schema:targetDescription>
     <schema:targetName>Regelbasierte Ansätze zur OCR-Nachkorrektur können beschrieben und deren Auswirkungen auf die OCR-Qualität anhand von Metriken erläutert werden.</schema:targetName>
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#chapter_4_objective_2">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar</schema:targetDescription>
+    <schema:targetDescription>Competency: 2.3 Aufbereitung | Bloom's: 2 Verstehen | Data Flow: 2 Erhebung und Aufbereitung</schema:targetDescription>
     <schema:targetName>Die grundlegenden Herausforderungen beim Einsatz von Large Language Models für die OCR-Nachbearbeitung können beschrieben werden.</schema:targetName>
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#chapter_5_objective_0">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar</schema:targetDescription>
+    <schema:targetDescription>Competency: 2.3 Aufbereitung | Bloom's: 2 Verstehen | Data Flow: 2 Erhebung und Aufbereitung</schema:targetDescription>
     <schema:targetName>Die Grundkonzepte des Natural Language Processing können erklärt und die Funktionen von Tokenisierung und Lemmatisierung für die Textanalyse beschrieben werden.</schema:targetName>
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#chapter_5_objective_1">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: nicht anwendbar | Bloom's: 3 Anwenden | Data Flow: nicht anwendbar</schema:targetDescription>
+    <schema:targetDescription>Competency: 2.3 Aufbereitung | Bloom's: 1 Erinnern | Data Flow: 2 Erhebung und Aufbereitung</schema:targetDescription>
     <schema:targetName>Die notwendigen Schritte zur automatischen Annotation eines Texts können aufgezählt und Vorteile der Tokenisierung gegenüber einfacheren Methoden der Worttrennung genannt werden.</schema:targetName>
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#chapter_6_objective_0">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: 4.1 Datenanalyse | Bloom's: 2 Verstehen | Data Flow: 4 Analyse</schema:targetDescription>
+    <schema:targetDescription>Competency: 4.1 Datenanalyse | Bloom's: 5 Bewerten | Data Flow: 4 Analyse</schema:targetDescription>
     <schema:targetName>Das Konzept des semantischen Feldes kann erklärt, der Unterschied zwischen absoluten und relativen Häufigkeiten beschrieben und die Darstellungsmethoden des Liniendiagramms und der Key Word in Context (KWIC)-Anzeige interpretiert werden.</schema:targetName>
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/#chapter_6_objective_1">

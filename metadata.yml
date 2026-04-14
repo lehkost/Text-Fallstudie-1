@@ -90,8 +90,8 @@ chapters:
     blooms-category: 2 Verstehen
   - learning-objective: Der Operationalisierungsprozess kann am Beispiel der Spanischen
       Grippe nachvollzogen und auf andere Forschungsfragen übertragen werden.
-    competency: nicht anwendbar
-    data-flow: nicht anwendbar
+    competency: 1.1 Identifikation
+    data-flow: 1 Planung
     blooms-category: 3 Anwenden
 - title: Korpusaufbau. Auswählen, sammeln, dokumentieren
   url: https://quadriga-dk.github.io/Text-Fallstudie-1/corpus_collection/corpus-collection_intro.html
@@ -101,26 +101,26 @@ chapters:
   learning-objectives:
   - learning-objective: Korpora können als geisteswissenschaftliche Forschungsobjekte
       definiert und deren wesentliche Merkmale beschrieben werden.
-    competency: nicht anwendbar
-    data-flow: nicht anwendbar
+    competency: 3.2 Erschließung
+    data-flow: 3 Management
     blooms-category: 2 Verstehen
   - learning-objective: Die vier Hauptformate digitaler Texte (Bilddigitalisate, Plain
       Text, XML/TEI, CSV) können anhand ihrer charakteristischen Eigenschaften unterschieden
       und deren Vor- und Nachteile für spezifische Anwendungsfälle analysiert werden.
-    competency: nicht anwendbar
-    data-flow: nicht anwendbar
+    competency: 3.2 Erschließung
+    data-flow: 3 Management
     blooms-category: 4 Analysieren
   - learning-objective: Die grundlegenden Metadatenschemata (Dublin Core, TEI, MODS,
       METS) und deren charakteristische Elemente für Korpora und Einzeldokumente können
       beschrieben werden.
-    competency: nicht anwendbar
-    data-flow: nicht anwendbar
+    competency: 3.2 Erschließung
+    data-flow: 3 Management
     blooms-category: 2 Verstehen
   - learning-objective: Der schrittweise Prozess des praktischen Korpusaufbaus (Konzeptentwicklung,
       Metadatenerstellung und Datensammlung) kann am Beispiel eines Zeitungskorpus
       beschrieben werden.
-    competency: nicht anwendbar
-    data-flow: nicht anwendbar
+    competency: 3.2 Erschließung
+    data-flow: 3 Management
     blooms-category: 2 Verstehen
 - title: OCR. Von Bild zu Text
   url: https://quadriga-dk.github.io/Text-Fallstudie-1/ocr/ocr_intro.html
@@ -131,25 +131,25 @@ chapters:
   - learning-objective: Der Prozess der Optical Character Recognition (OCR) für die
       Korpuserstellung kann beschrieben und Tools zur Durchführung der OCR aufgezählt
       werden.
-    competency: nicht anwendbar
-    data-flow: nicht anwendbar
+    competency: 2.1 Erhebung
+    data-flow: 2 Erhebung und Aufbereitung
     blooms-category: 2 Verstehen
   - learning-objective: Die notwendigen Schritte zur Verarbeitung ein- und mehrseitiger
       PDFs zu Text können aufgezählt und die Unterschiede zwischen Ursprungs- und
       Zielformat erklärt werden.
-    competency: nicht anwendbar
-    data-flow: nicht anwendbar
+    competency: 2.1 Erhebung
+    data-flow: 2 Erhebung und Aufbereitung
     blooms-category: 2 Verstehen
   - learning-objective: Die grundlegenden Metriken zur OCR-Qualitätsevaluation (Präzision,
       Recall, F1-Score) können erläutert und deren Bedeutung für die Bewertung von
       OCR-Systemen beschrieben werden.
-    competency: nicht anwendbar
-    data-flow: nicht anwendbar
+    competency: 2.1 Erhebung
+    data-flow: 2 Erhebung und Aufbereitung
     blooms-category: 2 Verstehen
   - learning-objective: Die Schritte zur Qualitätsmessung eines OCR-Outputs können
       aufgezählt und die Qualitätsmaße interpretiert werden.
-    competency: nicht anwendbar
-    data-flow: nicht anwendbar
+    competency: 2.1 Erhebung
+    data-flow: 2 Erhebung und Aufbereitung
     blooms-category: 3 Anwenden
 - title: 'OCR-Nachbearbeitung: manuell, automatisch, LLMs'
   url: https://quadriga-dk.github.io/Text-Fallstudie-1/ocr_post_correction/post-correcting_intro.html
@@ -159,18 +159,18 @@ chapters:
   learning-objectives:
   - learning-objective: Verschiedene Verfahren der OCR-Nachbearbeitung können beschrieben
       und deren Einsatzzwecke unterschieden werden.
-    competency: nicht anwendbar
-    data-flow: nicht anwendbar
+    competency: 2.3 Aufbereitung
+    data-flow: 2 Erhebung und Aufbereitung
     blooms-category: 2 Verstehen
   - learning-objective: Regelbasierte Ansätze zur OCR-Nachkorrektur können beschrieben
       und deren Auswirkungen auf die OCR-Qualität anhand von Metriken erläutert werden.
-    competency: nicht anwendbar
-    data-flow: nicht anwendbar
+    competency: 2.2 Validierung
+    data-flow: 2 Erhebung und Aufbereitung
     blooms-category: 4 Analysieren
   - learning-objective: Die grundlegenden Herausforderungen beim Einsatz von Large
       Language Models für die OCR-Nachbearbeitung können beschrieben werden.
-    competency: nicht anwendbar
-    data-flow: nicht anwendbar
+    competency: 2.3 Aufbereitung
+    data-flow: 2 Erhebung und Aufbereitung
     blooms-category: 2 Verstehen
 - title: Korpusverarbeitung. Von Strings zu Token
   url: https://quadriga-dk.github.io/Text-Fallstudie-1/corpus_processing/corpus-processing_intro.html
@@ -182,15 +182,15 @@ chapters:
   - learning-objective: Die Grundkonzepte des Natural Language Processing können erklärt
       und die Funktionen von Tokenisierung und Lemmatisierung für die Textanalyse
       beschrieben werden.
-    competency: nicht anwendbar
-    data-flow: nicht anwendbar
+    competency: 2.3 Aufbereitung
+    data-flow: 2 Erhebung und Aufbereitung
     blooms-category: 2 Verstehen
   - learning-objective: Die notwendigen Schritte zur automatischen Annotation eines
       Texts können aufgezählt und Vorteile der Tokenisierung gegenüber einfacheren
       Methoden der Worttrennung genannt werden.
-    competency: nicht anwendbar
-    data-flow: nicht anwendbar
-    blooms-category: 3 Anwenden
+    competency: 2.3 Aufbereitung
+    data-flow: 2 Erhebung und Aufbereitung
+    blooms-category: 1 Erinnern
 - title: Korpusanalyse. Von Häufigkeiten zu Diagrammen
   url: https://quadriga-dk.github.io/Text-Fallstudie-1/corpus_analysis/corpus-analysis_intro.html
   description: Nachdem die Korpuserstellung und -anreicherung abgeschlossen ist, wird
@@ -207,7 +207,7 @@ chapters:
       werden.
     competency: 4.1 Datenanalyse
     data-flow: 4 Analyse
-    blooms-category: 2 Verstehen
+    blooms-category: 5 Bewerten
   - learning-objective: Die notwendigen Schritte zur Frequenzanalyse eines semantischen
       Felds können aufgezählt, Unterschiede in der Berechnung der Häufigkeiten benannt
       und die Ergebnisse reflektiert werden.
