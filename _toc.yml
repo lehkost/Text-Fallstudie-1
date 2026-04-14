@@ -3,7 +3,7 @@ root: front_page/intro
 options:
   numbered: 3
 chapters:
-  - file: präambel/einführung
+  - file: einstieg/einführung
     sections:
     - file: introduction/learning-outcomes
     - file: introduction/introduction_requirements
@@ -13,7 +13,7 @@ chapters:
     - file: research_question/research-question_operationalization
     - file: research_question/research-question_summary
     - file: research_question/research-question_assessment
-  - file: corpus_collection/corpus-collection_intro    
+  - file: corpus_collection/corpus-collection_intro
     sections:
     - file: corpus_collection/corpus-collection_corpora-as-research-objects
     - file: corpus_collection/corpus-collection_text_as_digital_objects
@@ -53,11 +53,11 @@ chapters:
     - file: corpus_analysis/corpus-analysis_assessment
   - file: reflection/reflection_reflection
     sections:
-    - file: reflection/reflection_LLM-post-correction 
-  - file: epilog/toc
+    - file: reflection/reflection_LLM-post-correction
+  - file: abschluss/toc
     sections:
-      - file: epilog/fragen_und_feedback
-      - file: epilog/literaturverzeichnis
-      - file: epilog/authors
-      - file: epilog/quadriga
-      - file: epilog/impressum
+      - file: abschluss/fragen_und_feedback
+      - file: abschluss/literaturverzeichnis
+      - file: abschluss/authors
+      - file: abschluss/quadriga
+      - file: abschluss/impressum
