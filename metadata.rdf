@@ -102,7 +102,7 @@
   </schema:AlignmentObject>
   <schema:Book rdf:about="https://quadriga-dk.github.io/Text-Fallstudie-1/">
     <dc:type>Jupyter Book</dc:type>
-    <dcterms:tableOfContents>- Präambel
+    <dcterms:tableOfContents>- Einstieg
 - Fragestellung und Operationalisierung. Einführung in die Fallstudie
 - Korpusaufbau. Auswählen, sammeln, dokumentieren
 - OCR. Von Bild zu Text
@@ -110,7 +110,7 @@
 - Korpusverarbeitung. Von Strings zu Token
 - Korpusanalyse. Von Häufigkeiten zu Diagrammen
 - Reflexion
-- Epilog</dcterms:tableOfContents>
+- Abschluss</dcterms:tableOfContents>
     <dcterms:type>Jupyter Book</dcterms:type>
     <lrmi:learningResourceType>Jupyter Book</lrmi:learningResourceType>
     <schema:about>
