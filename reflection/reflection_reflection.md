@@ -44,7 +44,6 @@ Forschung in den Digital Humanities ist auch der stete Versuch, die Tradition qu
 
 ```{figure} ../assets/images/Embrace-the-light-and-the-dark-side.jpg
 ---
-height: 30
 name: Star Wars Meme: Embrace the light and dark side
 ---
 ```
