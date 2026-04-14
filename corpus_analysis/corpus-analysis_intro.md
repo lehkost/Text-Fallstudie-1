@@ -26,8 +26,7 @@ Für die Ausführung einer digitalen Analyse, in diesem Fall der Analyse der Spa
 
 ```{figure} ../assets/images/flow-chart_corpus-analysis.jpeg
 ---
-height:
-name: Flussdiagramm der Fallstudie
+name: flussdiagramm-analysis
 ---
 Flussdiagramm der Fallstudie, das aktuelle Arbeitspaket ist hervorgehoben.
 ```

@@ -37,8 +37,7 @@ Nachdem im [vorherigen Kapitel](../research_question/research-question_research-
 
 ```{figure} ../assets/images/flow-chart_corpus-collection.png
 ---
-height:
-name: Flussdiagramm der Fallstudie
+name: flussdiagramm-corpus-collection
 ---
 Flussdiagramm der Fallstudie. Wir befinden uns nun im zweiten Arbeitspaket.
 ```

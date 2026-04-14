@@ -36,8 +36,7 @@ Für die Ausführung einer digitalen Analyse, in diesem Fall die Analyse von Wor
 
 ```{figure} ../assets/images/flow-chart_corpus-processing.jpeg
 ---
-height:
-name: Flussdiagramm der Fallstudie
+name: flussdiagramm-corpus-processing
 ---
 Flussdiagramm der Fallstudie, das aktuelle Arbeitspaket ist hevorgehoben.
 ```

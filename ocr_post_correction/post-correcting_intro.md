@@ -26,8 +26,7 @@ Im vorherigen [Kapitel](ocr) haben wir die Scans der Zeitungen mithilfe von OCR 
 
 ```{figure} ../assets/images/flow-chart_ocr-postprocessing.jpeg
 ---
-height:
-name: Flussdiagramm der Fallstudie
+name: flussdiagramm-post-correction
 ---
 Flussdiagramm der Fallstudie. Wir befinden uns im vierten Arbeitspaket.
 ```

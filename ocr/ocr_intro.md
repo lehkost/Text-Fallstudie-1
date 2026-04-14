@@ -37,8 +37,7 @@ Nach dem vorherigen [Kapitel](../corpus_collection/corpus-collection_summary) ha
 
 ```{figure} ../assets/images/flow-chart_ocr.jpeg
 ---
-height:
-name: Flussdiagramm der Fallstudie
+name: flussdiagramm-ocr
 ---
 Flussdiagramm der Fallstudie. Wir befinden uns im dritten Arbeitspaket.
 ```

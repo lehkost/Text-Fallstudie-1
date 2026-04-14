@@ -25,8 +25,7 @@ Dieses Kapitel bildet den Auftakt der Fallstudie und dient der Klärung des Erke
 
 ```{figure} ../assets/images/flow-chart_research-question.png
 ---
-height:
-name: Flussdiagramm der Fallstudie
+name: flussdiagramm-research-question
 ---
 Flussdiagramm der Fallstudie. Wir befinden uns im ersten Arbeitspaket.
 ```
