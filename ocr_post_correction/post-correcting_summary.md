@@ -9,7 +9,7 @@ Die [Nachbearbeitung](post-correcting_ocr) von OCR-Ergebnissen kann sowohl [rege
 
 **Messbare Verbesserungen:** 
 
-Die regelbasierte Korrektur führte zu einer nachweisbaren <a href="post-correcting_correction#messung-der-verbesserung">Qualitätsverbesserung</a>, mit einem Anstieg des F1-Scores von 0.78 auf 0.82, was die Effektivität systematischer Nachbearbeitung demonstriert.
+Die regelbasierte Korrektur führte zu einer nachweisbaren <a href="post-correcting_correction#messung-der-verbesserung">Qualitätsverbesserung</a>, mit einem Anstieg des F1-Scores, was die Effektivität systematischer Nachbearbeitung demonstriert.
 
 **Methodische Grenzen:**
 
